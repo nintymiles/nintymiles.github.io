@@ -1,0 +1,23 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+#relative_permalinks: true
+
+# Setup
+title:               九十里
+tagline:             '高端产品理想产品'
+description:         '高端产品理想产品'
+url:                 http://nintymiles.github.io
+baseurl:             ''
+paginate:            5
+gems: [jekyll-paginate]
+
+# About/contact
+author:
+  name:              Mark Otto
+  url:               https://twitter.com/mdo
+  email:             markdotto@gmail.com
+
+# Custom vars
+version:             1.0.0
