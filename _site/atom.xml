@@ -4,7 +4,7 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-03-31T18:34:36+08:00</updated>
+ <updated>2016-03-31T18:42:54+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>Mark Otto</name>
@@ -17,7 +17,8 @@
    <link href="http://nintymiles.github.io/2016/03/31/nintymiles-kickoff/"/>
    <updated>2016-03-31T00:00:00+08:00</updated>
    <id>http://nintymiles.github.io/2016/03/31/nintymiles-kickoff</id>
-   <content type="html">&lt;p&gt;万物生长，水木自亲。&lt;/p&gt;
+   <content type="html">&lt;p&gt;万物生长，水木自亲。
+&lt;img src=&quot;/asset/springflower_160331.jpg&quot; alt=&quot;image description&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;built-on-jekyll-by-seanren&quot;&gt;Built on Jekyll by SeanRen&lt;/h3&gt;
 
