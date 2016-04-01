@@ -4,13 +4,29 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-03-31T18:42:54+08:00</updated>
+ <updated>2016-04-01T10:36:10+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
-   <name>Mark Otto</name>
-   <email>markdotto@gmail.com</email>
+   <name>SeanRen</name>
+   <email>nintymiles@icloud.com</email>
  </author>
 
+ 
+ <entry>
+   <title>昨日记</title>
+   <link href="http://nintymiles.github.io/2016/04/01/everyday-thoughts/"/>
+   <updated>2016-04-01T00:00:00+08:00</updated>
+   <id>http://nintymiles.github.io/2016/04/01/everyday thoughts</id>
+   <content type="html">&lt;h2 id=&quot;willie-said-yesterday&quot;&gt;Willie Said Yesterday：&lt;/h2&gt;
+&lt;p&gt;我昨天在小广场看见了一个恐龙头化石！
+&lt;img src=&quot;emoji/whale&quot; width=&quot;18&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;sean-read-something-impressive-yesterday&quot;&gt;Sean read something impressive yesterday：&lt;/h2&gt;
+&lt;p&gt;“Where a religion was bound up with the government of an empire, political motives did much to tansform its primitive features.” –Bertrand Russel
+&amp;gt; 凡事有果必有因。&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>九十里</title>
