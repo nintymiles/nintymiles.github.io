@@ -4,7 +4,7 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-04-01T16:19:29+08:00</updated>
+ <updated>2016-04-01T21:01:51+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>SeanRen</name>
@@ -45,6 +45,23 @@
 &lt;blockquote&gt;
   &lt;p&gt;凡事有果必有因。&lt;/p&gt;
 &lt;/blockquote&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Willie's Painting in Kindergarten</title>
+   <link href="http://nintymiles.github.io/2016/04/01/class-painting/"/>
+   <updated>2016-04-01T00:00:00+08:00</updated>
+   <id>http://nintymiles.github.io/2016/04/01/class-painting</id>
+   <content type="html">&lt;h5 id=&quot;willie-naming-it&quot;&gt;Willie naming it：&lt;/h5&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;《葡萄与蜗牛》&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/asset/painting/xuan_painting0401.jpg&quot; alt=&quot;image description&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
 
 </content>
  </entry>
