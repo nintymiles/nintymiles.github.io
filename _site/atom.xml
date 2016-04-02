@@ -4,13 +4,30 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-04-02T14:54:12+08:00</updated>
+ <updated>2016-04-02T15:16:59+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>SeanRen</name>
    <email>nintymiles@icloud.com</email>
  </author>
 
+ 
+ <entry>
+   <title>影分身术</title>
+   <link href="http://nintymiles.github.io/2016/04/02/playing_in_maze_house/"/>
+   <updated>2016-04-02T00:00:00+08:00</updated>
+   <id>http://nintymiles.github.io/2016/04/02/playing_in_maze_house</id>
+   <content type="html">&lt;h5 id=&quot;willie-is-playing-in-the-maze-house&quot;&gt;Willie is playing in the maze house&lt;/h5&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;影分身术&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/asset/maze_20160402.jpg&quot; alt=&quot;image description&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>摘记</title>
