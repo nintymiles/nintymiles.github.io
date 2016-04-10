@@ -7,7 +7,7 @@ title: This Spring Flowers
 
 > I was collecting all kinds of flowers this spring,so the below shows are.
 
-###### The flowers peple wont see
+###### The flowers people wont see
 ![image description](/asset/springflowers2016/flowers_invisible_1000.jpg)
 ###### peach blossom
 ![image description](/asset/springflowers2016/peach_flowers1.jpg)
