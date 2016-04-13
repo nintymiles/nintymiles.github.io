@@ -4,7 +4,7 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-04-10T16:42:09+08:00</updated>
+ <updated>2016-04-13T10:44:29+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>SeanRen</name>
@@ -13,10 +13,28 @@
 
  
  <entry>
+   <title>Willie's Blue and White Porcelain</title>
+   <link href="http://nintymiles.github.io/2016/04/13/willie-blue-and-white-porcelain/"/>
+   <updated>2016-04-13T00:00:00+08:00</updated>
+   <id>http://nintymiles.github.io/2016/04/13/willie-blue-and-white-porcelain</id>
+   <content type="html">&lt;h5 id=&quot;section&quot;&gt;青花瓷&lt;/h5&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Just records the grown up tracks.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/asset/painting/blueandwhiteporcelain.jpg&quot; alt=&quot;image description&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
    <title>This Spring Flowers</title>
-   <link href="http://nintymiles.github.io/2016/04/10/spring-flowers/"/>
+   <link href="http://nintymiles.github.io/2016/04/10/spring-flowers-copy/"/>
    <updated>2016-04-10T00:00:00+08:00</updated>
-   <id>http://nintymiles.github.io/2016/04/10/spring-flowers</id>
+   <id>http://nintymiles.github.io/2016/04/10/spring-flowers copy</id>
    <content type="html">&lt;h5 id=&quot;so-many-kinds-of-flowers-blossom&quot;&gt;So many kinds of flowers blossom.&lt;/h5&gt;
 
 &lt;blockquote&gt;
