@@ -9,6 +9,5 @@ title: 旧游照片-贵得（2）
 
 ![image description](/asset/xizang/2-guide_mountains.jpg)
 
----
 
 
