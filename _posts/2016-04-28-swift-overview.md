@@ -61,9 +61,11 @@ let captain: String = "Kirk"
 
 Swift提供一种新特性称之为**推断类型（Inferred Typing）**。这意味着如果在定义和初始化变量时**提供足够的信息**，Swift可以自动预测数据类型，从而不需要每次都输入类型。
 在这个特性的支持下，之前的变量声明语法可以变为：
+
 ```swift
 var 你的变量名称=变量初始值
 let 你的常量名称=常量初始值
 ```
+
 >注意描述推断类型的“**提供足够的信息**”，如果 “var intNumber=7"没有问题，但是”var doubleNumber=7“则可能达不到你的类型预期，doubleNumber会被默认推断为Int类型，提供足够的信息则需要”var doubleNumber=7.0“。
 

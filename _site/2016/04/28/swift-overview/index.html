@@ -189,12 +189,16 @@
 <p>##推断类型（Inferred Typing）</p>
 
 <p>Swift提供一种新特性称之为<strong>推断类型（Inferred Typing）</strong>。这意味着如果在定义和初始化变量时<strong>提供足够的信息</strong>，Swift可以自动预测数据类型，从而不需要每次都输入类型。
-在这个特性的支持下，之前的变量声明语法可以变为：
-<code class="highlighter-rouge">swift
-var 你的变量名称=变量初始值
-let 你的常量名称=常量初始值
-</code>
-&gt;注意描述推断类型的“<strong>提供足够的信息</strong>”，如果 “var intNumber=7”没有问题，但是”var doubleNumber=7“则可能达不到你的类型预期，doubleNumber会被默认推断为Int类型，提供足够的信息则需要”var doubleNumber=7.0“。</p>
+在这个特性的支持下，之前的变量声明语法可以变为：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">你的变量名称</span><span class="o">=</span><span class="n">变量初始值</span>
+<span class="k">let</span> <span class="nv">你的常量名称</span><span class="o">=</span><span class="n">常量初始值</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>注意描述推断类型的“<strong>提供足够的信息</strong>”，如果 “var intNumber=7”没有问题，但是”var doubleNumber=7“则可能达不到你的类型预期，doubleNumber会被默认推断为Int类型，提供足够的信息则需要”var doubleNumber=7.0“。</p>
+</blockquote>
 
 
 </div>

@@ -4,7 +4,7 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-04-28T17:08:37+08:00</updated>
+ <updated>2016-04-28T17:10:26+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>SeanRen</name>
@@ -88,12 +88,16 @@
 &lt;p&gt;##推断类型（Inferred Typing）&lt;/p&gt;
 
 &lt;p&gt;Swift提供一种新特性称之为&lt;strong&gt;推断类型（Inferred Typing）&lt;/strong&gt;。这意味着如果在定义和初始化变量时&lt;strong&gt;提供足够的信息&lt;/strong&gt;，Swift可以自动预测数据类型，从而不需要每次都输入类型。
-在这个特性的支持下，之前的变量声明语法可以变为：
-&lt;code class=&quot;highlighter-rouge&quot;&gt;swift
-var 你的变量名称=变量初始值
-let 你的常量名称=常量初始值
-&lt;/code&gt;
-&amp;gt;注意描述推断类型的“&lt;strong&gt;提供足够的信息&lt;/strong&gt;”，如果 “var intNumber=7”没有问题，但是”var doubleNumber=7“则可能达不到你的类型预期，doubleNumber会被默认推断为Int类型，提供足够的信息则需要”var doubleNumber=7.0“。&lt;/p&gt;
+在这个特性的支持下，之前的变量声明语法可以变为：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;你的变量名称&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;变量初始值&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;你的常量名称&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;常量初始值&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;注意描述推断类型的“&lt;strong&gt;提供足够的信息&lt;/strong&gt;”，如果 “var intNumber=7”没有问题，但是”var doubleNumber=7“则可能达不到你的类型预期，doubleNumber会被默认推断为Int类型，提供足够的信息则需要”var doubleNumber=7.0“。&lt;/p&gt;
+&lt;/blockquote&gt;
 
 </content>
  </entry>
