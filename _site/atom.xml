@@ -4,13 +4,99 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-04-23T08:41:53+08:00</updated>
+ <updated>2016-04-28T17:08:37+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>SeanRen</name>
    <email>nintymiles@icloud.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Swift概要（Swift Overview）</title>
+   <link href="http://nintymiles.github.io/2016/04/28/swift-overview/"/>
+   <updated>2016-04-28T00:00:00+08:00</updated>
+   <id>http://nintymiles.github.io/2016/04/28/swift-overview</id>
+   <content type="html">&lt;h1 id=&quot;swift-overview&quot;&gt;Swift Overview&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Swift是一门新语言.Swift在设计时结合了C和ObjectiveC的许多特性，但又不受C的各种限制，Swift采用了安全的编程模型并且添加了许多新特性。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- --&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Swift采用了ObjectiveC的命名参数以及动态对象模型，从而可以无缝对接到现有的Cocoa框架。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- --&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Swift使用自动引用计数（Automatic Reference Counting, ARC）来简化内存管理。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--开头 --&gt;
+&lt;p&gt;通常来说，编程语言教程中的第一个程序应该在屏幕上打印“Hello, world”。在 Swift 中，可以用一行代码实现：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;print(“Hello, world!”)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;在 Swift 中，这行代码就是一个完整的程序。你不需要为了输入输出或者字符串处理导入一个单独的库。全局作用域中的代码会被自动当做程序的入口点，所以你也不需要main()函数。&lt;/p&gt;
+
+&lt;p&gt;你同样不需要在每个语句结尾写上分号。&lt;/p&gt;
+
+&lt;h2 id=&quot;variable&quot;&gt;变量（Variable）声明&lt;/h2&gt;
+
+&lt;p&gt;变量声明语法：
+&amp;gt;var 你的变量名称:数据类型=变量初始值&lt;/p&gt;
+
+&lt;p&gt;变量要符合下面的原则：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;你的变量名称&lt;/strong&gt;：你可以用任何字符命名变量，比如age和🐶🐱&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;变量类型&lt;/strong&gt;：变量类型，比如Int和String,更多类型会在后面列出&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;变量初始值&lt;/strong&gt;：你要赋给变量的初始值，根据类型。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;##数据类型（Types）&lt;/p&gt;
+
+&lt;p&gt;Swift提供下面的基础数据类型&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Int&lt;/strong&gt;：整数&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Double&lt;/strong&gt;：十进位数&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Boolean&lt;/strong&gt;：true,false&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;String&lt;/strong&gt;：string (letters and words)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;##常量 （Constants）&lt;/p&gt;
+
+&lt;p&gt;特定类型的变量称为常量，常量是指你只需要决定一次，但是可以使用很多次的特殊变量。&lt;/p&gt;
+
+&lt;p&gt;使用关键字&lt;strong&gt;let&lt;/strong&gt;来声明常量。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;life&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Double&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.14&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;canTouchThis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;captain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Kirk&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;如果尝试给常量赋值，会得到编译器错误。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;##推断类型（Inferred Typing）&lt;/p&gt;
+
+&lt;p&gt;Swift提供一种新特性称之为&lt;strong&gt;推断类型（Inferred Typing）&lt;/strong&gt;。这意味着如果在定义和初始化变量时&lt;strong&gt;提供足够的信息&lt;/strong&gt;，Swift可以自动预测数据类型，从而不需要每次都输入类型。
+在这个特性的支持下，之前的变量声明语法可以变为：
+&lt;code class=&quot;highlighter-rouge&quot;&gt;swift
+var 你的变量名称=变量初始值
+let 你的常量名称=常量初始值
+&lt;/code&gt;
+&amp;gt;注意描述推断类型的“&lt;strong&gt;提供足够的信息&lt;/strong&gt;”，如果 “var intNumber=7”没有问题，但是”var doubleNumber=7“则可能达不到你的类型预期，doubleNumber会被默认推断为Int类型，提供足够的信息则需要”var doubleNumber=7.0“。&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>A kid portrait copying painting</title>
