@@ -22,6 +22,7 @@ title: Swift概要（Swift Overview）
 
 你同样不需要在每个语句结尾写上分号。
 
+
 ## 变量（Variable）声明
 
 变量声明语法：
@@ -33,7 +34,8 @@ title: Swift概要（Swift Overview）
 - **变量类型**：变量类型，比如Int和String,更多类型会在后面列出
 - **变量初始值**：你要赋给变量的初始值，根据类型。
 
-##数据类型（Types）
+
+## 数据类型（Types）
 
 Swift提供下面的基础数据类型
 
@@ -42,7 +44,8 @@ Swift提供下面的基础数据类型
 - **Boolean**：true,false
 - **String**：string (letters and words)
 
-##常量 （Constants）
+
+## 常量 （Constants）
 
 特定类型的变量称为常量，常量是指你只需要决定一次，但是可以使用很多次的特殊变量。
 
@@ -57,7 +60,8 @@ let captain: String = "Kirk"
 
 >如果尝试给常量赋值，会得到编译器错误。
 
-##推断类型（Inferred Typing）
+
+## 推断类型（Inferred Typing）
 
 Swift提供一种新特性称之为**推断类型（Inferred Typing）**。这意味着如果在定义和初始化变量时**提供足够的信息**，Swift可以自动预测数据类型，从而不需要每次都输入类型。
 在这个特性的支持下，之前的变量声明语法可以变为：
