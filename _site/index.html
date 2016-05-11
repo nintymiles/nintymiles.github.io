@@ -167,15 +167,19 @@ if name != nil {
 </code></pre>
 </div>
 
-<p>We can also test multiple optional variables in one line. We do this by separating each optional check with a comma. The following example shows how to do this:
-<code class="highlighter-rouge">
-   if let myOptional = myOptional, myOptional2 = myOptional2,
+<p>We can also test multiple optional variables in one line. We do this by separating each optional check with a comma. The following example shows how to do this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>   if let myOptional = myOptional, myOptional2 = myOptional2,
    myOptional3 = myOptional3 {
      // only reach this if all three optionals
      // have non-nil values
    }
-</code>
-&gt;Within the optional binding zone,variable’s changing is independent.so it doesn’t affect the value of the outter variable,even the variable is declared outter the scope.</p>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>Within the optional binding zone,variable’s changing is independent.so it doesn’t affect the value of the outter variable,even the variable is declared outter the scope.</p>
+</blockquote>
 
 <p><strong>Optional chaining</strong> allows us to call properties, methods, and subscripts on an optional that might be nil. If any of the chained values return nil, the return value will be nil.</p>
 

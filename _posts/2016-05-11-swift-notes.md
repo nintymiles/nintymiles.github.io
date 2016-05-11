@@ -25,7 +25,6 @@ if name != nil {
 
 We use **optional binding** to check whether an optional variable or constant has a non-nil value, and, if so, assign that value to a temporary variable. For optional binding, we use the **if-let** or **if-var** keywords together. If we use if-let, the ***temporary*** value is a constant and cannot be changed, while the if-var keywords puts the temporary value into a variable that allows us to change the value. 
 
-
 ```
 if let temp = myOptional {
     print(temp)
@@ -36,6 +35,7 @@ if let temp = myOptional {
 ```
 
 We can also test multiple optional variables in one line. We do this by separating each optional check with a comma. The following example shows how to do this:
+
 ```
    if let myOptional = myOptional, myOptional2 = myOptional2,
    myOptional3 = myOptional3 {
@@ -43,6 +43,7 @@ We can also test multiple optional variables in one line. We do this by separati
      // have non-nil values
    }
 ```
+
 >Within the optional binding zone,variable's changing is independent.so it doesn't affect the value of the outter variable,even the variable is declared outter the scope.
 
 **Optional chaining** allows us to call properties, methods, and subscripts on an optional that might be nil. If any of the chained values return nil, the return value will be nil. 

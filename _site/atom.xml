@@ -4,7 +4,7 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-05-11T14:08:38+08:00</updated>
+ <updated>2016-05-11T14:12:39+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>SeanRen</name>
@@ -52,15 +52,19 @@ if name != nil {
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;We can also test multiple optional variables in one line. We do this by separating each optional check with a comma. The following example shows how to do this:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-   if let myOptional = myOptional, myOptional2 = myOptional2,
+&lt;p&gt;We can also test multiple optional variables in one line. We do this by separating each optional check with a comma. The following example shows how to do this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   if let myOptional = myOptional, myOptional2 = myOptional2,
    myOptional3 = myOptional3 {
      // only reach this if all three optionals
      // have non-nil values
    }
-&lt;/code&gt;
-&amp;gt;Within the optional binding zone,variable’s changing is independent.so it doesn’t affect the value of the outter variable,even the variable is declared outter the scope.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Within the optional binding zone,variable’s changing is independent.so it doesn’t affect the value of the outter variable,even the variable is declared outter the scope.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;&lt;strong&gt;Optional chaining&lt;/strong&gt; allows us to call properties, methods, and subscripts on an optional that might be nil. If any of the chained values return nil, the return value will be nil.&lt;/p&gt;
 
