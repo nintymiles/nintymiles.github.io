@@ -125,6 +125,245 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/05/11/swift-notes/">
+        Swift Learning Notes part 2
+      </a>
+    </h1>
+
+    <span class="post-date">11 May 2016</span>
+
+    <h1 id="swift-learning-notes-part-2">Swift Learning Notes part 2</h1>
+<hr />
+<blockquote>
+  <p>Swift can be thought of as Objective-C reimagined using modern concepts and safe programming patterns. In Apple’s own words, Swift is like Objective-C without
+the C. Chris Lattner, the creator of Swift, said Swift took language ideas from Objective-C, Rust, Haskell, Ruby, Python, C#, CLU, and far too many others to list. At WWDC 2014, Apple really stressed that Swift was safe by default. Swift was designed to eliminate many common programming errors, making applications more secure and less prone to bugs. Swift 2 added two additional core features to the language—availability and error handling—which are designed to make it even easier to write safe code.</p>
+</blockquote>
+
+<h2 id="optional-variables">Optional variables</h2>
+<p>In Swift,normally,the variables are considered to be nonoptional. an optional variable is a variable that we are able to assign nil (no value) to. <strong>Optional variables and constants are defined using <em>?</em> (question mark).</strong></p>
+
+<blockquote>
+  <p>Optional variables were added to the Swift language as a safety feature.</p>
+</blockquote>
+
+<p>To use force unwrapping, we must  rst make sure that the optional has a non-nil value and then we can use the explanation point to access that value.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var name: String?
+Name = "Jon"
+if name != nil {
+    var newString = "Hello " + name!
+}
+</code></pre>
+</div>
+
+<p>We use <strong>optional binding</strong> to check whether an optional variable or constant has a non-nil value, and, if so, assign that value to a temporary variable. For optional binding, we use the <strong>if-let</strong> or <strong>if-var</strong> keywords together. If we use if-let, the <strong><em>temporary</em></strong> value is a constant and cannot be changed, while the if-var keywords puts the temporary value into a variable that allows us to change the value.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>if let temp = myOptional {
+    print(temp)
+    print("Can not use temp outside of the if bracket")
+} else {
+    print("myOptional was nil")
+}
+</code></pre>
+</div>
+
+<p>We can also test multiple optional variables in one line. We do this by separating each optional check with a comma. The following example shows how to do this:
+<code class="highlighter-rouge">
+   if let myOptional = myOptional, myOptional2 = myOptional2,
+   myOptional3 = myOptional3 {
+     // only reach this if all three optionals
+     // have non-nil values
+   }
+</code>
+&gt;Within the optional binding zone,variable’s changing is independent.so it doesn’t affect the value of the outter variable,even the variable is declared outter the scope.</p>
+
+<p><strong>Optional chaining</strong> allows us to call properties, methods, and subscripts on an optional that might be nil. If any of the chained values return nil, the return value will be nil.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var s = car?.tires?.tireSize
+</code></pre>
+</div>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/05/02/swift-notes/">
+        Swift Learning Notes
+      </a>
+    </h1>
+
+    <span class="post-date">02 May 2016</span>
+
+    <h1 id="swift-learning-notes">Swift Learning Notes</h1>
+<hr />
+<blockquote>
+  <p>Swift can be thought of as Objective-C reimagined using modern concepts and safe programming patterns. In Apple’s own words, Swift is like Objective-C without
+the C. Chris Lattner, the creator of Swift, said Swift took language ideas from Objective-C, Rust, Haskell, Ruby, Python, C#, CLU, and far too many others to list. At WWDC 2014, Apple really stressed that Swift was safe by default. Swift was designed to eliminate many common programming errors, making applications more secure and less prone to bugs. Swift 2 added two additional core features to the language—availability and error handling—which are designed to make it even easier to write safe code.</p>
+</blockquote>
+
+<h2 id="getting-started-with-playgrounds">Getting started with Playgrounds</h2>
+
+<blockquote>
+  <p>Playgrounds are interactive work environments that let us write code and see
+the results immediately.</p>
+</blockquote>
+
+<h2 id="how-does-playgournds-open-the-debug-area">How does Playgournds open the debug area</h2>
+
+<p>You can open it manually by pressing the shift + command + Y keys together. The debug area is so userful.</p>
+
+<h2 id="swfit-language-syntax">Swfit Language Syntax</h2>
+
+<h3 id="comments">Comments</h3>
+
+<p>Writing comments in Swift code is a little different from writing comments in Objective-C code.</p>
+
+<p><strong>Double slash \\</strong> for single line comments
+<strong>/* and */</strong> for multi line comments</p>
+
+<p>What has changed is how we document the parameters and the return value. To document any parameter, we use the :parm:  eld, and for the return value, we use the :return:  eld.</p>
+
+<h3 id="semicolons">Semicolons</h3>
+<p>The semicolons are optional in Swift;</p>
+
+<h3 id="parentheses">Parentheses</h3>
+<p>The parentheses around conditional statements are optional</p>
+
+<h3 id="curly-braces">Curly Braces</h3>
+<p>The the curly bracket is required after statements</p>
+
+<h3 id="an-assignment-operator-does-not-return-a-value">An assignment operator does not return a value</h3>
+<p>In Swift, this statement is not valid. Using an assignment operator (=) in a conditional statement (if and while) will throw an error.</p>
+
+<h3 id="spaces-are-optional-in-conditional-and-assignment-statements">Spaces are optional in conditional and assignment statements</h3>
+<p>For both conditional (if and while) and assignment (=) statements, the white spaces are optional.</p>
+
+<h3 id="powerful-print-function">Powerful Print() function</h3>
+<blockquote>
+  <p>Official Definition:Writes the textual representations of items, separated by separator and terminated by terminator, into the standard output.</p>
+</blockquote>
+
+<blockquote>
+  <p>The textual representations are obtained for each item via the expression String(item).</p>
+</blockquote>
+
+<p>Prior to Swift 2, we had two separate print functions: print() and println(). Now both of these functions have been combined into the single print() function.</p>
+
+<p>There are two ways to use print() function:</p>
+
+<ul>
+  <li>We can include the value of variables and/or constants using a special sequence of characters, \( )</li>
+  <li>by separating the values within the print() function with commas</li>
+</ul>
+
+<pre><code class="language-swifty">var name = "Jon"
+var language = "Swift"
+var message1 = " Welcome to the wonderful world of "
+var message2 = "\(name) Welcome to the wonderful world of \(language)!"
+
+print(name, message1, language, "!")
+print(message2)
+</code></pre>
+
+<p>The usage for <strong>seperator</strong> and <strong>terminator</strong> parameters:</p>
+
+<pre><code class="language-swifty">var name1 = "Jon"
+var name2 = "Kim"
+var name3 = "Kailey"
+var name4 = "Kara"
+print(name1, name2, name3, name4, separator:", ",terminator:"")
+</code></pre>
+
+<p>The usage for <strong>toStream</strong> parameter:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var name1 = "Jon"
+var name2 = "Kim"
+var name3 = "Kailey"
+var name4 = "Kara"
+var line = ""
+
+print(name1, name2, name3, name4, separator:", ",terminator:"", toStream:&amp;line)
+</code></pre>
+</div>
+<p>### Strings and Characters</p>
+
+<ul>
+  <li>A <em>string</em> is a series of characters</li>
+  <li>A string is an ordered collection of characters, such as Hello or Swift.</li>
+  <li>Swift has the <strong><em>String</em></strong> type to represent strings</li>
+  <li><em>String</em> can be accessed in various way,including as a collection of <em>Character</em> values</li>
+  <li>Swift’s <em>String</em> and <em>Character</em> types privode a fast,Unicode-compliant way to work with text in your code,Swift’s <em>String</em> type is a fast,modern string implementation</li>
+</ul>
+
+<blockquote>
+  <p>Note</p>
+</blockquote>
+
+<blockquote>
+  <p>Swift’s String type is bridged with Foundation’s NSString class. If you are working with the Foundation framework in Cocoa, the entire NSString API is available to call on any String value you create when type cast to NSString, as described in AnyObject. You can also use a String value with any API that requires an NSString instance.</p>
+</blockquote>
+
+<h4 id="string-literals">String Literals</h4>
+
+<p>a string iteral is a fixed sequence of textual characters that must be surrounded by a pair of <em>double quotes</em> (<strong>”“</strong>)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Use a string literal as an initial value for a constant or variable:
+
+let someString = "Some string literal value"
+</code></pre>
+</div>
+
+<h4 id="initializing-an-empty-string">Initializing an Empty String</h4>
+<p>Intitialize syntax:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var emptyString = "" // empty string literal
+var anotherEmptyString = String() // initializer syntax
+// these two strings are both empty, and are equivalent to each other
+</code></pre>
+</div>
+
+<p>How to decide whether a <strong>String</strong> is empty:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>if emptyString.isEmpty {
+print("Nothing to see here")
+}
+// Prints "Nothing to see here"
+</code></pre>
+</div>
+
+<h4 id="constants-and-variables">Constants and Variables</h4>
+<p>Constants and variables associate an identi er (such as myName or currentTemperature) with a value of a particular type (such as String or Int), where the identi er can be used to retrieve the value
+-  a variable can be updated or changed
+-  a constant cannot be changed once a value is assigned to it</p>
+
+<blockquote>
+  <p>The use of constants is encouraged in Swift. If we do not expect or want the value to change, we should declare it as a constant. This adds a very important safety constraint to our code that ensures that the value never changes.</p>
+</blockquote>
+
+<p>You can use almost any character in the identi er of a variable or constant (even Unicode characters); however, there are a few rules that you must follow:
+- An identifier must not contain any whitespace
+- An identifier must not contain any mathematical symbols
+- An identifier must not contain any arrows
+- An identifier must not contain private use or invalid Unicode characters
+- An identifier must not contain line- or box-drawing characters
+- An identifier must not start with a number, but they can contain numbers
+- If you use a Swift keyword as an identifier, surround it with back ticks</p>
+
+<h4 id="type-safety">Type safety</h4>
+<p>Swift is a type-safe language. In a type-safe language, we are required to be clear
+on the types of values we store in a variable.</p>
+
+<h4 id="numberic-types">Numberic types</h4>
+<p>Swift contains many of the standard numeric types that are suitable for storing various integer and  oating-point values.</p>
+
+<h4 id="swift-repl">Swift REPL</h4>
+<p>You can set up and run a REPL — read, eval, print, loop — in order to write interactive Swift code in the command line. To enable this capability, open the Terminal app from your /Applications/Utilities folder and type <em>xcrun swift</em> (or <em>lldb –repl</em>) at the command prompt and press return.</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="http://nintymiles.github.io//2016/05/01/swift-overview-2/">
         Swift概要2（Swift Overview 2）
       </a>
@@ -134,6 +373,10 @@
 
     <h1 id="swift-overview-2">Swift Overview 2</h1>
 <hr />
+<blockquote>
+  <p>Swift can be thought of as Objective-C reimagined using modern concepts and safe programming patterns. In Apple’s own words, Swift is like Objective-C without
+the C. Chris Lattner, the creator of Swift, said Swift took language ideas from Objective-C, Rust, Haskell, Ruby, Python, C#, CLU, and far too many others to list. At WWDC 2014, Apple really stressed that Swift was safe by default. Swift was designed to eliminate many common programming errors, making applications more secure and less prone to bugs. Swift 2 added two additional core features to the language—availability and error handling—which are designed to make it even easier to write safe code.</p>
+</blockquote>
 
 <h2 id="comparison-operators">比较操作符 （Comparison Operators)</h2>
 
@@ -321,47 +564,6 @@
     <h5 id="willies-kid-portrait-copying-painting-in-class">Willie’s kid portrait copying painting in class</h5>
 
 <p><img src="/asset/painting/kid_portrait_copying_painting.jpg" alt="image description" /></p>
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/04/21/ancient-drawing/">
-        美图
-      </a>
-    </h1>
-
-    <span class="post-date">21 Apr 2016</span>
-
-    <h5 id="section">美图偶拾</h5>
-<blockquote>
-  <p>网络时代，一切皆可记录。</p>
-</blockquote>
-
-<p><img src="/asset/ancient_drawing/paint2.png" alt="image description" />
-<img src="/asset/ancient_drawing/paint4.png" alt="image description" />
-<img src="/asset/ancient_drawing/paint3.png" alt="image description" />
-<img src="/asset/ancient_drawing/paint1.png" alt="image description" /></p>
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/04/16/past_tourism_guide_mountains/">
-        旧游照片-贵得（2）
-      </a>
-    </h1>
-
-    <span class="post-date">16 Apr 2016</span>
-
-    <h5 id="section">旅程第二段：贵得(2)</h5>
-<blockquote>
-  <p>贵得及周边。</p>
-</blockquote>
-
-<p><img src="/asset/xizang/2-guide_mountains.jpg" alt="image description" /></p>
 
 
   </div>
