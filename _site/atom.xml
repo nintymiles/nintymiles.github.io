@@ -4,7 +4,7 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-05-11T14:12:39+08:00</updated>
+ <updated>2016-05-13T16:20:10+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>SeanRen</name>
@@ -13,13 +13,11 @@
 
  
  <entry>
-   <title>Swift Learning Notes part 2</title>
+   <title>Swift Learning Notes 2 - Optional and Enumeration</title>
    <link href="http://nintymiles.github.io/2016/05/11/swift-notes/"/>
    <updated>2016-05-11T00:00:00+08:00</updated>
    <id>http://nintymiles.github.io/2016/05/11/swift-notes</id>
-   <content type="html">&lt;h1 id=&quot;swift-learning-notes-part-2&quot;&gt;Swift Learning Notes part 2&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;blockquote&gt;
+   <content type="html">&lt;blockquote&gt;
   &lt;p&gt;Swift can be thought of as Objective-C reimagined using modern concepts and safe programming patterns. In Apple’s own words, Swift is like Objective-C without
 the C. Chris Lattner, the creator of Swift, said Swift took language ideas from Objective-C, Rust, Haskell, Ruby, Python, C#, CLU, and far too many others to list. At WWDC 2014, Apple really stressed that Swift was safe by default. Swift was designed to eliminate many common programming errors, making applications more secure and less prone to bugs. Swift 2 added two additional core features to the language—availability and error handling—which are designed to make it even easier to write safe code.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -63,7 +61,7 @@ if name != nil {
 &lt;/div&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Within the optional binding zone,variable’s changing is independent.so it doesn’t affect the value of the outter variable,even the variable is declared outter the scope.&lt;/p&gt;
+  &lt;p&gt;Within the optional binding zone,value type variable’s changing is &lt;strong&gt;independent&lt;/strong&gt;.so it doesn’t affect the value of the outter variable,even the variable is declared outter the scope. But reference type variable’s changing is &lt;strong&gt;relative&lt;/strong&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;strong&gt;Optional chaining&lt;/strong&gt; allows us to call properties, methods, and subscripts on an optional that might be nil. If any of the chained values return nil, the return value will be nil.&lt;/p&gt;
@@ -71,6 +69,121 @@ if name != nil {
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var s = car?.tires?.tireSize
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;h2 id=&quot;enumerations&quot;&gt;Enumerations&lt;/h2&gt;
+&lt;p&gt;Enumerations (otherwise known as enums) are a &lt;strong&gt;special&lt;/strong&gt; data type that enables us
+to &lt;strong&gt;group&lt;/strong&gt; related types together and use them in a &lt;strong&gt;type safe&lt;/strong&gt; manner.&lt;/p&gt;
+
+&lt;p&gt;enums in Swift are &lt;strong&gt;not tied to integer values&lt;/strong&gt;. We can define an enum with a type (string, character, integer, or floating-point) and then it’s actual value (known as the raw value) will
+be the assigned value.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Enums’ member can have two kind of value,one is &lt;strong&gt;hasValue&lt;/strong&gt; (the value is &lt;strong&gt;&lt;em&gt;herent&lt;/em&gt;&lt;/strong&gt;),the other is &lt;strong&gt;rawValue&lt;/strong&gt; (the value is  &lt;strong&gt;&lt;em&gt;optional&lt;/em&gt;&lt;/strong&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enum Planets{
+    case Mercury  //only have &quot;hashValue&quot;,hashValue=0
+    case Venus
+    case Earth
+    case Mars
+    case Jupiter
+    case Saturn
+    case Uranus
+    case Neptune
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Enums can come prepopulated with raw values, which are required to be of &lt;strong&gt;the same type&lt;/strong&gt;. The raw values can be &lt;strong&gt;string&lt;/strong&gt;, &lt;strong&gt;character&lt;/strong&gt;, &lt;strong&gt;integer&lt;/strong&gt;, or &lt;strong&gt;floating&lt;/strong&gt;-point values.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enum Devices: String {
+       case iPod = &quot;iPod&quot;  //the member now have two values,one is &quot;hashValue&quot;-0,the other is &quot;rawValue&quot;-&quot;iPod&quot;
+       case iPhone = &quot;iPhone&quot;
+       case iPad = &quot;iPad&quot;
+   }
+print(&quot;We are using an &quot; + Devices.iPad.rawValue)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If integers are used for the raw values of an enum, we do not have to assign a value to each member. If no value is present, the raw values will be auto-incremented.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enum Planets: Int  {
+       case Mercury = 1   //hasValue=0,rawValue=1
+       case Venus   //hashValue=1,rawValue=2
+       case Earth
+       case Mars
+       case Jupiter
+       case Saturn
+       case Uranus
+       case Neptune
+   }
+print(&quot;Earth is planet number \(Planets.Earth.rawValue)&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;enums can also have &lt;em&gt;associated&lt;/em&gt; values. Associate values allow us to store additional information along with member values. This additional information can vary each time we use the member. It can also be of any type, and the types can be different for each member.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enum Product {
+       case Book(Double, Int, Int)
+       case Puzzle(Double, Int)
+   }
+   var masterSwift = Product.Book(49.99, 2015, 310)
+   var worldPuzzle = Product.Puzzle(9.99, 200)
+   switchmasterSwift {
+   case .Book(let price, let year, let pages):
+       print(&quot;Mastering Swift was published in \(year) for the price
+           of \(price) and has \(pages) pages&quot;)
+   case .Puzzle(let price, let pieces):
+       print(&quot;Master Swift is a puzze with \(pieces) and sells for
+       \(price)&quot;)
+}
+   switchworldPuzzle {
+   case .Book(let price, let year, let pages):
+       print(&quot;World Puzzle was published in \(year) for the price of
+       \(price) and has \(pages) pages&quot;)
+   case .Puzzle(let price, let pieces):
+       print(&quot;World Puzzle is a puzze with \(pieces) and sells for
+\(price)&quot;) }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Enums have a &lt;strong&gt;shorter&lt;/strong&gt; version.This shorter version lets us de ne multiple members in a single line, separated by &lt;em&gt;commas&lt;/em&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enum Planets {
+       case Mercury, Venus, Earth, Mars, Jupiter
+       case Saturn, Uranus, Neptune
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Once the enum variable type is inferred or defined, we can then assign a new value without the enum pre x, as shown here:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;planetWeLiveOn = .Mars
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You can match an enum value using the traditional equals (==) operator or use a switch statement.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Using the traditional == operator
+   if planetWeLiveOn == .Earth {
+       print(&quot;Earth it is&quot;)
+   }
+   // Using the switch statement
+   switch planetWeLiveOn {
+   case .Mercury:
+       print(&quot;We live on Mercury, it is very hot!&quot;)
+   case .Venus:
+       print(&quot;We live on Venus, it is very hot!&quot;)
+   case .Earth:
+       print(&quot;We live on Earth, just right&quot;)
+   case .Mars:
+       print(&quot;We live on Mars, a little cold&quot;)
+   default:
+       print(&quot;Where do we live?&quot;)
+   }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 </content>
  </entry>
  

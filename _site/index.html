@@ -126,15 +126,13 @@
   <div class="post">
     <h1 class="post-title">
       <a href="http://nintymiles.github.io//2016/05/11/swift-notes/">
-        Swift Learning Notes part 2
+        Swift Learning Notes 2 - Optional and Enumeration
       </a>
     </h1>
 
     <span class="post-date">11 May 2016</span>
 
-    <h1 id="swift-learning-notes-part-2">Swift Learning Notes part 2</h1>
-<hr />
-<blockquote>
+    <blockquote>
   <p>Swift can be thought of as Objective-C reimagined using modern concepts and safe programming patterns. In Apple’s own words, Swift is like Objective-C without
 the C. Chris Lattner, the creator of Swift, said Swift took language ideas from Objective-C, Rust, Haskell, Ruby, Python, C#, CLU, and far too many others to list. At WWDC 2014, Apple really stressed that Swift was safe by default. Swift was designed to eliminate many common programming errors, making applications more secure and less prone to bugs. Swift 2 added two additional core features to the language—availability and error handling—which are designed to make it even easier to write safe code.</p>
 </blockquote>
@@ -178,7 +176,7 @@ if name != nil {
 </div>
 
 <blockquote>
-  <p>Within the optional binding zone,variable’s changing is independent.so it doesn’t affect the value of the outter variable,even the variable is declared outter the scope.</p>
+  <p>Within the optional binding zone,value type variable’s changing is <strong>independent</strong>.so it doesn’t affect the value of the outter variable,even the variable is declared outter the scope. But reference type variable’s changing is <strong>relative</strong>.</p>
 </blockquote>
 
 <p><strong>Optional chaining</strong> allows us to call properties, methods, and subscripts on an optional that might be nil. If any of the chained values return nil, the return value will be nil.</p>
@@ -186,6 +184,121 @@ if name != nil {
 <div class="highlighter-rouge"><pre class="highlight"><code>var s = car?.tires?.tireSize
 </code></pre>
 </div>
+
+<h2 id="enumerations">Enumerations</h2>
+<p>Enumerations (otherwise known as enums) are a <strong>special</strong> data type that enables us
+to <strong>group</strong> related types together and use them in a <strong>type safe</strong> manner.</p>
+
+<p>enums in Swift are <strong>not tied to integer values</strong>. We can define an enum with a type (string, character, integer, or floating-point) and then it’s actual value (known as the raw value) will
+be the assigned value.</p>
+
+<blockquote>
+  <p>Enums’ member can have two kind of value,one is <strong>hasValue</strong> (the value is <strong><em>herent</em></strong>),the other is <strong>rawValue</strong> (the value is  <strong><em>optional</em></strong>)</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>enum Planets{
+    case Mercury  //only have "hashValue",hashValue=0
+    case Venus
+    case Earth
+    case Mars
+    case Jupiter
+    case Saturn
+    case Uranus
+    case Neptune
+}
+</code></pre>
+</div>
+
+<p>Enums can come prepopulated with raw values, which are required to be of <strong>the same type</strong>. The raw values can be <strong>string</strong>, <strong>character</strong>, <strong>integer</strong>, or <strong>floating</strong>-point values.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>enum Devices: String {
+       case iPod = "iPod"  //the member now have two values,one is "hashValue"-0,the other is "rawValue"-"iPod"
+       case iPhone = "iPhone"
+       case iPad = "iPad"
+   }
+print("We are using an " + Devices.iPad.rawValue)
+</code></pre>
+</div>
+
+<p>If integers are used for the raw values of an enum, we do not have to assign a value to each member. If no value is present, the raw values will be auto-incremented.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>enum Planets: Int  {
+       case Mercury = 1   //hasValue=0,rawValue=1
+       case Venus   //hashValue=1,rawValue=2
+       case Earth
+       case Mars
+       case Jupiter
+       case Saturn
+       case Uranus
+       case Neptune
+   }
+print("Earth is planet number \(Planets.Earth.rawValue)")
+</code></pre>
+</div>
+
+<p><strong>enums can also have <em>associated</em> values. Associate values allow us to store additional information along with member values. This additional information can vary each time we use the member. It can also be of any type, and the types can be different for each member.</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>enum Product {
+       case Book(Double, Int, Int)
+       case Puzzle(Double, Int)
+   }
+   var masterSwift = Product.Book(49.99, 2015, 310)
+   var worldPuzzle = Product.Puzzle(9.99, 200)
+   switchmasterSwift {
+   case .Book(let price, let year, let pages):
+       print("Mastering Swift was published in \(year) for the price
+           of \(price) and has \(pages) pages")
+   case .Puzzle(let price, let pieces):
+       print("Master Swift is a puzze with \(pieces) and sells for
+       \(price)")
+}
+   switchworldPuzzle {
+   case .Book(let price, let year, let pages):
+       print("World Puzzle was published in \(year) for the price of
+       \(price) and has \(pages) pages")
+   case .Puzzle(let price, let pieces):
+       print("World Puzzle is a puzze with \(pieces) and sells for
+\(price)") }
+</code></pre>
+</div>
+
+<p>Enums have a <strong>shorter</strong> version.This shorter version lets us de ne multiple members in a single line, separated by <em>commas</em>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>enum Planets {
+       case Mercury, Venus, Earth, Mars, Jupiter
+       case Saturn, Uranus, Neptune
+}
+</code></pre>
+</div>
+
+<p>Once the enum variable type is inferred or defined, we can then assign a new value without the enum pre x, as shown here:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>planetWeLiveOn = .Mars
+</code></pre>
+</div>
+
+<p>You can match an enum value using the traditional equals (==) operator or use a switch statement.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// Using the traditional == operator
+   if planetWeLiveOn == .Earth {
+       print("Earth it is")
+   }
+   // Using the switch statement
+   switch planetWeLiveOn {
+   case .Mercury:
+       print("We live on Mercury, it is very hot!")
+   case .Venus:
+       print("We live on Venus, it is very hot!")
+   case .Earth:
+       print("We live on Earth, just right")
+   case .Mars:
+       print("We live on Mars, a little cold")
+   default:
+       print("Where do we live?")
+   }
+</code></pre>
+</div>
+
 
   </div>
   
