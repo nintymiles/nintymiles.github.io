@@ -11,3 +11,6 @@ title: Willie's recent drawing collection
 
 ![image description](/asset/painting/Calabash_7_brothers.png)
 
+## Car in driving.
+
+![image description](/asset/painting/driving_car_201605.png)
