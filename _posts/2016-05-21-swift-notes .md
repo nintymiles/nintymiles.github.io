@@ -17,22 +17,26 @@ title: Swift Learning Notes  - Closure
 	- Shorthand argument name
 	- Trailing closure syntax
 - **Closure syntax expression**
-	```
-	{(parameters)  ->  return type in      
-	    code      //code break in a new line is necessary for this sort of expression
-    }
-	```
+
+```
+
+{(parameters)  ->  return type in      
+    code      //code break in a new line is necessary for this sort of expression
+}
+```
+	
 	Code implementation block must be started on a new line,even in optimization style。otherwise it will raise error in playground.
-	```
-	let reversed=names.sort({(s1: String,s2: String) -> Bool in
+	
+```
+let reversed=names.sort({(s1: String,s2: String) -> Bool in
         return s1 > s2 })
 
-    let revesed2=names.sort({(s1,s2) in
+let revesed2=names.sort({(s1,s2) in
         return s1 > s2});
 
-    let reversed3=names.sort({s1,s2 in
+let reversed3=names.sort({s1,s2 in
         s1 > s2})
-    ```
+```
 	
 	
 > Collection classes’ sort(\_:) method_will produce a new collection that has the same size and type as the old one. the original collection is not modified by the sort(\_:) method._
