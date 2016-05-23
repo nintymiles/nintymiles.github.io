@@ -11,7 +11,7 @@
 
   <title>
     
-      影分身术 &middot; 九十里
+      Swift Learning Notes  - Closure &middot; 九十里
     
   </title>
 
@@ -128,16 +128,29 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">影分身术</h1>
-  <span class="post-date">02 Apr 2016</span>
-  <h5 id="willie-is-playing-in-the-maze-house">Willie is playing in the maze house</h5>
-<blockquote>
-  <p>影分身术</p>
-</blockquote>
+  <h1 class="post-title">Swift Learning Notes  - Closure</h1>
+  <span class="post-date">21 May 2016</span>
+  <h2 id="closure-definition">Closure Definition</h2>
+<p><em>Closures are <strong>self-contained blocks of functionality</strong> that can be <strong>passed around</strong> and <strong>used</strong> in your code.</em></p>
 
-<p><img src="/asset/maze_20160402.jpg" alt="image description" /></p>
-
-<hr />
+<ul>
+  <li>Closures are similar to blocks in C and Objective C</li>
+  <li>Closures can <strong>capture</strong> and <strong>store</strong> <strong>references</strong> to <strong><em>any</em></strong> constants and variables <em>from the context in which they are defined</em>.</li>
+  <li>Global and nested functions are special cases of closures,not all kinds of functions.
+    <ul>
+      <li>Global functions are closures that have a name and do not capture any values</li>
+      <li>Nested functions are closures that have a name and can capture values from their enclosing function</li>
+      <li>Closure expressions are unnamed closures written in a lightweight syntax that can capture values from their surrounding context.</li>
+    </ul>
+  </li>
+  <li><strong>Closure syntax optimisation</strong>
+    <ul>
+      <li>Inferring parameter and return value types from context Implicit returns from single-expression closures (<em>two key point here</em>)</li>
+      <li>Shorthand argument name</li>
+      <li>Trailing closure syntax</li>
+    </ul>
+  </li>
+</ul>
 
 
 </div>
@@ -145,15 +158,6 @@
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/2016/05/21/swift-notes/">
-            Swift Learning Notes  - Closure
-            <small>21 May 2016</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -169,6 +173,15 @@
           <a href="/2016/05/18/reading_notes/">
             Reading notes 5.18-5.20
             <small>18 May 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/05/15/willie-drawing-collection/">
+            Willie's recent drawing collection
+            <small>15 May 2016</small>
           </a>
         </h3>
       </li>

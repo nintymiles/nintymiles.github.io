@@ -4,13 +4,43 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-05-21T15:33:22+08:00</updated>
+ <updated>2016-05-23T11:37:41+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>SeanRen</name>
    <email>nintymiles@icloud.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Swift Learning Notes  - Closure</title>
+   <link href="http://nintymiles.github.io/2016/05/21/swift-notes/"/>
+   <updated>2016-05-21T00:00:00+08:00</updated>
+   <id>http://nintymiles.github.io/2016/05/21/swift-notes </id>
+   <content type="html">&lt;h2 id=&quot;closure-definition&quot;&gt;Closure Definition&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Closures are &lt;strong&gt;self-contained blocks of functionality&lt;/strong&gt; that can be &lt;strong&gt;passed around&lt;/strong&gt; and &lt;strong&gt;used&lt;/strong&gt; in your code.&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Closures are similar to blocks in C and Objective C&lt;/li&gt;
+  &lt;li&gt;Closures can &lt;strong&gt;capture&lt;/strong&gt; and &lt;strong&gt;store&lt;/strong&gt; &lt;strong&gt;references&lt;/strong&gt; to &lt;strong&gt;&lt;em&gt;any&lt;/em&gt;&lt;/strong&gt; constants and variables &lt;em&gt;from the context in which they are defined&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Global and nested functions are special cases of closures,not all kinds of functions.
+    &lt;ul&gt;
+      &lt;li&gt;Global functions are closures that have a name and do not capture any values&lt;/li&gt;
+      &lt;li&gt;Nested functions are closures that have a name and can capture values from their enclosing function&lt;/li&gt;
+      &lt;li&gt;Closure expressions are unnamed closures written in a lightweight syntax that can capture values from their surrounding context.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Closure syntax optimisation&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Inferring parameter and return value types from context Implicit returns from single-expression closures (&lt;em&gt;two key point here&lt;/em&gt;)&lt;/li&gt;
+      &lt;li&gt;Shorthand argument name&lt;/li&gt;
+      &lt;li&gt;Trailing closure syntax&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Surfing notes 5.21</title>
