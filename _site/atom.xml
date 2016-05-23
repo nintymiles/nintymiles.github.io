@@ -4,7 +4,7 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-05-23T16:22:51+08:00</updated>
+ <updated>2016-05-23T16:36:28+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>SeanRen</name>
@@ -47,9 +47,7 @@
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Code implementation block must be started on a new line,even in optimization style。otherwise it will raise error in playground.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;Code implementation block must be started on a new line,even in optimization style。otherwise it will raise error in playground.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let reversed=names.sort({(s1: String,s2: String) -&amp;gt; Bool in
         return s1 &amp;gt; s2 })
@@ -59,6 +57,11 @@ let revesed2=names.sort({(s1,s2) in
 
 let reversed3=names.sort({s1,s2 in
         s1 &amp;gt; s2})
+        
+let reversed4=names.sort({
+        $0 &amp;lt; $1})
+        
+let reversed5=names.sort( &amp;lt; ) //The most simpliest way is operator function. no new line required, but it seems weired.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 

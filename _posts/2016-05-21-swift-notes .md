@@ -24,8 +24,8 @@ title: Swift Learning Notes  - Closure
     code      //code break in a new line is necessary for this sort of expression
 }
 ```
-	
-	Code implementation block must be started on a new line,even in optimization style。otherwise it will raise error in playground.
+
+Code implementation block must be started on a new line,even in optimization style。otherwise it will raise error in playground.
 	
 ```
 let reversed=names.sort({(s1: String,s2: String) -> Bool in
@@ -36,6 +36,11 @@ let revesed2=names.sort({(s1,s2) in
 
 let reversed3=names.sort({s1,s2 in
         s1 > s2})
+        
+let reversed4=names.sort({
+        $0 < $1})
+        
+let reversed5=names.sort( < ) //The most simpliest way is operator function. no new line required, but it seems weired.
 ```
 	
 	

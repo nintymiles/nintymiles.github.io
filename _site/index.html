@@ -168,9 +168,7 @@
 </span></code></pre>
 </div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Code implementation block must be started on a new line,even in optimization style。otherwise it will raise error in playground.
-</code></pre>
-</div>
+<p>Code implementation block must be started on a new line,even in optimization style。otherwise it will raise error in playground.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>let reversed=names.sort({(s1: String,s2: String) -&gt; Bool in
         return s1 &gt; s2 })
@@ -180,6 +178,11 @@ let revesed2=names.sort({(s1,s2) in
 
 let reversed3=names.sort({s1,s2 in
         s1 &gt; s2})
+        
+let reversed4=names.sort({
+        $0 &lt; $1})
+        
+let reversed5=names.sort( &lt; ) //The most simpliest way is operator function. no new line required, but it seems weired.
 </code></pre>
 </div>
 
