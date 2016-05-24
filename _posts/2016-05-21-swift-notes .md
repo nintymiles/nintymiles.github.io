@@ -42,7 +42,10 @@ let reversed4=names.sort({
         
 let reversed5=names.sort( < ) //The most simpliest way is operator function. no new line required, but it seems weired.
 ```
-	
+- Operator function，**Swift’s String type defines its string-specific implementation of the greater-than operator (>) as a function that has two parameters of type String, and returns a value of type Bool*.** *This exactly matches the function type needed by the sort(_:) method. *So the operator function simple style is just a special case? *
+- Trailing closure,**A trailing closure is a closure expression that is written outside of (and after) the parentheses of the function call.**  If you need to pass a closure expression to a function as the function’s final argument and the closure expression is long, it can be useful to write it as a trailing closure instead.
+- Trailing closure more simpler style,If a closure expression is provided as the function or method’s only argument and you provide that expression as a trailing closure, *you do not need to write a pair of parentheses ()* after the function or method’s name when you call the function
+
 	
 > Collection classes’ sort(\_:) method_will produce a new collection that has the same size and type as the old one. the original collection is not modified by the sort(\_:) method._
 

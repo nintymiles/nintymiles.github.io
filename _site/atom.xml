@@ -4,13 +4,99 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-05-23T16:36:28+08:00</updated>
+ <updated>2016-05-24T17:53:59+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>SeanRen</name>
    <email>nintymiles@icloud.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Swift Learning Notes  - Function</title>
+   <link href="http://nintymiles.github.io/2016/05/23/swift-notes/"/>
+   <updated>2016-05-23T00:00:00+08:00</updated>
+   <id>http://nintymiles.github.io/2016/05/23/swift-notes</id>
+   <content type="html">&lt;h2 id=&quot;variadic-parameters&quot;&gt;Variadic parameters&lt;/h2&gt;
+&lt;p&gt;A variadic parameter accepts zero or more values of a specified type.Write variadic parameters by inserting three period characters (…) after the parameter’s type name.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A function may have at most one variadic parameter.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;in-out-parameters&quot;&gt;In-Out parameters&lt;/h2&gt;
+&lt;p&gt;You write an in-out parameter by placing the inout keyword at the &lt;strong&gt;start&lt;/strong&gt; of its parameter definition. An &lt;strong&gt;&lt;em&gt;in-out&lt;/em&gt;&lt;/strong&gt; parameter has a value that is passed in to the function, is modified by the function, and is passed back out of the function to replace the original value.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Usually, function parameters are &lt;strong&gt;constants&lt;/strong&gt; by default. Trying to change the value of a function parameter from within the body of that function results in a compile-time error. This means that you can’t change the value of a parameter by mistake.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func swapTwoInts(inout a: Int, inout _ b: Int) {
+    let temporaryA = a
+    a = b
+    b = temporaryA
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;function-types&quot;&gt;Function types&lt;/h2&gt;
+&lt;p&gt;function types just like any other types in Swift.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var mathFunction: (Int, Int) -&amp;gt; Int = addTwoInts
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Function types as parameter types
+  You can use a function type such as (Int, Int) -&amp;gt; Int as a parameter type for another function. This enables you to leave some aspects of a function’s implementation for the function’s caller to provide when the function is called.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func printMathResult(mathFunction: (Int, Int) -&amp;gt; Int, _ a: Int, _ b: Int) {
+    print(&quot;Result: \(mathFunction(a, b))&quot;)
+}
+printMathResult(addTwoInts, 3, 5)
+// Prints &quot;Result: 8&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Function types as return types
+  You can use a function type as the return type of another function. You do this by writing a complete function type immediately after the return arrow (-&amp;gt;) of the returning function.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;nested-functions&quot;&gt;Nested functions&lt;/h2&gt;
+&lt;p&gt;All of the functions you have encountered so far in this chapter have been examples of &lt;strong&gt;global&lt;/strong&gt; functions, which are defined at a &lt;strong&gt;global scope&lt;/strong&gt;. You can also define functions &lt;strong&gt;inside the bodies&lt;/strong&gt; of other functions, known as nested functions.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Nested functions are hidden from the outside world by default, but can still be called and used by their enclosing function. An enclosing function can also &lt;strong&gt;return&lt;/strong&gt; one of its nested functions to allow the nested function to be used in &lt;strong&gt;another scope&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Nested functions can make implementation certain level privacy&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func chooseStepFunction(backwards: Bool) -&amp;gt; (Int) -&amp;gt; Int {
+    func stepForward(input: Int) -&amp;gt; Int { return input + 1 }
+    func stepBackward(input: Int) -&amp;gt; Int { return input - 1 }
+    return backwards ? stepBackward : stepForward
+}
+var currentValue = -4
+let moveNearerToZero = chooseStepFunction(currentValue &amp;gt; 0)
+// moveNearerToZero now refers to the nested stepForward() function
+while currentValue != 0 {
+    print(&quot;\(currentValue)... &quot;)
+    currentValue = moveNearerToZero(currentValue)
+}
+print(&quot;zero!&quot;)
+// -4...
+// -3...
+// -2...
+// -1...
+// zero!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Swift Learning Notes  - Closure</title>
@@ -64,6 +150,11 @@ let reversed4=names.sort({
 let reversed5=names.sort( &amp;lt; ) //The most simpliest way is operator function. no new line required, but it seems weired.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Operator function，&lt;strong&gt;Swift’s String type defines its string-specific implementation of the greater-than operator (&amp;gt;) as a function that has two parameters of type String, and returns a value of type Bool*.&lt;/strong&gt; *This exactly matches the function type needed by the sort(_:) method. *So the operator function simple style is just a special case? *&lt;/li&gt;
+  &lt;li&gt;Trailing closure,&lt;strong&gt;A trailing closure is a closure expression that is written outside of (and after) the parentheses of the function call.&lt;/strong&gt;  If you need to pass a closure expression to a function as the function’s final argument and the closure expression is long, it can be useful to write it as a trailing closure instead.&lt;/li&gt;
+  &lt;li&gt;Trailing closure more simpler style,If a closure expression is provided as the function or method’s only argument and you provide that expression as a trailing closure, &lt;em&gt;you do not need to write a pair of parentheses ()&lt;/em&gt; after the function or method’s name when you call the function&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Collection classes’ sort(_:) method_will produce a new collection that has the same size and type as the old one. the original collection is not modified by the sort(_:) method._&lt;/p&gt;
