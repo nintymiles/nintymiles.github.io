@@ -11,7 +11,7 @@
 
   <title>
     
-      万物生长，草木自亲 &middot; 九十里
+      The true side of the world &middot; 九十里
     
   </title>
 
@@ -127,74 +127,10 @@
       </div>
 
       <div class="container content">
-        <div class="posts">
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/05/30/swift-notes/">
-        Swift Notes - Classes and Structures
-      </a>
-    </h1>
-
-    <span class="post-date">30 May 2016</span>
-
-    <h2 id="classes-and-structures">Classes and Structures</h2>
-<p>Definition:Classes and structures are general-purpose, flexible constructs that become the building blocks of your program’s code.</p>
-
-<ul>
-  <li>same features
-  There are some common features in swift  between classes and structures:
-    <ol>
-      <li>Define properties to store values  - 定义属性以存值</li>
-      <li>Define methods to provide functionality - 定义方法以提供功能</li>
-      <li>Define subscripts to provide access to their values by using subscript syntax - 定义下标以提供使用下标语法进行值的访问</li>
-      <li>Define initializers to set up their initial state - 定义初始化器以设置初始状态</li>
-      <li>Be extended to expand their functionality beyond a default implementation. - 可以被延伸扩展功能，而不是基于默认实现</li>
-      <li>Conform to protocols to provide standard functionality of a certain kind - 符合协议以提供某种标准功能</li>
-    </ol>
-  </li>
-  <li>different features
-  Classes own features exclusively:
-    <ol>
-      <li>Inheritance enables one class to have characteristics of another - 类可以继承拥有其他类的特征，而structure不能</li>
-      <li>Type casting enables you to check and interpret the types of a class instance at runtime - 类型转换可以在运行时检查和解析类实例的类型，而structure不能</li>
-      <li>Deinitializers enable an instance of a class to free up any resources it has assigned - 解构器可以让类实例释放已分配的任何资源</li>
-      <li>Reference counting allows more than one reference to a class instance - 引用计数机制允许类实例可以拥有超过一个（<strong>多个</strong>）引用存在</li>
-    </ol>
-  </li>
-</ul>
-
-<blockquote>
-  <p>Structures are always copied when they are passed around in your code, and do not use reference counting.</p>
-</blockquote>
-
-<p><strong>Structures are <em>value</em> types and Classes are <em>reference</em> types.</strong></p>
-
-<h2 id="definition-syntax">Definition Syntax</h2>
-<p>Classes and structures have a <strong>similar definition syntax</strong>. You introduce classes with the <strong>class</strong> keyword and structures with the <strong>struct</strong> keyword.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>class SomeClass {
-// class definition goes here`
-}
-
-struct SomeStructure {
-// structure definition goes here
-}
-</code></pre>
-</div>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/05/28/article-forward-wanghaibin/">
-        The true side of the world
-      </a>
-    </h1>
-
-    <span class="post-date">28 May 2016</span>
-
-    <h2 id="section">世界真实的一面</h2>
+        <div class="post">
+  <h1 class="post-title">The true side of the world</h1>
+  <span class="post-date">28 May 2016</span>
+  <h2 id="section">世界真实的一面</h2>
 <p>本文重口味,小清新慎入.
      下午我写了篇台湾选举的文章,有人留言说:作为生下来就被剥夺选举权的大陆人来说，有什么资格去质疑台湾人民的选择？
      我以前写过不少的民主文章，如果你有耐心去翻，还是能够了解一点社科知识，虽然是来自一个草莽研究者的笔下。民主是一种手段，不是一种结果，更不是一种信仰，决不可能是一种宗教。
@@ -318,205 +254,41 @@ struct SomeStructure {
      进化的人类进入了银河系，开始繁衍扩张。
      他们创造了新的神，于是心有所属。</p>
 
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/05/23/swift-notes/">
-        Swift Learning Notes  - Function
-      </a>
-    </h1>
-
-    <span class="post-date">23 May 2016</span>
-
-    <h2 id="variadic-parameters">Variadic parameters</h2>
-<p>A variadic parameter accepts zero or more values of a specified type.Write variadic parameters by inserting three period characters (…) after the parameter’s type name.</p>
-
-<blockquote>
-  <p>A function may have at most one variadic parameter.</p>
-</blockquote>
-
-<h2 id="in-out-parameters">In-Out parameters</h2>
-<p>You write an in-out parameter by placing the inout keyword at the <strong>start</strong> of its parameter definition. An <strong><em>in-out</em></strong> parameter has a value that is passed in to the function, is modified by the function, and is passed back out of the function to replace the original value.</p>
-
-<blockquote>
-  <p>Usually, function parameters are <strong>constants</strong> by default. Trying to change the value of a function parameter from within the body of that function results in a compile-time error. This means that you can’t change the value of a parameter by mistake.</p>
-</blockquote>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>func swapTwoInts(inout a: Int, inout _ b: Int) {
-    let temporaryA = a
-    a = b
-    b = temporaryA
-}
-</code></pre>
 </div>
 
-<h2 id="function-types">Function types</h2>
-<p>function types just like any other types in Swift.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var mathFunction: (Int, Int) -&gt; Int = addTwoInts
-</code></pre>
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2016/05/30/swift-notes/">
+            Swift Notes - Classes and Structures
+            <small>30 May 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/05/23/swift-notes/">
+            Swift Learning Notes  - Function
+            <small>23 May 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/05/21/swift-notes/">
+            Swift Learning Notes  - Closure
+            <small>21 May 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
 </div>
-
-<ul>
-  <li>Function types as parameter types
-  You can use a function type such as (Int, Int) -&gt; Int as a parameter type for another function. This enables you to leave some aspects of a function’s implementation for the function’s caller to provide when the function is called.</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>func printMathResult(mathFunction: (Int, Int) -&gt; Int, _ a: Int, _ b: Int) {
-    print("Result: \(mathFunction(a, b))")
-}
-printMathResult(addTwoInts, 3, 5)
-// Prints "Result: 8"
-</code></pre>
-</div>
-
-<ul>
-  <li>Function types as return types
-  You can use a function type as the return type of another function. You do this by writing a complete function type immediately after the return arrow (-&gt;) of the returning function.</li>
-</ul>
-
-<h2 id="nested-functions">Nested functions</h2>
-<p>All of the functions you have encountered so far in this chapter have been examples of <strong>global</strong> functions, which are defined at a <strong>global scope</strong>. You can also define functions <strong>inside the bodies</strong> of other functions, known as nested functions.</p>
-
-<blockquote>
-  <p>Nested functions are hidden from the outside world by default, but can still be called and used by their enclosing function. An enclosing function can also <strong>return</strong> one of its nested functions to allow the nested function to be used in <strong>another scope</strong>.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Nested functions can make implementation certain level privacy</strong></p>
-</blockquote>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>func chooseStepFunction(backwards: Bool) -&gt; (Int) -&gt; Int {
-    func stepForward(input: Int) -&gt; Int { return input + 1 }
-    func stepBackward(input: Int) -&gt; Int { return input - 1 }
-    return backwards ? stepBackward : stepForward
-}
-var currentValue = -4
-let moveNearerToZero = chooseStepFunction(currentValue &gt; 0)
-// moveNearerToZero now refers to the nested stepForward() function
-while currentValue != 0 {
-    print("\(currentValue)... ")
-    currentValue = moveNearerToZero(currentValue)
-}
-print("zero!")
-// -4...
-// -3...
-// -2...
-// -1...
-// zero!
-</code></pre>
-</div>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/05/21/swift-notes/">
-        Swift Learning Notes  - Closure
-      </a>
-    </h1>
-
-    <span class="post-date">21 May 2016</span>
-
-    <h2 id="closure-definition">Closure Definition</h2>
-<p><em>Closures are <strong>self-contained blocks of functionality</strong> that can be <strong>passed around</strong> and <strong>used</strong> in your code.</em></p>
-
-<ul>
-  <li>Closures are similar to blocks in C and Objective C</li>
-  <li>Closures can <strong>capture</strong> and <strong>store</strong> <strong>references</strong> to <strong><em>any</em></strong> constants and variables <em>from the context in which they are defined</em>.</li>
-  <li>Global and nested functions are special cases of closures,not all kinds of functions.
-    <ul>
-      <li>Global functions are closures that have a name and do not capture any values</li>
-      <li>Nested functions are closures that have a name and can capture values from their enclosing function</li>
-      <li>Closure expressions are unnamed closures written in a lightweight syntax that can capture values from their surrounding context.</li>
-    </ul>
-  </li>
-  <li><strong>Closure syntax optimisation</strong>
-    <ul>
-      <li>Inferring parameter and return value types from context Implicit returns from single-expression closures (<em>two key point here</em>)</li>
-      <li>Shorthand argument name</li>
-      <li>Trailing closure syntax</li>
-    </ul>
-  </li>
-  <li><strong>Closure syntax expression</strong></li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">
-</span><span class="p">{</span><span class="err">(parameters)</span><span class="w">  </span><span class="err">-&gt;</span><span class="w">  </span><span class="err">return</span><span class="w"> </span><span class="err">type</span><span class="w"> </span><span class="err">in</span><span class="w">      
-    </span><span class="err">code</span><span class="w">      </span><span class="err">//code</span><span class="w"> </span><span class="err">break</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">new</span><span class="w"> </span><span class="err">line</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">necessary</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">sort</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">expression</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
-
-<p>Code implementation block must be started on a new line,even in optimization style。otherwise it will raise error in playground.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>let reversed=names.sort({(s1: String,s2: String) -&gt; Bool in
-        return s1 &gt; s2 })
-
-let revesed2=names.sort({(s1,s2) in
-        return s1 &gt; s2});
-
-let reversed3=names.sort({s1,s2 in
-        s1 &gt; s2})
-        
-let reversed4=names.sort({
-        $0 &lt; $1})
-        
-let reversed5=names.sort( &lt; ) //The most simpliest way is operator function. no new line required, but it seems weired.
-</code></pre>
-</div>
-<ul>
-  <li>Operator function，<strong>Swift’s String type defines its string-specific implementation of the greater-than operator (&gt;) as a function that has two parameters of type String, and returns a value of type Bool*.</strong> *This exactly matches the function type needed by the sort(_:) method. *So the operator function simple style is just a special case? *</li>
-  <li>Trailing closure,<strong>A trailing closure is a closure expression that is written outside of (and after) the parentheses of the function call.</strong>  If you need to pass a closure expression to a function as the function’s final argument and the closure expression is long, it can be useful to write it as a trailing closure instead.</li>
-  <li>Trailing closure more simpler style,If a closure expression is provided as the function or method’s only argument and you provide that expression as a trailing closure, <em>you do not need to write a pair of parentheses ()</em> after the function or method’s name when you call the function</li>
-</ul>
-
-<blockquote>
-  <p>Collection classes’ sort(_:) method_will produce a new collection that has the same size and type as the old one. the original collection is not modified by the sort(_:) method._</p>
-</blockquote>
-
-<h2 id="function-parameter-names">Function Parameter Names</h2>
-<p>Function has two kind of parameter name,one is external parameter name,the other is local parameter name.
-- external parameter name is used to label arguments passed to a function call
-- local parameter name  is used in the implementation of the function</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/05/21/surfing_notes/">
-        Surfing notes 5.21
-      </a>
-    </h1>
-
-    <span class="post-date">21 May 2016</span>
-
-    <h2 id="section">杠杆到了非去不可的时候-如松</h2>
-<ul>
-  <li>权威人士发言通篇都是“杠杆”</li>
-  <li>认为杠杆到了非去不可的时候
-    <ul>
-      <li>大宗下降到一定程度后，进口就会增长，会推进贸易逆差。</li>
-      <li>资本外流加上贸易逆差。如果放任杠杆，则资产价格和生产成本都会飙升，那么进口增加会更快，导致贸易逆差更大。</li>
-      <li>后果是“甚至让储蓄泡汤”</li>
-    </ul>
-  </li>
-</ul>
-
-  </div>
-  
-</div>
-
-<div class="pagination">
-  
-    <a class="pagination-item older" href="/page2">Older</a>
-  
-  
-    <span class="pagination-item newer">Newer</span>
-  
-</div>
-
 
       </div>
     </div>
