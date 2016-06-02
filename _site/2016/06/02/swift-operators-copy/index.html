@@ -11,7 +11,7 @@
 
   <title>
     
-      美图 &middot; 九十里
+      Swift Operators &middot; 九十里
     
   </title>
 
@@ -134,18 +134,61 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">美图</h1>
-  <span class="post-date">21 Apr 2016</span>
-  <h5 id="section">美图偶拾</h5>
+  <h1 class="post-title">Swift Operators</h1>
+  <span class="post-date">02 Jun 2016</span>
+  <h2 id="nil-coalescing-operator-">Nil Coalescing operator (??)</h2>
+<p>The <strong>nil coalescing operator</strong> (<em>a ?? b</em>) unwraps an optional a if it contains a value, or returns a default value b if a is nil. The expression a is always of an optional type. <em>The expression b must <strong>match</strong> the type that is stored inside a.</em></p>
+
+<p><strong>So it is a special tenary operator case for optional value operating.</strong></p>
+
+<p>The nil coalescing operator is shorthand for the code below:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>a != nil ? a! : b
+</code></pre>
+</div>
+
+<h2 id="range-operators">Range Operators</h2>
+<p>Swift includes two range operators, which are shortcuts for expressing a range of values.
+- <strong>Closed Range Operator</strong>     (闭合范围操作符)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>The closed range operator (a...b) defines a range that runs from a to b, and includes the values a and b. The value of a must not be greater than b.
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>for index in 1...5 {
+    print("\(index) times 5 is \(index * 5)")
+}
+// 1 times 5 is 5
+// 2 times 5 is 10
+// 3 times 5 is 15
+// 4 times 5 is 20
+// 5 times 5 is 25
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p><strong>Half Open Range Operator</strong>  (半开范围操作符)</p>
+
+    <p>The half-open range operator (<strong>a..&lt;b</strong>) defines a range that runs from a to b, but does not include b. It is said to be half-open because it contains its first value, but not its final value. As with the closed range operator, the value of a must not be greater than b. If the value of a is equal to b, then the resulting range will be empty.</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>let names = ["Anna", "Alex", "Brian", "Jack"]
+let count = names.count
+for i in 0..&lt;count {
+    print("Person \(i + 1) is called \(names[i])")
+}
+// Person 1 is called Anna
+// Person 2 is called Alex
+// Person 3 is called Brian
+// Person 4 is called Jack
+</code></pre>
+</div>
+
 <blockquote>
-  <p>网络时代，一切皆可记录。</p>
+  <p>Half-open ranges are particularly useful when you work with zero-based lists such as arrays</p>
 </blockquote>
-
-<p><img src="/asset/ancient_drawing/paint2.png" alt="image description" />
-<img src="/asset/ancient_drawing/paint4.png" alt="image description" />
-<img src="/asset/ancient_drawing/paint3.png" alt="image description" />
-<img src="/asset/ancient_drawing/paint1.png" alt="image description" /></p>
-
 
 </div>
 
@@ -173,9 +216,9 @@
     
       <li>
         <h3>
-          <a href="/2016/06/02/developer-resource-collections/">
-            Developer Resources Collection
-            <small>02 Jun 2016</small>
+          <a href="/2016/05/30/swift-notes/">
+            Swift Notes - Classes and Structures
+            <small>30 May 2016</small>
           </a>
         </h3>
       </li>

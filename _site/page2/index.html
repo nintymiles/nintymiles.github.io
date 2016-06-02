@@ -137,6 +137,96 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/05/23/swift-notes/">
+        Swift Learning Notes  - Function
+      </a>
+    </h1>
+
+    <span class="post-date">23 May 2016</span>
+
+    <h2 id="variadic-parameters">Variadic parameters</h2>
+<p>A variadic parameter accepts zero or more values of a specified type.Write variadic parameters by inserting three period characters (…) after the parameter’s type name.</p>
+
+<blockquote>
+  <p>A function may have at most one variadic parameter.</p>
+</blockquote>
+
+<h2 id="in-out-parameters">In-Out parameters</h2>
+<p>You write an in-out parameter by placing the inout keyword at the <strong>start</strong> of its parameter definition. An <strong><em>in-out</em></strong> parameter has a value that is passed in to the function, is modified by the function, and is passed back out of the function to replace the original value.</p>
+
+<blockquote>
+  <p>Usually, function parameters are <strong>constants</strong> by default. Trying to change the value of a function parameter from within the body of that function results in a compile-time error. This means that you can’t change the value of a parameter by mistake.</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>func swapTwoInts(inout a: Int, inout _ b: Int) {
+    let temporaryA = a
+    a = b
+    b = temporaryA
+}
+</code></pre>
+</div>
+
+<h2 id="function-types">Function types</h2>
+<p>function types just like any other types in Swift.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var mathFunction: (Int, Int) -&gt; Int = addTwoInts
+</code></pre>
+</div>
+
+<ul>
+  <li>Function types as parameter types
+  You can use a function type such as (Int, Int) -&gt; Int as a parameter type for another function. This enables you to leave some aspects of a function’s implementation for the function’s caller to provide when the function is called.</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>func printMathResult(mathFunction: (Int, Int) -&gt; Int, _ a: Int, _ b: Int) {
+    print("Result: \(mathFunction(a, b))")
+}
+printMathResult(addTwoInts, 3, 5)
+// Prints "Result: 8"
+</code></pre>
+</div>
+
+<ul>
+  <li>Function types as return types
+  You can use a function type as the return type of another function. You do this by writing a complete function type immediately after the return arrow (-&gt;) of the returning function.</li>
+</ul>
+
+<h2 id="nested-functions">Nested functions</h2>
+<p>All of the functions you have encountered so far in this chapter have been examples of <strong>global</strong> functions, which are defined at a <strong>global scope</strong>. You can also define functions <strong>inside the bodies</strong> of other functions, known as nested functions.</p>
+
+<blockquote>
+  <p>Nested functions are hidden from the outside world by default, but can still be called and used by their enclosing function. An enclosing function can also <strong>return</strong> one of its nested functions to allow the nested function to be used in <strong>another scope</strong>.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Nested functions can make implementation certain level privacy</strong></p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>func chooseStepFunction(backwards: Bool) -&gt; (Int) -&gt; Int {
+    func stepForward(input: Int) -&gt; Int { return input + 1 }
+    func stepBackward(input: Int) -&gt; Int { return input - 1 }
+    return backwards ? stepBackward : stepForward
+}
+var currentValue = -4
+let moveNearerToZero = chooseStepFunction(currentValue &gt; 0)
+// moveNearerToZero now refers to the nested stepForward() function
+while currentValue != 0 {
+    print("\(currentValue)... ")
+    currentValue = moveNearerToZero(currentValue)
+}
+print("zero!")
+// -4...
+// -3...
+// -2...
+// -1...
+// zero!
+</code></pre>
+</div>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="http://nintymiles.github.io//2016/05/21/swift-notes/">
         Swift Learning Notes  - Closure
       </a>
@@ -319,185 +409,6 @@ let reversed5=names.sort( &lt; ) //The most simpliest way is operator function. 
 <h2 id="car-in-driving">Car in driving.</h2>
 
 <p><img src="/asset/painting/driving_car_201605.png" alt="image description" /></p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/05/11/swift-notes/">
-        Swift Learning Notes 2 - Optional and Enumeration
-      </a>
-    </h1>
-
-    <span class="post-date">11 May 2016</span>
-
-    <blockquote>
-  <p>Swift can be thought of as Objective-C reimagined using modern concepts and safe programming patterns. In Apple’s own words, Swift is like Objective-C without
-the C. Chris Lattner, the creator of Swift, said Swift took language ideas from Objective-C, Rust, Haskell, Ruby, Python, C#, CLU, and far too many others to list. At WWDC 2014, Apple really stressed that Swift was safe by default. Swift was designed to eliminate many common programming errors, making applications more secure and less prone to bugs. Swift 2 added two additional core features to the language—availability and error handling—which are designed to make it even easier to write safe code.</p>
-</blockquote>
-
-<h2 id="optional-variables">Optional variables</h2>
-<p>In Swift,normally,the variables are considered to be nonoptional. an optional variable is a variable that we are able to assign nil (no value) to. <strong>Optional variables and constants are defined using <em>?</em> (question mark).</strong></p>
-
-<blockquote>
-  <p>Optional variables were added to the Swift language as a safety feature.</p>
-</blockquote>
-
-<p>To use force unwrapping, we must  rst make sure that the optional has a non-nil value and then we can use the explanation point to access that value.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var name: String?
-Name = "Jon"
-if name != nil {
-    var newString = "Hello " + name!
-}
-</code></pre>
-</div>
-
-<p>We use <strong>optional binding</strong> to check whether an optional variable or constant has a non-nil value, and, if so, assign that value to a temporary variable. For optional binding, we use the <strong>if-let</strong> or <strong>if-var</strong> keywords together. If we use if-let, the <strong><em>temporary</em></strong> value is a constant and cannot be changed, while the if-var keywords puts the temporary value into a variable that allows us to change the value.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>if let temp = myOptional {
-    print(temp)
-    print("Can not use temp outside of the if bracket")
-} else {
-    print("myOptional was nil")
-}
-</code></pre>
-</div>
-
-<p>We can also test multiple optional variables in one line. We do this by separating each optional check with a comma. The following example shows how to do this:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>   if let myOptional = myOptional, myOptional2 = myOptional2,
-   myOptional3 = myOptional3 {
-     // only reach this if all three optionals
-     // have non-nil values
-   }
-</code></pre>
-</div>
-
-<blockquote>
-  <p>Within the optional binding zone,value type variable’s changing is <strong>independent</strong>.so it doesn’t affect the value of the outter variable,even the variable is declared outter the scope. But reference type variable’s changing is <strong>relative</strong>.</p>
-</blockquote>
-
-<p><strong>Optional chaining</strong> allows us to call properties, methods, and subscripts on an optional that might be nil. If any of the chained values return nil, the return value will be nil.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var s = car?.tires?.tireSize
-</code></pre>
-</div>
-
-<h2 id="enumerations">Enumerations</h2>
-<p>Enumerations (otherwise known as enums) are a <strong>special</strong> data type that enables us
-to <strong>group</strong> related types together and use them in a <strong>type safe</strong> manner.</p>
-
-<p>enums in Swift are <strong>not tied to integer values</strong>. We can define an enum with a type (string, character, integer, or floating-point) and then it’s actual value (known as the raw value) will
-be the assigned value.</p>
-
-<blockquote>
-  <p>Enums’ member can have two kind of value,one is <strong>hasValue</strong> (the value is <strong><em>herent</em></strong>),the other is <strong>rawValue</strong> (the value is  <strong><em>optional</em></strong>)</p>
-</blockquote>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>enum Planets{
-    case Mercury  //only have "hashValue",hashValue=0
-    case Venus
-    case Earth
-    case Mars
-    case Jupiter
-    case Saturn
-    case Uranus
-    case Neptune
-}
-</code></pre>
-</div>
-
-<p>Enums can come prepopulated with raw values, which are required to be of <strong>the same type</strong>. The raw values can be <strong>string</strong>, <strong>character</strong>, <strong>integer</strong>, or <strong>floating</strong>-point values.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>enum Devices: String {
-       case iPod = "iPod"  //the member now have two values,one is "hashValue"-0,the other is "rawValue"-"iPod"
-       case iPhone = "iPhone"
-       case iPad = "iPad"
-   }
-print("We are using an " + Devices.iPad.rawValue)
-</code></pre>
-</div>
-
-<p>If integers are used for the raw values of an enum, we do not have to assign a value to each member. If no value is present, the raw values will be auto-incremented.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>enum Planets: Int  {
-       case Mercury = 1   //hasValue=0,rawValue=1
-       case Venus   //hashValue=1,rawValue=2
-       case Earth
-       case Mars
-       case Jupiter
-       case Saturn
-       case Uranus
-       case Neptune
-   }
-print("Earth is planet number \(Planets.Earth.rawValue)")
-</code></pre>
-</div>
-
-<p><strong>enums can also have <em>associated</em> values. Associate values allow us to store additional information along with member values. This additional information can vary each time we use the member. It can also be of any type, and the types can be different for each member.</strong></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>enum Product {
-       case Book(Double, Int, Int)
-       case Puzzle(Double, Int)
-   }
-   var masterSwift = Product.Book(49.99, 2015, 310)
-   var worldPuzzle = Product.Puzzle(9.99, 200)
-   switchmasterSwift {
-   case .Book(let price, let year, let pages):
-       print("Mastering Swift was published in \(year) for the price
-           of \(price) and has \(pages) pages")
-   case .Puzzle(let price, let pieces):
-       print("Master Swift is a puzze with \(pieces) and sells for
-       \(price)")
-}
-   switchworldPuzzle {
-   case .Book(let price, let year, let pages):
-       print("World Puzzle was published in \(year) for the price of
-       \(price) and has \(pages) pages")
-   case .Puzzle(let price, let pieces):
-       print("World Puzzle is a puzze with \(pieces) and sells for
-\(price)") }
-</code></pre>
-</div>
-
-<p>Enums have a <strong>shorter</strong> version.This shorter version lets us de ne multiple members in a single line, separated by <em>commas</em>.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>enum Planets {
-       case Mercury, Venus, Earth, Mars, Jupiter
-       case Saturn, Uranus, Neptune
-}
-</code></pre>
-</div>
-
-<p>Once the enum variable type is inferred or defined, we can then assign a new value without the enum pre x, as shown here:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>planetWeLiveOn = .Mars
-</code></pre>
-</div>
-
-<p>You can match an enum value using the traditional equals (==) operator or use a switch statement.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// Using the traditional == operator
-   if planetWeLiveOn == .Earth {
-       print("Earth it is")
-   }
-   // Using the switch statement
-   switch planetWeLiveOn {
-   case .Mercury:
-       print("We live on Mercury, it is very hot!")
-   case .Venus:
-       print("We live on Venus, it is very hot!")
-   case .Earth:
-       print("We live on Earth, just right")
-   case .Mars:
-       print("We live on Mars, a little cold")
-   default:
-       print("Where do we live?")
-   }
-</code></pre>
-</div>
-
 
   </div>
   
