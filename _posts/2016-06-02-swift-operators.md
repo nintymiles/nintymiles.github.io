@@ -35,7 +35,7 @@ for index in 1...5 {
 
 - **Half Open Range Operator**  (半开范围操作符)
 
-    The half-open range operator (**a..<b**) defines a range that runs from a to b, but does not include b. It is said to be half-open because it contains its first value, but not its final value. As with the closed range operator, the value of a must not be greater than b. If the value of a is equal to b, then the resulting range will be empty.le Inc. “The Swift Programming Language (Swift 2.2).” iBooks. 
+    The half-open range operator (**a..<b**) defines a range that runs from a to b, but does not include b. It is said to be half-open because it contains its first value, but not its final value. As with the closed range operator, the value of a must not be greater than b. If the value of a is equal to b, then the resulting range will be empty.
     
 
 ```
