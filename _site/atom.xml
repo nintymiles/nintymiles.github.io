@@ -4,13 +4,25 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-05-31T17:45:45+08:00</updated>
+ <updated>2016-06-02T11:23:39+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>SeanRen</name>
    <email>nintymiles@icloud.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Notes</title>
+   <link href="http://nintymiles.github.io/2016/06/02/essay-notes/"/>
+   <updated>2016-06-02T00:00:00+08:00</updated>
+   <id>http://nintymiles.github.io/2016/06/02/essay-notes</id>
+   <content type="html">&lt;h2 id=&quot;section&quot;&gt;随笔&lt;/h2&gt;
+&lt;p&gt;“Wilbur heard the words of praise.He felt the warm milk inside his stomach.He felt the pleasant rubbing of the stick along his itchy back.” The story is a little hard to tell for me.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/asset/charlotte_web_book_cover.jpg&quot; alt=&quot;夏洛特的网封面&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Swift Notes - Classes and Structures</title>
