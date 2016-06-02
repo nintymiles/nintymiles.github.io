@@ -11,7 +11,7 @@
 
   <title>
     
-      Willie's Painting in Kindergarten &middot; 九十里
+      Swift Operators &middot; 九十里
     
   </title>
 
@@ -134,16 +134,18 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Willie's Painting in Kindergarten</h1>
-  <span class="post-date">01 Apr 2016</span>
-  <h5 id="willie-naming-it">Willie naming it：</h5>
-<blockquote>
-  <p>《葡萄与蜗牛》</p>
-</blockquote>
+  <h1 class="post-title">Swift Operators</h1>
+  <span class="post-date">02 Jun 2016</span>
+  <h2 id="nil-coalescing-operator-">Nil Coalescing operator (??)</h2>
+<p>The <strong>nil coalescing operator</strong> (<em>a ?? b</em>) unwraps an optional a if it contains a value, or returns a default value b if a is nil. The expression a is always of an optional type. <em>The expression b must <strong>match</strong> the type that is stored inside a.</em></p>
 
-<p><img src="/asset/painting/xuan_painting0401.jpg" alt="image description" /></p>
+<p><strong>So it is a special tenary operator case for optional value operating.</strong></p>
 
-<hr />
+<p>The nil coalescing operator is shorthand for the code below:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>a != nil ? a! : b
+</code></pre>
+</div>
 
 
 </div>
@@ -151,15 +153,6 @@
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/2016/06/02/swift-operators/">
-            Swift Operators
-            <small>02 Jun 2016</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -175,6 +168,15 @@
           <a href="/2016/05/30/swift-notes/">
             Swift Notes - Classes and Structures
             <small>30 May 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/05/28/article-forward-wanghaibin/">
+            The true side of the world
+            <small>28 May 2016</small>
           </a>
         </h3>
       </li>

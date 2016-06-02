@@ -4,13 +4,32 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-06-02T11:23:39+08:00</updated>
+ <updated>2016-06-02T14:44:19+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>SeanRen</name>
    <email>nintymiles@icloud.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Swift Operators</title>
+   <link href="http://nintymiles.github.io/2016/06/02/swift-operators/"/>
+   <updated>2016-06-02T00:00:00+08:00</updated>
+   <id>http://nintymiles.github.io/2016/06/02/swift-operators</id>
+   <content type="html">&lt;h2 id=&quot;nil-coalescing-operator-&quot;&gt;Nil Coalescing operator (??)&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;nil coalescing operator&lt;/strong&gt; (&lt;em&gt;a ?? b&lt;/em&gt;) unwraps an optional a if it contains a value, or returns a default value b if a is nil. The expression a is always of an optional type. &lt;em&gt;The expression b must &lt;strong&gt;match&lt;/strong&gt; the type that is stored inside a.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;So it is a special tenary operator case for optional value operating.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The nil coalescing operator is shorthand for the code below:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;a != nil ? a! : b
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Notes</title>
@@ -73,6 +92,29 @@ struct SomeStructure {
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;h2 id=&quot;identity-operators-&quot;&gt;Identity Operators (身份操作符)&lt;/h2&gt;
+&lt;p&gt;We can use identity operators to check whether two constants or variables refer to the same single instance. There are two kinds of identity operators:
+1. Identical to (&lt;strong&gt;===&lt;/strong&gt;) 
+2. Not identical to (&lt;strong&gt;!==&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if tenEighty === alsoTenEighty {
+    print(&quot;tenEighty and alsoTenEighty refer to the same VideoMode instance.&quot;)
+}
+// Prints &quot;tenEighty and alsoTenEighty refer to the same VideoMode instance.”
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Note that “identical to” (represented by &lt;strong&gt;&lt;em&gt;three equals signs&lt;/em&gt;&lt;/strong&gt;, or ===) does not mean the same thing as “equal to” (represented by two equals signs, or ==)”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;two-concepts&quot;&gt;two concepts&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;“Identical to” means that two constants or variables of class type refer to exactly the same class instance.&lt;/li&gt;
+  &lt;li&gt;“Equal to” means that two instances are considered “equal” or “equivalent” in value, for some appropriate meaning of “equal”, as defined by the type’s designer.&lt;/li&gt;
+&lt;/ul&gt;
 </content>
  </entry>
  

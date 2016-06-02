@@ -38,3 +38,23 @@ struct SomeStructure {
 // structure definition goes here
 }
 ```
+
+## Identity Operators (身份操作符)
+We can use identity operators to check whether two constants or variables refer to the same single instance. There are two kinds of identity operators:
+1. Identical to (**===**) 
+2. Not identical to (**!==**)
+
+
+```
+if tenEighty === alsoTenEighty {
+    print("tenEighty and alsoTenEighty refer to the same VideoMode instance.")
+}
+// Prints "tenEighty and alsoTenEighty refer to the same VideoMode instance.”
+
+```
+
+> “Note that “identical to” (represented by ***three equals signs***, or ===) does not mean the same thing as “equal to” (represented by two equals signs, or ==)”
+
+### two concepts
+- “Identical to” means that two constants or variables of class type refer to exactly the same class instance.
+- “Equal to” means that two instances are considered “equal” or “equivalent” in value, for some appropriate meaning of “equal”, as defined by the type's designer.

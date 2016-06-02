@@ -181,11 +181,43 @@ struct SomeStructure {
 </code></pre>
 </div>
 
+<h2 id="identity-operators-">Identity Operators (身份操作符)</h2>
+<p>We can use identity operators to check whether two constants or variables refer to the same single instance. There are two kinds of identity operators:
+1. Identical to (<strong>===</strong>) 
+2. Not identical to (<strong>!==</strong>)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>if tenEighty === alsoTenEighty {
+    print("tenEighty and alsoTenEighty refer to the same VideoMode instance.")
+}
+// Prints "tenEighty and alsoTenEighty refer to the same VideoMode instance.”
+
+</code></pre>
+</div>
+
+<blockquote>
+  <p>“Note that “identical to” (represented by <strong><em>three equals signs</em></strong>, or ===) does not mean the same thing as “equal to” (represented by two equals signs, or ==)”</p>
+</blockquote>
+
+<h3 id="two-concepts">two concepts</h3>
+<ul>
+  <li>“Identical to” means that two constants or variables of class type refer to exactly the same class instance.</li>
+  <li>“Equal to” means that two instances are considered “equal” or “equivalent” in value, for some appropriate meaning of “equal”, as defined by the type’s designer.</li>
+</ul>
+
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2016/06/02/swift-operators/">
+            Swift Operators
+            <small>02 Jun 2016</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
@@ -201,15 +233,6 @@ struct SomeStructure {
           <a href="/2016/05/28/article-forward-wanghaibin/">
             The true side of the world
             <small>28 May 2016</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2016/05/23/swift-notes/">
-            Swift Learning Notes  - Function
-            <small>23 May 2016</small>
           </a>
         </h3>
       </li>
