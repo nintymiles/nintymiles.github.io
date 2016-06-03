@@ -210,6 +210,16 @@
 
 <h2 id="mac-os-x-ios-">开发Mac OS X ／iOS 图片文件归档应用</h2>
 
+<h2 id="android-activities">Android Activities怎样工作？</h2>
+
+<ul>
+  <li>An app is a collection of activities, layouts, and other resources.</li>
+  <li>By default, each app runs within its own process.</li>
+  <li>You can start an activity in another application by passing an intent with startActivity().（startActivity能力超出预期？）</li>
+  <li>When an activity needs to start, Android checks if there’s already a process for that app.</li>
+  <li>When Android starts an activity, it calls its onCreate() method.(此处入口)</li>
+</ul>
+
   </div>
   
   <div class="post">
