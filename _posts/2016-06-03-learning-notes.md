@@ -20,3 +20,11 @@ title: Learning notes
 
 
 ## 开发Mac OS X ／iOS 图片文件归档应用
+
+## Android Activities怎样工作？
+
+- An app is a collection of activities, layouts, and other resources.
+- By default, each app runs within its own process.
+- You can start an activity in another application by passing an intent with startActivity().（startActivity能力超出预期？）
+- When an activity needs to start, Android checks if there’s already a process for that app.
+- When Android starts an activity, it calls its onCreate() method.(此处入口)
