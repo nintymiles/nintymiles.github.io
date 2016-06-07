@@ -143,6 +143,138 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/04/28/swift-overview/">
+        Swift概要（Swift Overview）
+      </a>
+    </h1>
+
+    <span class="post-date">28 Apr 2016</span>
+
+    <h1 id="swift-overview">Swift Overview</h1>
+<hr />
+<blockquote>
+  <p>Swift是一门新语言.Swift在设计时结合了C和ObjectiveC的许多特性，但又不受C的各种限制，Swift采用了安全的编程模型并且添加了许多新特性。</p>
+</blockquote>
+
+<!-- -->
+<blockquote>
+  <p>Swift采用了ObjectiveC的命名参数以及动态对象模型，从而可以无缝对接到现有的Cocoa框架。</p>
+</blockquote>
+
+<!-- -->
+<blockquote>
+  <p>Swift使用自动引用计数（Automatic Reference Counting, ARC）来简化内存管理。</p>
+</blockquote>
+
+<!--开头 -->
+<p>通常来说，编程语言教程中的第一个程序应该在屏幕上打印“Hello, world”。在 Swift 中，可以用一行代码实现：</p>
+
+<blockquote>
+  <p>print(“Hello, world!”)</p>
+</blockquote>
+
+<p>在 Swift 中，这行代码就是一个完整的程序。你不需要为了输入输出或者字符串处理导入一个单独的库。全局作用域中的代码会被自动当做程序的入口点，所以你也不需要main()函数。</p>
+
+<p>你同样不需要在每个语句结尾写上分号。</p>
+
+<h2 id="variable">变量（Variable）声明</h2>
+
+<p>变量声明语法：
+&gt;var 你的变量名称:数据类型=变量初始值</p>
+
+<p>变量要符合下面的原则：</p>
+
+<ul>
+  <li><strong>你的变量名称</strong>：你可以用任何字符命名变量，比如age和🐶🐱</li>
+  <li><strong>变量类型</strong>：变量类型，比如Int和String,更多类型会在后面列出</li>
+  <li><strong>变量初始值</strong>：你要赋给变量的初始值，根据类型。</li>
+</ul>
+
+<h2 id="types">数据类型（Types）</h2>
+
+<p>Swift提供下面的基础数据类型</p>
+
+<ul>
+  <li><strong>Int</strong>：整数</li>
+  <li><strong>Double</strong>：十进位数</li>
+  <li><strong>Boolean</strong>：true,false</li>
+  <li><strong>String</strong>：string (letters and words)</li>
+</ul>
+
+<h2 id="constants">常量 （Constants）</h2>
+
+<p>特定类型的变量称为常量，常量是指你只需要决定一次，但是可以使用很多次的特殊变量。</p>
+
+<p>使用关键字<strong>let</strong>来声明常量。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">life</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="k">let</span> <span class="nv">pi</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="k">let</span> <span class="nv">canTouchThis</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="k">let</span> <span class="nv">captain</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"Kirk"</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>如果尝试给常量赋值，会得到编译器错误。</p>
+</blockquote>
+
+<h2 id="inferred-typing">推断类型（Inferred Typing）</h2>
+
+<p>Swift提供一种新特性称之为<strong>推断类型（Inferred Typing）</strong>。这意味着如果在定义和初始化变量时<strong>提供足够的信息</strong>，Swift可以自动预测数据类型，从而不需要每次都输入类型。
+在这个特性的支持下，之前的变量声明语法可以变为：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">你的变量名称</span><span class="o">=</span><span class="n">变量初始值</span>
+<span class="k">let</span> <span class="nv">你的常量名称</span><span class="o">=</span><span class="n">常量初始值</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>注意描述推断类型的“<strong>提供足够的信息</strong>”，如果 “var intNumber=7”没有问题，但是”var doubleNumber=7“则可能达不到你的类型预期，doubleNumber会被默认推断为Int类型，提供足够的信息则需要”var doubleNumber=7.0“。</p>
+</blockquote>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/04/23/kid-portrait-copying-painting/">
+        A kid portrait copying painting
+      </a>
+    </h1>
+
+    <span class="post-date">23 Apr 2016</span>
+
+    <h5 id="willies-kid-portrait-copying-painting-in-class">Willie’s kid portrait copying painting in class</h5>
+
+<p><img src="/asset/painting/kid_portrait_copying_painting.jpg" alt="image description" /></p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/04/21/ancient-drawing/">
+        美图
+      </a>
+    </h1>
+
+    <span class="post-date">21 Apr 2016</span>
+
+    <h5 id="section">美图偶拾</h5>
+<blockquote>
+  <p>网络时代，一切皆可记录。</p>
+</blockquote>
+
+<p><img src="/asset/ancient_drawing/paint2.png" alt="image description" />
+<img src="/asset/ancient_drawing/paint4.png" alt="image description" />
+<img src="/asset/ancient_drawing/paint3.png" alt="image description" />
+<img src="/asset/ancient_drawing/paint1.png" alt="image description" /></p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="http://nintymiles.github.io//2016/04/16/past_tourism_guide_mountains/">
         旧游照片-贵得（2）
       </a>
@@ -176,111 +308,6 @@
 </blockquote>
 
 <p><img src="/asset/painting/blueandwhiteporcelain.jpg" alt="image description" /></p>
-
-<hr />
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/04/10/spring-flowers/">
-        This Spring Flowers
-      </a>
-    </h1>
-
-    <span class="post-date">10 Apr 2016</span>
-
-    <h5 id="so-many-kinds-of-flowers-blossom">So many kinds of flowers blossom.</h5>
-
-<blockquote>
-  <p>I was collecting all kinds of flowers this spring,so the below shows are.</p>
-</blockquote>
-
-<h6 id="the-flowers-people-wont-see">The flowers people wont see</h6>
-
-<p><img src="/asset/springflowers2016/flowers_invisible_1000.jpg" alt="image description" /></p>
-
-<h6 id="peach-blossom">peach blossom</h6>
-
-<p><img src="/asset/springflowers2016/peach_flowers1.jpg" alt="image description" />
-<img src="/asset/springflowers2016/peach_flower2.jpg" alt="image description" /></p>
-
-<h6 id="tulip-blossom">tulip blossom</h6>
-
-<p><img src="/asset/springflowers2016/tulip_flowers.jpg" alt="image description" /></p>
-
-<h6 id="cherry-apple-blossom">cherry-apple blossom</h6>
-
-<p><img src="/asset/springflowers2016/cherry_apple_flowers.jpg" alt="image description" /></p>
-
-<h6 id="so-many-kinds-of-other-flowers">so many kinds of other flowers</h6>
-
-<p><img src="/asset/springflowers2016/all_kinds_of_flowers.jpg" alt="image description" />
-<img src="/asset/springflowers2016/all_kinds_of_flowers2.jpg" alt="image description" />
-—</p>
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/04/06/ultraman-in-willie-eyes/">
-        The Ultramans in Willie's painting
-      </a>
-    </h1>
-
-    <span class="post-date">06 Apr 2016</span>
-
-    <h5 id="the-kids-always-have-extraordinary-imagination">The kids always have extraordinary imagination.</h5>
-
-<p><img src="/asset/painting/ultranman-drawing0406.jpg" alt="image description" /></p>
-
-<hr />
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/04/04/past_tourism/">
-        同事去西藏，让我想起了故纸堆中的几千张旧日旅行照片
-      </a>
-    </h1>
-
-    <span class="post-date">04 Apr 2016</span>
-
-    <h5 id="section">重拾一段旅程</h5>
-<blockquote>
-  <p>不是因为西藏，而是山川壮美。不是炫耀，而是自然撼动人心。权力的欲望真的可以永无止境的随意地更改自然的面貌吗？！</p>
-</blockquote>
-
-<hr />
-
-<h5 id="section-1">旅程第一段：西宁至贵得(1)</h5>
-<blockquote>
-  <p>以苍鹰和雪山开头。</p>
-</blockquote>
-
-<p><img src="/asset/xizang/1-hawk_snowmountain.jpg" alt="image description" /></p>
-
-<blockquote>
-  <p>初见大山，已然震撼，尚未离开西宁。</p>
-</blockquote>
-
-<p><img src="/asset/xizang/1-xining_moutains.jpg" alt="image description" /></p>
-
-<blockquote>
-  <p>路遇牧民剪羊毛，只是这高原羊有些威严气象。</p>
-</blockquote>
-
-<p><img src="/asset/xizang/1-goat_highlander.jpg" alt="image description" /></p>
-
-<blockquote>
-  <p>高原草甸中的点缀。</p>
-</blockquote>
-
-<p><img src="/asset/xizang/1-flowers_xining.jpg" alt="image description" /></p>
 
 <hr />
 

@@ -155,6 +155,28 @@
 
 <p>Lazy properties are useful when the initial value for a property is dependent on <strong>outside factors</strong> whose values are not known until after an <em>instance’s initialization is complete</em>.</p>
 
+<h2 id="swifts-properties">Swift’s Properties</h2>
+<p>Properties associate values with a particular <em>class</em>, <em>structure</em>, or <em>enumeration</em>. There are two kind of properties:
+- stored properties, Stored properties store constant and variable values as part of an instance, Stored properties are provided only by classes and structures.
+- computed properties,whereas computed properties calculate (rather than store) a value. Computed properties are provided by classes, structures, and <strong><em>enumerations</em></strong>.</p>
+
+<h2 id="how-to-access-properties">How to access properties</h2>
+<p>You can access the properties of an instance using <strong>dot syntax</strong>. In dot syntax, you write the property name immediately after the instance name, separated by a period (.), <strong>without any spaces</strong>.</p>
+
+<h2 id="reference-types">Reference Types</h2>
+<p>Effectively,reference types are just the different names for the same instance.</p>
+
+<h2 id="choosing-between-classes-and-structures">Choosing Between Classes and Structures</h2>
+<p>Both classes and structures can be use as the build blocks of programmer’s code.</p>
+
+<p>Normally, structure instances are always passed by value, and class instances are always passed by reference. This means that they are suited to different kinds of tasks.</p>
+
+<p>A general guideline for using structures:
+- The structure’s primary purpose is to encapsulate a few relatively simple data values.
+- It is reasonable to expect that the encapsulated values will be copied rather than referenced when you assign or pass around an instance of that structure.
+- Any properties stored by the structure are themselves value types, which would also be expected to be copied rather than referenced.
+- The structure does not need to inherit properties or behavior from another existing type.</p>
+
 </div>
 
 <div class="related">
@@ -163,27 +185,27 @@
     
       <li>
         <h3>
-          <a href="/2016/06/03/x-reading-notes-copy/">
-            Reading notes
-            <small>03 Jun 2016</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2016/06/03/learning-notes/">
+          <a href="/2016/06/07/learning-notes/">
             Learning notes
-            <small>03 Jun 2016</small>
+            <small>07 Jun 2016</small>
           </a>
         </h3>
       </li>
     
       <li>
         <h3>
-          <a href="/2016/06/03/developer-resource-collections/">
-            如何阻止恶意数据爬虫
-            <small>03 Jun 2016</small>
+          <a href="/2016/06/04/reading-notes/">
+            Reading notes
+            <small>04 Jun 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/06/04/forward-article-elephant-in-room/">
+            房间里的大象
+            <small>04 Jun 2016</small>
           </a>
         </h3>
       </li>

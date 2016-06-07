@@ -143,6 +143,130 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/06/03/learning-notes/">
+        Learning notes
+      </a>
+    </h1>
+
+    <span class="post-date">03 Jun 2016</span>
+
+    <h2 id="sketchscale-tool">Sketch的Scale Tool</h2>
+<p>使用Cmd+K激活。The tool isn’t same as resizing,it actually scales every property,size,radius,border,<strong>shadow</strong> and inner <strong>shadow</strong></p>
+
+<blockquote>
+  <p>The Sacle Tool even can take effect on Artboard.</p>
+</blockquote>
+
+<h2 id="sketchalt">Sketch的Alt键</h2>
+<p>选中图层后，摁住alt键，会显示选中图层和其他图层的距离(dist)</p>
+
+<h2 id="markdown">MarkDown格式问题</h2>
+<p>普通正文和有格式正文中间须有空行。比如普通正文和unordered list格式之间，但是xxx list格式及缩进xxx list格式之间不需要空行区隔，如果有空行则实际解析也为空行，但是正常的回车符区隔是少不了的。</p>
+
+<blockquote>
+  <p>对于jekyll post尤其要注意这点。</p>
+</blockquote>
+
+<h2 id="mac-os-x-ios-">开发Mac OS X ／iOS 图片文件归档应用</h2>
+
+<h2 id="android-activities">Android Activities怎样工作？</h2>
+
+<ul>
+  <li>An app is a collection of activities, layouts, and other resources.</li>
+  <li>By default, each app runs within its own process.</li>
+  <li>You can start an activity in another application by passing an intent with startActivity().（startActivity能力超出预期？）</li>
+  <li>When an activity needs to start, Android checks if there’s already a process for that app.</li>
+  <li>When Android starts an activity, it calls its onCreate() method.(此处入口)</li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/06/03/developer-resource-collections/">
+        如何阻止恶意数据爬虫
+      </a>
+    </h1>
+
+    <span class="post-date">03 Jun 2016</span>
+
+    <h2 id="section">针对恶意数据爬虫，有好的方法吗？</h2>
+<p>问了一下专门搞安全的，有两种方式：</p>
+
+<ul>
+  <li>一种是使用robot协议，过滤一下，只允许你希望的</li>
+  <li>另一种是在Nigix之类的配置中写href过滤</li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/06/02/swift-operators/">
+        Swift Operators
+      </a>
+    </h1>
+
+    <span class="post-date">02 Jun 2016</span>
+
+    <h2 id="nil-coalescing-operator-">Nil Coalescing operator (??)</h2>
+<p>The <strong>nil coalescing operator</strong> (<em>a ?? b</em>) unwraps an optional a if it contains a value, or returns a default value b if a is nil. The expression a is always of an optional type. <em>The expression b must <strong>match</strong> the type that is stored inside a.</em></p>
+
+<p><strong>So it is a special tenary operator case for optional value operating.</strong></p>
+
+<p>The nil coalescing operator is shorthand for the code below:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>a != nil ? a! : b
+</code></pre>
+</div>
+
+<h2 id="range-operators">Range Operators</h2>
+<p>Swift includes two range operators, which are shortcuts for expressing a range of values.
+- <strong>Closed Range Operator</strong>     (闭合范围操作符)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>The closed range operator (a...b) defines a range that runs from a to b, and includes the values a and b. The value of a must not be greater than b.
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>for index in 1...5 {
+    print("\(index) times 5 is \(index * 5)")
+}
+// 1 times 5 is 5
+// 2 times 5 is 10
+// 3 times 5 is 15
+// 4 times 5 is 20
+// 5 times 5 is 25
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p><strong>Half Open Range Operator</strong>  (半开范围操作符)</p>
+
+    <p>The half-open range operator (<strong>a..&lt;b</strong>) defines a range that runs from a to b, but does not include b. It is said to be half-open because it contains its first value, but not its final value. As with the closed range operator, the value of a must not be greater than b. If the value of a is equal to b, then the resulting range will be empty.</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>let names = ["Anna", "Alex", "Brian", "Jack"]
+let count = names.count
+for i in 0..&lt;count {
+    print("Person \(i + 1) is called \(names[i])")
+}
+// Person 1 is called Anna
+// Person 2 is called Alex
+// Person 3 is called Brian
+// Person 4 is called Jack
+</code></pre>
+</div>
+
+<blockquote>
+  <p>Half-open ranges are particularly useful when you work with zero-based lists such as arrays</p>
+</blockquote>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="http://nintymiles.github.io//2016/06/02/essay-notes/">
         Notes
       </a>
@@ -170,425 +294,6 @@
 <p><a href="https://developer.apple.com/support/app-store/">Apple官方渠道数据</a></p>
 
 <p><a href="https://david-smith.org/iosversionstats/">AudioBook作者统计数据</a></p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/05/30/swift-notes/">
-        Swift Notes - Classes and Structures
-      </a>
-    </h1>
-
-    <span class="post-date">30 May 2016</span>
-
-    <h2 id="classes-and-structures">Classes and Structures</h2>
-<p>Definition:Classes and structures are general-purpose, flexible constructs that become the building blocks of your program’s code.</p>
-
-<ul>
-  <li>same features
-  There are some common features in swift  between classes and structures:
-    <ol>
-      <li>Define properties to store values  - 定义属性以存值</li>
-      <li>Define methods to provide functionality - 定义方法以提供功能</li>
-      <li>Define subscripts to provide access to their values by using subscript syntax - 定义下标以提供使用下标语法进行值的访问</li>
-      <li>Define initializers to set up their initial state - 定义初始化器以设置初始状态</li>
-      <li>Be extended to expand their functionality beyond a default implementation. - 可以被延伸扩展功能，而不是基于默认实现</li>
-      <li>Conform to protocols to provide standard functionality of a certain kind - 符合协议以提供某种标准功能</li>
-    </ol>
-  </li>
-  <li>different features
-  Classes own features exclusively:
-    <ol>
-      <li>Inheritance enables one class to have characteristics of another - 类可以继承拥有其他类的特征，而structure不能</li>
-      <li>Type casting enables you to check and interpret the types of a class instance at runtime - 类型转换可以在运行时检查和解析类实例的类型，而structure不能</li>
-      <li>Deinitializers enable an instance of a class to free up any resources it has assigned - 解构器可以让类实例释放已分配的任何资源</li>
-      <li>Reference counting allows more than one reference to a class instance - 引用计数机制允许类实例可以拥有超过一个（<strong>多个</strong>）引用存在</li>
-    </ol>
-  </li>
-</ul>
-
-<blockquote>
-  <p>Structures are always copied when they are passed around in your code, and do not use reference counting.</p>
-</blockquote>
-
-<p><strong>Structures are <em>value</em> types and Classes are <em>reference</em> types.</strong></p>
-
-<h2 id="definition-syntax">Definition Syntax</h2>
-<p>Classes and structures have a <strong>similar definition syntax</strong>. You introduce classes with the <strong>class</strong> keyword and structures with the <strong>struct</strong> keyword.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>class SomeClass {
-// class definition goes here`
-}
-
-struct SomeStructure {
-// structure definition goes here
-}
-</code></pre>
-</div>
-
-<h2 id="identity-operators-">Identity Operators (身份操作符)</h2>
-<p>We can use identity operators to check whether two constants or variables refer to the same single instance. There are two kinds of identity operators:
-1. Identical to (<strong>===</strong>) 
-2. Not identical to (<strong>!==</strong>)</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>if tenEighty === alsoTenEighty {
-    print("tenEighty and alsoTenEighty refer to the same VideoMode instance.")
-}
-// Prints "tenEighty and alsoTenEighty refer to the same VideoMode instance.”
-
-</code></pre>
-</div>
-
-<blockquote>
-  <p>“Note that “identical to” (represented by <strong><em>three equals signs</em></strong>, or ===) does not mean the same thing as “equal to” (represented by two equals signs, or ==)”</p>
-</blockquote>
-
-<h3 id="two-concepts">two concepts</h3>
-<ul>
-  <li>“Identical to” means that two constants or variables of class type refer to exactly the same class instance.</li>
-  <li>“Equal to” means that two instances are considered “equal” or “equivalent” in value, for some appropriate meaning of “equal”, as defined by the type’s designer.</li>
-</ul>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/05/28/article-forward-wanghaibin/">
-        The true side of the world
-      </a>
-    </h1>
-
-    <span class="post-date">28 May 2016</span>
-
-    <h2 id="section">世界真实的一面</h2>
-<p>— 转自王海滨博客</p>
-
-<hr />
-
-<p><strong>本文重口味,小清新慎入.</strong></p>
-
-<p>下午我写了篇台湾选举的文章,有人留言说:作为生下来就被剥夺选举权的大陆人来说，有什么资格去质疑台湾人民的选择？</p>
-
-<p>我以前写过不少的民主文章，如果你有耐心去翻，还是能够了解一点社科知识，虽然是来自一个草莽研究者的笔下。民主是一种手段，不是一种结果，更不是一种信仰，决不可能是一种宗教。</p>
-
-<p>西方世界的哲人苏格拉底曾表示：民主体系是所有政体中最糟糕的一种。</p>
-
-<p>但这不是指近现代的英国体系和美国民主体系。</p>
-
-<p>民主体系有着极其严谨的设置，以防范乌合之众的多数人暴政。它呈现的是权力制衡和顾及全体人利益，而非对部分人的侵害和牺牲，来满足其他人的利益。</p>
-
-<p>最近因为特朗普的崛起，很多人关注了美国大选。初选的过程让中国人了解了美国选举代表人制度的不同，这并不是一个人数取胜的简单多数人选举制度。其超级代表的设置和赢家通吃的设置，是相互制衡的。在国会选举中，以人数和州来定义议员的数字，也是在表达多数人意愿和少数人州的意愿不要在联邦层面受损，这也是一种制衡。你可以联想到在每一级政府，从州到郡市都是同样的设计。</p>
-
-<p>为何苏格拉底曾经发出这样的声音？他作为民主的敌人，后来被雅典人判决为死罪。</p>
-
-<p>因为他在上千年之后的法国人之前，就看到了乌合之众的毁灭性。</p>
-
-<p>社会行为心理学告诉我们，一群人聚集在一起，智商向最短的那块板靠拢；人们聚拢在一起，群体行为容易导致卸责，法不责众的现实在全球通用，人们容易做出邪恶的事情；而当人们聚集在一起，易于煽动的情绪感染，会让人们轻易的去相信一件事情，情绪化导致群氓效应产生，逻辑和长期眼光都不复存在，容易做出既损害他人，也损害自己长远利益的事情。</p>
-
-<p>这就是民主的致命之处。</p>
-
-<p>所以，当那位读者留言，说生下来就被剥夺选择权的大陆人，有什么资格去质疑台湾人的选择呢？</p>
-
-<p>我不能说你错了，但即使是生来就被剥夺选举权—注意我不是说选择权，仍旧有资格质疑台湾人的选择，因为当台湾在煽动民粹的时候，一群失去理性的乌合之众的群氓行为，连自己祖母被日本人掠作慰安妇都会去辩成自愿才觉得骄傲的卑劣心理，去反对教科书修改写错别字的文盲行为等等，诸如此类的白痴做法，都让人想起苏格拉底的警告和法国人对乌合之众的描述。</p>
-
-<p>煽动意识形态的撕裂，制造敌人，不仅仅是这种类似民主的民粹主义做法，这种做法曾诞生了法西斯主义，选举出了希特勒；也是极权体系下极左常用的手法，制造一种敌人，然后再制造一种敌人，剥夺他们的财务和人身自由，甚至夺去生命。</p>
-
-<p>群氓在这两种体系下，表现都是一样的。</p>
-
-<p>所以，这里我们要回到文章的正题，世界的真相是怎么样的？</p>
-
-<p>有台湾同胞跑来和我争辩,说台湾妇女团体只是争议强制慰安两个字,有许多妇女当年是自愿的，所以对历史留个空白.</p>
-
-<p>我只能对台湾妇女团体的智商和无耻表示同情.台湾看来皇化的比较彻底,和日本人否定南京大屠杀有得一拼.日本人一直和中国人纠结三十万人死亡的事实,他们说没有死三十万人,举出各种数据,用逻辑推演.</p>
-
-<p>强盗逻辑就是这样的,我到你家杀了人,抢了东西,没什么不好意思的,不用道歉.你说我杀了你家三个孩子,你家不是还剩了一个吗?你这是污蔑我.</p>
-
-<p>我说的对吧,台湾同胞们?一场侵略战争中,妇女无论何种原因,变成了一群士兵的性工具,这都不是件值得骄傲和争辩的事情.这居然成了抠字眼的游戏,能让当年的慰安妇很高兴的出来说:感谢妇女团体,感谢自由民主,我当年是自愿去被日本人操的啊,幸亏今天你们帮我昭雪了,否则哪里说理去?今天我总算可以挺胸抬头出去,逢人便说,我当年是自愿被操的了.</p>
-
-<p>我理解的对吧?</p>
-
-<p>至于说错别字那章节,我是讽刺那帮孩子们,中文都没学好,就去反课纲,错别字一堆,被媒体拍个正脸.</p>
-
-<p>不要自诩为自由民主社会,资讯发达.专制社会下,信息是封闭的.你觉得我这样的人会看不到海外大量的信息吗?那我怎么看到小英姐的演说呢了?</p>
-
-<p>事实上,是海外信息看多了,照样感觉整个世界上一堆堆垃圾,脑残的人到处都有,持两分法看世界的意识形态之争到处都有.</p>
-
-<p>我在中国的十几个大小城市居住过至少半年以上,在许多国家长时间的停留,多次出入,生活在他们中间.了解这个世界的所谓权贵富豪、底层人民。我们一家住过长达5年的所谓上海贫民窟；见识过美国底层的生活状态；也在美国与奥巴马的政治后援团交谈；曾和加州富豪交往；见过夏威夷顶级的游说公司。在国内和各层官员有过交集；富二代和权二代都曾经在身边晃过；美国著名的经济学教授我也密切交往了一年多。</p>
-
-<p>而我和台湾人打了十几年的交道。</p>
-
-<p>林林总总，您觉得我不会了解这个世界的虚妄和荒谬？不了解光鲜口号下的自私和迷茫？</p>
-
-<p>其实这一系列文章重点不是讨论台湾，结果话题一扯，就跑偏这么多了。</p>
-
-<p>上海城市中心有贫民窟，在外环外有贫民窟。你一定不能理解前一点，实际上在上海一些庞大的社区里，很多大房型都被切割成了群租房，每间几个平方米大小。我们一家曾经住过的一间，只能放一张床，一个拆卸式的衣柜，就是骨架是铁管，塑料布蒙起来那种。</p>
-
-<p>这里面住了外来的打工仔、妓女和其他无处可去的底层，因其廉价，在市中心。房子大厅空气里弥漫着粪尿油烟及其他各种莫名气味，楼下有路边摊，一群小贩用地沟油炒面和菜，五六元一碗。这是底层绝望的生活。</p>
-
-<p>群租房经常会被行政当局来驱赶和拆，路边摊经常被城管赶来赶去。</p>
-
-<p>见多了底层的绝望、愤怒；也见多了底层的任劳任怨，寻找着机会，以一技之长和苦作一周七天的精神，养家活口，积攒钱财，爬出烂泥坑。</p>
-
-<p>我也在洛杉矶、纽约、檀香山看到那些流落街头的人，浑身肮脏，带着一个大包，坐在街头，低头不语一小时、半天、一整天。在缅甸郊外看见农民一间间用草编席子围绕的几平米房屋，我坐在仰光街头和惊讶的当地人坐在摊子前，一起吃一点米饭和菜蔬。</p>
-
-<p>我也在美国的这些地方和真正的富豪饮茶吃饭，听他们讲孩童的教育，讲当地议员的交往，讲北京太子党如何通过他们移民。听奥巴马后援团里精英讲述哪些地域可以争夺选票。听游说公司谈论如何帮助当地市长竞选。</p>
-
-<p>我在二十年前，无法读懂财经报刊的文章，到生意失败时，我虽然能看懂产业，却仍旧对金融和经济一知半解；而经历人世间的苦难和荣华之后，在寻求哲学和宗教的心灵指引失败之后。我写了几千万文字，散落在网络间；每年读上千万字，到处寻找能够交谈的人。</p>
-
-<p>于是读书的速度越来越快，阅读世界的时间也越来越少，出门渐渐稀疏。</p>
-
-<p>因为你读过几本真正的书，就洞悉人类心灵；你去过一个地方，就去过了全世界。</p>
-
-<p>所有的浮光掠影都只是浮光掠影。</p>
-
-<p>很多很多年前，我那是其实不年轻了，但头脑仍旧年轻，和一个洋鬼子生意人聊天，他在中国待了十年。我们谈及民主，我总以为老外会更容易接受民主自由观念。</p>
-
-<p>他狠狠的给我上了一课，说michael,你以为欧洲的政客不贪污吗？你以为拉美的政客不贪污吗？你以为东南亚的政客不贪污吗？你以为美国的政客不捞好处吗？</p>
-
-<p>那政客为何要从事政客这个职业呢？</p>
-
-<p>我当时很鄙视他，从此断绝来往。</p>
-
-<p>十年后，我在美国和一个游说公司老总的父亲聊天，他说：michael，你以为美国的市长、议员不贪污，不贪财？他们只是换了一种形式，你看看市长、议员、总统们离职后，在大公司、银行演讲拿到的巨额演讲费，做顾问获得的年薪。你觉得这是什么？</p>
-
-<p>前两天我因为私事，极端厌恶一个国家。朋友劝我，海滨，你明白这个世界都是一样的，只是这里的人吃相比较好一点，你为何不能容忍呢？这世界没有理想国。</p>
-
-<p>是的，道德洁癖无助于生活在现实中。
-    
-所有的体系都是为了效率和稳定。</p>
-
-<p>所有的效率和稳定是为了什么？</p>
-
-<p>所有的体系都有规则，只不过有些社会是明规则，有些社会是潜规则。</p>
-
-<p>回到前面的问题，答案是，所有的效率和稳定，都是为了和平的、和风顺雨的保证利益集团收割牧民。</p>
-
-<p>印度教发明了种姓制度，有利于让底层认命，维持社会稳定，满足生产需要，提高社会效率。</p>
-
-<p>佛教发扬光大了轮回，有利于让底层认命，维持社会稳定，满足生产需要，提高社会效率。</p>
-
-<p>基督教制造了天堂和地狱，有利于让底层求死后天堂，维持社会稳定，满足生产需要，提高社会效率。</p>
-
-<p>民主派制造了普世价值，有利于让各阶层认为获得了平权和自由，维持社会稳定，满足生产需要，提高社会效率。</p>
-
-<p>主义们制造了现世的乌托邦，失败于让底层认命，不能长期维持社会稳定，不能满足生产需要，不能提高社会效率。</p>
-
-<p>但选票的需求和主义的供应失败，都让位于收买，用免费来收买权力。</p>
-
-<p>原始人类对世间万物心存恐惧，于是万物有灵，有了祭祀。</p>
-
-<p>人们是真的相信未知的神灵。</p>
-
-<p>祭祀或信，或不信，但得到了权柄。部落领袖信或不信，依赖于祭祀给与的神灵背书。</p>
-
-<p>于是权力得以存在。</p>
-
-<p>人性自私而贪婪，狭隘而排他，嗜血而性情不稳，于是宗教、集体、国家、组织成为凝聚力。掌握神旨者，掌握权力，掌握权力者掌握规则，掌握规则者掌握武力，掌握武力者掌握财富。</p>
-
-<p>在民主社会未起时，是这样的。</p>
-
-<p>清教徒的国家里，或者多神教的国家里，人直接面对神，神仆再无法干预权力。于是掌握规则者，掌握财富与话语权，掌握财富与话语权者，掌握权力与规则。</p>
-
-<p>人类的群氓行为，注定会成为无政府主义者，他们缺乏了信仰和规则的约束，就只能在广袤的土地上，以熟人社会存在，社会就失去了效率，人类也无法前行。</p>
-
-<p>有些人独立思考，他们信或不信神，都会前行，试图引领和影响整个世界，制定和修改了整个体系。这些人或为利他主义的人类情怀，或为神的旨意指引，或为自私自利的大贼心态，或三者兼而有之。</p>
-
-<p>他们洞悉群氓的行为，试图控制整个人类社会。</p>
-
-<p>在自觉与不自觉中，印度教的种姓制度被建立了，贱民被稳定的锁在底层的命运，被整个习俗缠绕，被心理的卑微压制，于是整个社会在各阶层间屏蔽垂直流动，只在自身的阶层流动。这样的社会呈现了数百年的稳定。</p>
-
-<p>佛教是一个平权的宗教，但终究被统治者发现了轮回宿命对信众的压制，也用来稳定整个社会的阶层。许多人放弃了命运的挣扎，只求来生的福报。统治者最终也相信了这一个信仰体系，他们追索自身灵魂的安放，接受佛陀给与自己的统治他人的命运，并求心灵的顿悟，并要求国民接受命运的安排，安于各阶层的命运，贫穷和富贵，富贵者要捐助，救助底层，以求来时。</p>
-
-<p>一神教曾有神仆垄断了神的旨意，凌驾于国王与各阶层之上，只要参考古代祭祀社会就可以了。</p>
-
-<p>以色列人曾在亡国前，不断的有聪明的强人，去向不同的统治者：埃及、希腊人、罗马人等等要求祭祀的地位，承诺支付多少税金，掉头以祭祀的身份，统治以色列人，榨取财富和一切，直到周而复始的亡国，被强国掳掠，金银被从圣殿夺走，圣殿被焚毁，妇女被强奸，成年男子被屠杀或奴役，最终彻底的灭国，犹太人流落四方。于是犹太人始终相信基督尚未降临，他来的那一刻既是毁灭，因为世间过于苦难。</p>
-
-<p>清教徒在几乎杀光了所有的印第安人之后，建立了一个伟大的民主国家，美国的先哲可能看到自己杀戮的本性，意图建立一个完善的权力制衡体系，去约束人的邪恶本性。求助于神是无助于约束贪婪和杀戮的，一神教的最大罪恶不过是不信神，基督教的七宗罪之首只不过是骄傲。因而必须以世间的权力制衡体系，去约束这群嗜血的众人。</p>
-
-<p>所以，我们看到了一个平全社会的建立。</p>
-
-<p>而美国的先哲看到了古希腊民主社会里群氓效应的巨大破坏力，因此才在平权体系里建立了平衡多数人选票和少数人州郡的选举体系。并以独立的法院体系，垂直约束整个行政和司法体系。</p>
-
-<p>同时在宪法中约定了一些最基本的权力，不可以通过选举去改变！</p>
-
-<p>但是在经历了二百年之后，美国的利益团体还是逐渐的掌握了整个制定规则的权力，在宪政和平权体系之下，建立了新的阶层屏障。</p>
-
-<p>整个教育体系，与富人区和穷人区的房价一起，并社区治安不同，成为整个美国贫富分化，阶层隔离的围墙。富人区得以维系社区教育优质资源，与良好的治安一起，制造了一个个穷人无法进入的富人社区。权贵的子弟进入更高级别的精英私立学校，不仅仅是金钱，还要依赖阶层背书才能够进入。</p>
-
-<p>唯一开放的管道，是权贵精英阶层为了保持阶层的流动性，不要腐朽，因而开放了对平民子弟里最优秀者的上升通道，可以让平民进入。</p>
-
-<p>除此外，你可以凭借创业上升，试问一下，在当今的美国社会，还有哪一类传统生意是可以白手起家吗？</p>
-
-<p>而医疗体系又称为当政者用来收买底层人心，保住选票，并以其昂贵能够发展生命科技，促使整个精英层的寿命越来越长。</p>
-
-<p>美国是一个不显山露水的金字塔社会，精英层的富贵不是豪宅游艇跑车，而是自由。生命的自由增长，来自于生命科技；行动的自由，来自太空科技；权力的自由，来自财富对规则的自由制定；思想的自由，来自于通透的精英教育。</p>
-
-<p>于是社会鸿沟成为天堑。</p>
-
-<p>平民只能游离于蓝领职业和服务业，甚至这些工作也逐渐在被机器人替代，未来的平民能够做什么，不得而知。</p>
-
-<p>威权主义国家，有不同的形式。</p>
-
-<p>宗教背书的君权神授国家，人民安于命运，权贵顺利收割。</p>
-
-<p>而无宗教背书的国家，王侯将相宁有种乎，权力体系始终有着致命的缺陷。其不稳定性，使得从上到下，人人自危，没有一个人有安全感。</p>
-
-<p>这样的国家只能依靠金钱的赎买，也就是经济目标的指引，换取国民对统治合法性的短暂承认。</p>
-
-<p>道教当年未能在中国成为强有力的宗教，是因为道教要修现世，让人们得道成仙。这种始终无法证实的仙迹，导致了道教的失败，只能融入儒释道文化里，沦为边缘宗教。</p>
-
-<p>老马想成为先知，但错误的定义了现世的乌托邦。</p>
-
-<p>要成为先知的必要条件是，必须要找到一个永远不能证伪的神、天堂、地狱，其次要一手拿着经书，一手拿着刀剑。</p>
-
-<p>老马的教义里只有乌托邦，现世的天堂只要数十年就被证伪不存在，他的追随者只剩下经书和刀剑。</p>
-
-<p>这是不长久的。</p>
-
-<p>中国这样的国家，只有回到儒释道精神，结合天人合一的祖先崇拜习俗，重立宗教背书的上层建筑。至于走向哪一种体制，民主或威权，都不重要。</p>
-
-<p>因为人类社会的本质都是一个。</p>
-
-<p>中国也已经有了教育壁垒，有了学区房，有了阶层壁垒，而吃相比欧美更难看。</p>
-
-<p>欧美的吃相是穿西装打领带，铺上桌布，刀叉立于两旁，把人们洗刷干净，为避免虐杀嫌疑，保证食物权力，需要用电击杀，不要放血，烤的三份生，带着血丝，上来后，食客们先向神祷告，感谢神赐予并洁净桌上的食物，就着红酒，闭着嘴咀嚼，把人们生吞活剥。</p>
-
-<p>怎一个文雅说的尽？</p>
-
-<p>中国的吃相是一棍子击杀，割喉放血，时而生吃，时而煎炸，就着白酒，大声谈笑，碎末乱飞。</p>
-
-<p>粗俗啊。</p>
-
-<h2 id="section-1">人类的终局</h2>
-
-<h3 id="section-2">终局一：悲观选择</h3>
-
-<p>机器替代劳工之后，劳工只有一再降低自己的要价，去和机器的成本比较。</p>
-
-<p>最终失败。</p>
-
-<p>人类社会的财富集中于掌握知识和规则的精英，经济危机频发。</p>
-
-<p>拯救经济危机的货币宽松与紧缩掠夺中下层。</p>
-
-<p>神说，夺取少的仅有的，给多的更多。</p>
-
-<p>但消费开始消失。</p>
-
-<p>极少数的人类开始有数百年的寿命、太空漫游，机器在地球工作。</p>
-
-<p>人类大量消亡。</p>
-
-<p>最后的人类开始觉得生命寂寞乏味。</p>
-
-<p>有的放逐自己死去，</p>
-
-<p>有的与机器结合，将精神与灵魂上传到网络。</p>
-
-<p>机器世界里，只有少数的灵魂。</p>
-
-<p>灵魂最终绝望，终止了程序运转，机器在电力消耗殆尽后终止。</p>
-
-<p>地球恢复了平静，万物生长。</p>
-
-<h3 id="section-3">终局二：乐观选择</h3>
-
-<p>非知识层的人类消亡在地球。</p>
-
-<p>进化的人类进入了银河系，开始繁衍扩张。</p>
-
-<p>他们创造了新的神，于是心有所属。</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/05/23/swift-notes/">
-        Swift Learning Notes  - Function
-      </a>
-    </h1>
-
-    <span class="post-date">23 May 2016</span>
-
-    <h2 id="variadic-parameters">Variadic parameters</h2>
-<p>A variadic parameter accepts zero or more values of a specified type.Write variadic parameters by inserting three period characters (…) after the parameter’s type name.</p>
-
-<blockquote>
-  <p>A function may have at most one variadic parameter.</p>
-</blockquote>
-
-<h2 id="in-out-parameters">In-Out parameters</h2>
-<p>You write an in-out parameter by placing the inout keyword at the <strong>start</strong> of its parameter definition. An <strong><em>in-out</em></strong> parameter has a value that is passed in to the function, is modified by the function, and is passed back out of the function to replace the original value.</p>
-
-<blockquote>
-  <p>Usually, function parameters are <strong>constants</strong> by default. Trying to change the value of a function parameter from within the body of that function results in a compile-time error. This means that you can’t change the value of a parameter by mistake.</p>
-</blockquote>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>func swapTwoInts(inout a: Int, inout _ b: Int) {
-    let temporaryA = a
-    a = b
-    b = temporaryA
-}
-</code></pre>
-</div>
-
-<h2 id="function-types">Function types</h2>
-<p>function types just like any other types in Swift.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var mathFunction: (Int, Int) -&gt; Int = addTwoInts
-</code></pre>
-</div>
-
-<ul>
-  <li>Function types as parameter types
-  You can use a function type such as (Int, Int) -&gt; Int as a parameter type for another function. This enables you to leave some aspects of a function’s implementation for the function’s caller to provide when the function is called.</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>func printMathResult(mathFunction: (Int, Int) -&gt; Int, _ a: Int, _ b: Int) {
-    print("Result: \(mathFunction(a, b))")
-}
-printMathResult(addTwoInts, 3, 5)
-// Prints "Result: 8"
-</code></pre>
-</div>
-
-<ul>
-  <li>Function types as return types
-  You can use a function type as the return type of another function. You do this by writing a complete function type immediately after the return arrow (-&gt;) of the returning function.</li>
-</ul>
-
-<h2 id="nested-functions">Nested functions</h2>
-<p>All of the functions you have encountered so far in this chapter have been examples of <strong>global</strong> functions, which are defined at a <strong>global scope</strong>. You can also define functions <strong>inside the bodies</strong> of other functions, known as nested functions.</p>
-
-<blockquote>
-  <p>Nested functions are hidden from the outside world by default, but can still be called and used by their enclosing function. An enclosing function can also <strong>return</strong> one of its nested functions to allow the nested function to be used in <strong>another scope</strong>.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Nested functions can make implementation certain level privacy</strong></p>
-</blockquote>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>func chooseStepFunction(backwards: Bool) -&gt; (Int) -&gt; Int {
-    func stepForward(input: Int) -&gt; Int { return input + 1 }
-    func stepBackward(input: Int) -&gt; Int { return input - 1 }
-    return backwards ? stepBackward : stepForward
-}
-var currentValue = -4
-let moveNearerToZero = chooseStepFunction(currentValue &gt; 0)
-// moveNearerToZero now refers to the nested stepForward() function
-while currentValue != 0 {
-    print("\(currentValue)... ")
-    currentValue = moveNearerToZero(currentValue)
-}
-print("zero!")
-// -4...
-// -3...
-// -2...
-// -1...
-// zero!
-</code></pre>
-</div>
 
   </div>
   
