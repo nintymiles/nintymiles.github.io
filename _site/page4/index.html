@@ -111,6 +111,12 @@
         
       
     
+      
+         
+        	
+        
+      
+    
 
     <!--<a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>
     <a class="sidebar-nav-item" href="">GitHub project</a>-->
@@ -140,6 +146,29 @@
 
       <div class="container content">
         <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/05/21/surfing_notes/">
+        Surfing notes 5.21
+      </a>
+    </h1>
+
+    <span class="post-date">21 May 2016</span>
+
+    <h2 id="section">杠杆到了非去不可的时候-如松</h2>
+<ul>
+  <li>权威人士发言通篇都是“杠杆”</li>
+  <li>认为杠杆到了非去不可的时候
+    <ul>
+      <li>大宗下降到一定程度后，进口就会增长，会推进贸易逆差。</li>
+      <li>资本外流加上贸易逆差。如果放任杠杆，则资产价格和生产成本都会飙升，那么进口增加会更快，导致贸易逆差更大。</li>
+      <li>后果是“甚至让储蓄泡汤”</li>
+    </ul>
+  </li>
+</ul>
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -584,102 +613,6 @@ on the types of values we store in a variable.</p>
 
 <h4 id="swift-repl">Swift REPL</h4>
 <p>You can set up and run a REPL — read, eval, print, loop — in order to write interactive Swift code in the command line. To enable this capability, open the Terminal app from your /Applications/Utilities folder and type <em>xcrun swift</em> (or <em>lldb –repl</em>) at the command prompt and press return.</p>
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/05/01/swift-overview-2/">
-        Swift概要2（Swift Overview 2）
-      </a>
-    </h1>
-
-    <span class="post-date">01 May 2016</span>
-
-    <h1 id="swift-overview-2">Swift Overview 2</h1>
-<hr />
-<blockquote>
-  <p>Swift can be thought of as Objective-C reimagined using modern concepts and safe programming patterns. In Apple’s own words, Swift is like Objective-C without
-the C. Chris Lattner, the creator of Swift, said Swift took language ideas from Objective-C, Rust, Haskell, Ruby, Python, C#, CLU, and far too many others to list. At WWDC 2014, Apple really stressed that Swift was safe by default. Swift was designed to eliminate many common programming errors, making applications more secure and less prone to bugs. Swift 2 added two additional core features to the language—availability and error handling—which are designed to make it even easier to write safe code.</p>
-</blockquote>
-
-<h2 id="comparison-operators">比较操作符 （Comparison Operators)</h2>
-
-<p>Swift中的比较操作符用于执行简单的数学操作，比如比较数字和值。常用的操作符有：</p>
-
-<ul>
-  <li><strong>&gt;</strong>     大于（Greater Than）</li>
-  <li><strong>&lt;</strong>     小于（Less Than）</li>
-  <li><strong>==</strong>    等于（Equal To）</li>
-  <li><strong>&gt;=</strong>    大于等于（Greater Than or Equal To ）</li>
-  <li><strong>&amp;&amp;</strong>    和（AND）</li>
-  <li><strong>||</strong>    或（OR）</li>
-</ul>
-
-<h2 id="string-interpolation">字符插入 （String Interpolation）</h2>
-
-<p>将String输出到控制台意义重大^_^,如何在print语句中将变量组合为String或者合适的值将更有价值。在Swift中，这种操作称为String Interpolation。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">apples</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="nf">print</span><span class="p">(</span><span class="s">"Sally has </span><span class="se">\(</span><span class="n">apples</span><span class="se">)</span><span class="s"> apples"</span><span class="p">)</span>
-</code></pre>
-</div>
-
-<p>看到上面的例子吗？使用格式：<strong>\(variable name)</strong>，就可以将任意变量的值转换为String。是不是很容易。在括号中甚至可以进行数学操作，如下：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="s">"Sally has </span><span class="se">\(</span><span class="n">apples</span> <span class="o">-</span> <span class="mi">5</span><span class="se">)</span><span class="s"> apples"</span><span class="p">)</span>
-</code></pre>
-</div>
-
-<h2 id="ifelse-ifelse-statements">If/else语句 (If/else statements)</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">batmanCoolness</span> <span class="o">&gt;</span> <span class="n">spidermanCoolness</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">spidermanCoolness</span> <span class="o">=</span> <span class="n">spidermanCoolness</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">batmanCoolness</span> <span class="o">&gt;=</span> <span class="n">spidermanCoolness</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">spidermanCoolness</span> <span class="o">=</span> <span class="n">spidermanCoolness</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="n">spidermanCoolness</span> <span class="o">=</span> <span class="n">spidermanCoolness</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<h2 id="while-while-loops">While循环 （While Loops）</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">secondsLeft</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="k">while</span> <span class="p">(</span><span class="n">secondsLeft</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">print</span><span class="p">(</span><span class="n">secondsLeft</span><span class="p">)</span>
-  <span class="n">secondsLeft</span> <span class="o">=</span> <span class="n">secondsLeft</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="s">"Blast off!"</span><span class="p">)</span>
-</code></pre>
-</div>
-
-<h2 id="breakcontinue">Break和Continue语句</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">cokesLeft</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="k">var</span> <span class="nv">fantasLeft</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="k">while</span><span class="p">(</span><span class="n">cokesLeft</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>  <span class="p">{</span>
-  <span class="nf">print</span><span class="p">(</span><span class="s">"You have </span><span class="se">\(</span><span class="n">cokesLeft</span><span class="se">)</span><span class="s"> Cokes left."</span><span class="p">)</span>
-  <span class="n">cokesLeft</span> <span class="o">=</span> <span class="n">cokesLeft</span> <span class="o">-</span> <span class="mi">1</span>
-  <span class="k">if</span><span class="p">(</span><span class="n">cokesLeft</span> <span class="o">&lt;=</span> <span class="n">fantasLeft</span><span class="p">)</span>  <span class="p">{</span>
-<span class="k">break</span> <span class="p">}</span>
-<span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="s">"You stop drinking Cokes."</span><span class="p">)</span>
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">numbers</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span><span class="p">(</span><span class="n">numbers</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)</span>  <span class="p">{</span>
-  <span class="k">if</span><span class="p">(</span><span class="n">numbers</span> <span class="o">==</span> <span class="mi">9</span><span class="p">)</span>  <span class="p">{</span>
-    <span class="n">numbers</span> <span class="o">=</span> <span class="n">numbers</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">continue</span>
-  <span class="p">}</span>
-  <span class="nf">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-  <span class="n">numbers</span> <span class="o">=</span> <span class="n">numbers</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="p">}</span>
-</code></pre>
-</div>
 
 
   </div>

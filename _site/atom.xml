@@ -4,13 +4,42 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-06-07T15:26:17+08:00</updated>
+ <updated>2016-06-07T17:25:31+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>SeanRen</name>
    <email>nintymiles@icloud.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Mac快速锁屏及其它</title>
+   <link href="http://nintymiles.github.io/2016/06/07/surfing-notes/"/>
+   <updated>2016-06-07T00:00:00+08:00</updated>
+   <id>http://nintymiles.github.io/2016/06/07/surfing-notes</id>
+   <content type="html">&lt;h2 id=&quot;mac&quot;&gt;Mac如何快捷锁屏的实现方式&lt;/h2&gt;
+&lt;p&gt;Mac快速锁屏的设置步骤：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;在security&amp;amp;privacy-&amp;gt;general中启用‘required password immediately after sleep or screen save launched&lt;/li&gt;
+  &lt;li&gt;使用command+option+power(eject)快捷键进入睡眠&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;注：ctrl＋shift＋power（eject）是休眠快捷键&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;jekyll-post&quot;&gt;Jekyll post如何使用草稿模式&lt;/h2&gt;
+&lt;p&gt;草稿是没有日期的文章。它们是你还在创作中而暂时不想发表的文章。想要开始使用草稿，你需要在网站根目录下创建一个名为 _drafts 的文件夹（如在目录结构章节里描述的），并新建你的第一份草稿：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;|-- _drafts/
+|   |-- a-draft-post.md
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;为了预览你拥有草稿的网站，运行 jekyll serve 或者带有 –drafts 配置选项的 jekyll build。此两种方法皆会将 Time.now 的值赋予草稿文章，作为其发布日期，所以你将看到草稿文章作为最新文章被生成。&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Learning notes</title>
@@ -21,7 +50,7 @@
 &lt;ol&gt;
   &lt;li&gt;先找出数组中的最大元素，然后以最大元素值加1建立计数数组&lt;/li&gt;
   &lt;li&gt;将实际元素在计数数组作为索引值，并将此位置存储出现次数计数&lt;/li&gt;
-  &lt;li&gt;把从头到尾的索引值的出现次数相加，然后得到每个元素的其实际索引位置。最后在1:1的新数组中将是实际值赋值到实际索引位置。&lt;/li&gt;
+  &lt;li&gt;把从头到尾的索引值的出现次数一次当前一个和后一个相加（从1开始），然后得到每个元素的其实际索引位置。最后在1:1的新数组中将是实际值赋值到实际索引位置。&lt;/li&gt;
   &lt;li&gt;因为实际计数每个数值的出现都计算在内，而数组索引从零开始，所以计算出的索引值实际使用时都要减1？&lt;/li&gt;
 &lt;/ol&gt;
 

@@ -11,7 +11,7 @@
 
   <title>
     
-      Learning notes &middot; 九十里
+      Mac快速锁屏及其它 &middot; 九十里
     
   </title>
 
@@ -146,51 +146,35 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Learning notes</h1>
-  <span class="post-date">03 Jun 2016</span>
-  <h2 id="sketchscale-tool">Sketch的Scale Tool</h2>
-<p>使用Cmd+K激活。The tool isn’t same as resizing,it actually scales every property,size,radius,border,<strong>shadow</strong> and inner <strong>shadow</strong></p>
+  <h1 class="post-title">Mac快速锁屏及其它</h1>
+  <span class="post-date">07 Jun 2016</span>
+  <h2 id="mac">Mac如何快捷锁屏的实现方式</h2>
+<p>Mac快速锁屏的设置步骤：</p>
+
+<ol>
+  <li>在security&amp;privacy-&gt;general中启用‘required password immediately after sleep or screen save launched</li>
+  <li>使用command+option+power(eject)快捷键进入睡眠</li>
+</ol>
 
 <blockquote>
-  <p>The Sacle Tool even can take effect on Artboard.</p>
+  <p>注：ctrl＋shift＋power（eject）是休眠快捷键</p>
 </blockquote>
 
-<h2 id="sketchalt">Sketch的Alt键</h2>
-<p>选中图层后，摁住alt键，会显示选中图层和其他图层的距离(dist)</p>
+<h2 id="jekyll-post">Jekyll post如何使用草稿模式</h2>
+<p>草稿是没有日期的文章。它们是你还在创作中而暂时不想发表的文章。想要开始使用草稿，你需要在网站根目录下创建一个名为 _drafts 的文件夹（如在目录结构章节里描述的），并新建你的第一份草稿：</p>
 
-<h2 id="markdown">MarkDown格式问题</h2>
-<p>普通正文和有格式正文中间须有空行。比如普通正文和unordered list格式之间，但是xxx list格式及缩进xxx list格式之间不需要空行区隔，如果有空行则实际解析也为空行，但是正常的回车符区隔是少不了的。</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>|-- _drafts/
+|   |-- a-draft-post.md
+</code></pre>
+</div>
 
-<blockquote>
-  <p>对于jekyll post尤其要注意这点。</p>
-</blockquote>
-
-<h2 id="mac-os-x-ios-">开发Mac OS X ／iOS 图片文件归档应用</h2>
-
-<h2 id="android-activities">Android Activities怎样工作？</h2>
-
-<ul>
-  <li>An app is a collection of activities, layouts, and other resources.</li>
-  <li>By default, each app runs within its own process.</li>
-  <li>You can start an activity in another application by passing an intent with startActivity().（startActivity能力超出预期？）</li>
-  <li>When an activity needs to start, Android checks if there’s already a process for that app.</li>
-  <li>When Android starts an activity, it calls its onCreate() method.(此处入口)</li>
-</ul>
+<p>为了预览你拥有草稿的网站，运行 jekyll serve 或者带有 –drafts 配置选项的 jekyll build。此两种方法皆会将 Time.now 的值赋予草稿文章，作为其发布日期，所以你将看到草稿文章作为最新文章被生成。</p>
 
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/2016/06/07/surfing-notes/">
-            Mac快速锁屏及其它
-            <small>07 Jun 2016</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -205,6 +189,15 @@
         <h3>
           <a href="/2016/06/04/reading-notes/">
             Reading notes
+            <small>04 Jun 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/06/04/forward-article-elephant-in-room/">
+            房间里的大象
             <small>04 Jun 2016</small>
           </a>
         </h3>

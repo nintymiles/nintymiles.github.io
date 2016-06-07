@@ -111,6 +111,12 @@
         
       
     
+      
+         
+        	
+        
+      
+    
 
     <!--<a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>
     <a class="sidebar-nav-item" href="">GitHub project</a>-->
@@ -140,6 +146,52 @@
 
       <div class="container content">
         <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/06/03/swift-notes/">
+        Swfit Notes - Lazy关键字
+      </a>
+    </h1>
+
+    <span class="post-date">03 Jun 2016</span>
+
+    <h2 id="lazy-stored-properties">Lazy stored properties</h2>
+<p>A <strong>lazy</strong> stored property is a property whose initial value is not calculated <strong>until the first time it is used</strong>. You indicate a lazy stored property <em>by writing the <strong>lazy modifier</strong> before its declaration</em>.</p>
+
+<blockquote>
+  <p>lazy关键字标识的属性的含义是，这个属性的值将在第一次使用前才会被初始化，虽然可能已经填写了初始化代码。</p>
+</blockquote>
+
+<blockquote>
+  <p>另注：lazy 属性只能声明为变量，常量无效报错。</p>
+</blockquote>
+
+<p>Lazy properties are useful when the initial value for a property is dependent on <strong>outside factors</strong> whose values are not known until after an <em>instance’s initialization is complete</em>.</p>
+
+<h2 id="swifts-properties">Swift’s Properties</h2>
+<p>Properties associate values with a particular <em>class</em>, <em>structure</em>, or <em>enumeration</em>. There are two kind of properties:
+- stored properties, Stored properties store constant and variable values as part of an instance, Stored properties are provided only by classes and structures.
+- computed properties,whereas computed properties calculate (rather than store) a value. Computed properties are provided by classes, structures, and <strong><em>enumerations</em></strong>.</p>
+
+<h2 id="how-to-access-properties">How to access properties</h2>
+<p>You can access the properties of an instance using <strong>dot syntax</strong>. In dot syntax, you write the property name immediately after the instance name, separated by a period (.), <strong>without any spaces</strong>.</p>
+
+<h2 id="reference-types">Reference Types</h2>
+<p>Effectively,reference types are just the different names for the same instance.</p>
+
+<h2 id="choosing-between-classes-and-structures">Choosing Between Classes and Structures</h2>
+<p>Both classes and structures can be use as the build blocks of programmer’s code.</p>
+
+<p>Normally, structure instances are always passed by value, and class instances are always passed by reference. This means that they are suited to different kinds of tasks.</p>
+
+<p>A general guideline for using structures:
+- The structure’s primary purpose is to encapsulate a few relatively simple data values.
+- It is reasonable to expect that the encapsulated values will be copied rather than referenced when you assign or pass around an instance of that structure.
+- Any properties stored by the structure are themselves value types, which would also be expected to be copied rather than referenced.
+- The structure does not need to inherit properties or behavior from another existing type.</p>
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -278,22 +330,6 @@ for i in 0..&lt;count {
 <p>“Wilbur heard the words of praise.He felt the warm milk inside his stomach.He felt the pleasant rubbing of the stick along his itchy back.” The story is a little hard to tell for me.</p>
 
 <p><img src="/asset/charlotte_web_book_cover.jpg" alt="夏洛特的网封面" /></p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/06/02/developer-resource-collections/">
-        Developer Resources Collection
-      </a>
-    </h1>
-
-    <span class="post-date">02 Jun 2016</span>
-
-    <h2 id="iosios-version-stats-">iOS各版本安装统计数据（iOS version stats ）</h2>
-<p><a href="https://developer.apple.com/support/app-store/">Apple官方渠道数据</a></p>
-
-<p><a href="https://david-smith.org/iosversionstats/">AudioBook作者统计数据</a></p>
 
   </div>
   
