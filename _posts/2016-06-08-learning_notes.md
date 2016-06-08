@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Surfing Notes
+title: Learning Notes
 ---
 
 ## 如何禁用sublime text 3的升级检测功能？
 使用Sublime Text 3时，每次打开会默认进行更新监测，若有更新则每次都会弹出更新提醒框，若不想更新检测则需要如下步骤：
 
-1. 进入Preferences -> Settings-User（用户设置） 
-2. 在JSON数据格式中（即curly braces（｛｝）所包括区域）添加一句Json格式配置："update_check":false
+1. 进入Preferences -\> Settings-User（用户设置） 
+2. 在JSON数据格式中（即curly braces（｛｝）所包括区域）添加一句Json格式配置："update\_check":false
 3. 然后关闭且重启Submine Text 3即可
 
 ## Twitter的视频缓存印象
