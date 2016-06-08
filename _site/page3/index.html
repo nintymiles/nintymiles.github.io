@@ -149,6 +149,87 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/06/02/swift-operators/">
+        Swift Operators
+      </a>
+    </h1>
+
+    <span class="post-date">02 Jun 2016</span>
+
+    <h2 id="nil-coalescing-operator-">Nil Coalescing operator (??)</h2>
+<p>The <strong>nil coalescing operator</strong> (<em>a ?? b</em>) unwraps an optional a if it contains a value, or returns a default value b if a is nil. The expression a is always of an optional type. <em>The expression b must <strong>match</strong> the type that is stored inside a.</em></p>
+
+<p><strong>So it is a special tenary operator case for optional value operating.</strong></p>
+
+<p>The nil coalescing operator is shorthand for the code below:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>a != nil ? a! : b
+</code></pre>
+</div>
+
+<h2 id="range-operators">Range Operators</h2>
+<p>Swift includes two range operators, which are shortcuts for expressing a range of values.
+- <strong>Closed Range Operator</strong>     (闭合范围操作符)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>The closed range operator (a...b) defines a range that runs from a to b, and includes the values a and b. The value of a must not be greater than b.
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>for index in 1...5 {
+    print("\(index) times 5 is \(index * 5)")
+}
+// 1 times 5 is 5
+// 2 times 5 is 10
+// 3 times 5 is 15
+// 4 times 5 is 20
+// 5 times 5 is 25
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p><strong>Half Open Range Operator</strong>  (半开范围操作符)</p>
+
+    <p>The half-open range operator (<strong>a..&lt;b</strong>) defines a range that runs from a to b, but does not include b. It is said to be half-open because it contains its first value, but not its final value. As with the closed range operator, the value of a must not be greater than b. If the value of a is equal to b, then the resulting range will be empty.</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>let names = ["Anna", "Alex", "Brian", "Jack"]
+let count = names.count
+for i in 0..&lt;count {
+    print("Person \(i + 1) is called \(names[i])")
+}
+// Person 1 is called Anna
+// Person 2 is called Alex
+// Person 3 is called Brian
+// Person 4 is called Jack
+</code></pre>
+</div>
+
+<blockquote>
+  <p>Half-open ranges are particularly useful when you work with zero-based lists such as arrays</p>
+</blockquote>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/06/02/essay-notes/">
+        Notes
+      </a>
+    </h1>
+
+    <span class="post-date">02 Jun 2016</span>
+
+    <h2 id="section">随笔</h2>
+<p>“Wilbur heard the words of praise.He felt the warm milk inside his stomach.He felt the pleasant rubbing of the stick along his itchy back.” The story is a little hard to tell for me.</p>
+
+<p><img src="/asset/charlotte_web_book_cover.jpg" alt="夏洛特的网封面" /></p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="http://nintymiles.github.io//2016/06/02/developer-resource-collections/">
         Developer Resources Collection
       </a>
@@ -489,169 +570,6 @@ struct SomeStructure {
 <p>进化的人类进入了银河系，开始繁衍扩张。</p>
 
 <p>他们创造了新的神，于是心有所属。</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/05/23/swift-notes/">
-        Swift Learning Notes  - Function
-      </a>
-    </h1>
-
-    <span class="post-date">23 May 2016</span>
-
-    <h2 id="variadic-parameters">Variadic parameters</h2>
-<p>A variadic parameter accepts zero or more values of a specified type.Write variadic parameters by inserting three period characters (…) after the parameter’s type name.</p>
-
-<blockquote>
-  <p>A function may have at most one variadic parameter.</p>
-</blockquote>
-
-<h2 id="in-out-parameters">In-Out parameters</h2>
-<p>You write an in-out parameter by placing the inout keyword at the <strong>start</strong> of its parameter definition. An <strong><em>in-out</em></strong> parameter has a value that is passed in to the function, is modified by the function, and is passed back out of the function to replace the original value.</p>
-
-<blockquote>
-  <p>Usually, function parameters are <strong>constants</strong> by default. Trying to change the value of a function parameter from within the body of that function results in a compile-time error. This means that you can’t change the value of a parameter by mistake.</p>
-</blockquote>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>func swapTwoInts(inout a: Int, inout _ b: Int) {
-    let temporaryA = a
-    a = b
-    b = temporaryA
-}
-</code></pre>
-</div>
-
-<h2 id="function-types">Function types</h2>
-<p>function types just like any other types in Swift.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var mathFunction: (Int, Int) -&gt; Int = addTwoInts
-</code></pre>
-</div>
-
-<ul>
-  <li>Function types as parameter types
-  You can use a function type such as (Int, Int) -&gt; Int as a parameter type for another function. This enables you to leave some aspects of a function’s implementation for the function’s caller to provide when the function is called.</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>func printMathResult(mathFunction: (Int, Int) -&gt; Int, _ a: Int, _ b: Int) {
-    print("Result: \(mathFunction(a, b))")
-}
-printMathResult(addTwoInts, 3, 5)
-// Prints "Result: 8"
-</code></pre>
-</div>
-
-<ul>
-  <li>Function types as return types
-  You can use a function type as the return type of another function. You do this by writing a complete function type immediately after the return arrow (-&gt;) of the returning function.</li>
-</ul>
-
-<h2 id="nested-functions">Nested functions</h2>
-<p>All of the functions you have encountered so far in this chapter have been examples of <strong>global</strong> functions, which are defined at a <strong>global scope</strong>. You can also define functions <strong>inside the bodies</strong> of other functions, known as nested functions.</p>
-
-<blockquote>
-  <p>Nested functions are hidden from the outside world by default, but can still be called and used by their enclosing function. An enclosing function can also <strong>return</strong> one of its nested functions to allow the nested function to be used in <strong>another scope</strong>.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Nested functions can make implementation certain level privacy</strong></p>
-</blockquote>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>func chooseStepFunction(backwards: Bool) -&gt; (Int) -&gt; Int {
-    func stepForward(input: Int) -&gt; Int { return input + 1 }
-    func stepBackward(input: Int) -&gt; Int { return input - 1 }
-    return backwards ? stepBackward : stepForward
-}
-var currentValue = -4
-let moveNearerToZero = chooseStepFunction(currentValue &gt; 0)
-// moveNearerToZero now refers to the nested stepForward() function
-while currentValue != 0 {
-    print("\(currentValue)... ")
-    currentValue = moveNearerToZero(currentValue)
-}
-print("zero!")
-// -4...
-// -3...
-// -2...
-// -1...
-// zero!
-</code></pre>
-</div>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/05/21/swift-notes/">
-        Swift Learning Notes  - Closure
-      </a>
-    </h1>
-
-    <span class="post-date">21 May 2016</span>
-
-    <h2 id="closure-definition">Closure Definition</h2>
-<p><em>Closures are <strong>self-contained blocks of functionality</strong> that can be <strong>passed around</strong> and <strong>used</strong> in your code.</em></p>
-
-<ul>
-  <li>Closures are similar to blocks in C and Objective C</li>
-  <li>Closures can <strong>capture</strong> and <strong>store</strong> <strong>references</strong> to <strong><em>any</em></strong> constants and variables <em>from the context in which they are defined</em>.</li>
-  <li>Global and nested functions are special cases of closures,not all kinds of functions.
-    <ul>
-      <li>Global functions are closures that have a name and do not capture any values</li>
-      <li>Nested functions are closures that have a name and can capture values from their enclosing function</li>
-      <li>Closure expressions are unnamed closures written in a lightweight syntax that can capture values from their surrounding context.</li>
-    </ul>
-  </li>
-  <li><strong>Closure syntax optimisation</strong>
-    <ul>
-      <li>Inferring parameter and return value types from context Implicit returns from single-expression closures (<em>two key point here</em>)</li>
-      <li>Shorthand argument name</li>
-      <li>Trailing closure syntax</li>
-    </ul>
-  </li>
-  <li><strong>Closure syntax expression</strong></li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">
-</span><span class="p">{</span><span class="err">(parameters)</span><span class="w">  </span><span class="err">-&gt;</span><span class="w">  </span><span class="err">return</span><span class="w"> </span><span class="err">type</span><span class="w"> </span><span class="err">in</span><span class="w">      
-    </span><span class="err">code</span><span class="w">      </span><span class="err">//code</span><span class="w"> </span><span class="err">break</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">new</span><span class="w"> </span><span class="err">line</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">necessary</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">sort</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">expression</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
-
-<p>Code implementation block must be started on a new line,even in optimization style。otherwise it will raise error in playground.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>let reversed=names.sort({(s1: String,s2: String) -&gt; Bool in
-        return s1 &gt; s2 })
-
-let revesed2=names.sort({(s1,s2) in
-        return s1 &gt; s2});
-
-let reversed3=names.sort({s1,s2 in
-        s1 &gt; s2})
-        
-let reversed4=names.sort({
-        $0 &lt; $1})
-        
-let reversed5=names.sort( &lt; ) //The most simpliest way is operator function. no new line required, but it seems weired.
-</code></pre>
-</div>
-<ul>
-  <li>Operator function，<strong>Swift’s String type defines its string-specific implementation of the greater-than operator (&gt;) as a function that has two parameters of type String, and returns a value of type Bool*.</strong> *This exactly matches the function type needed by the sort(_:) method. *So the operator function simple style is just a special case? *</li>
-  <li>Trailing closure,<strong>A trailing closure is a closure expression that is written outside of (and after) the parentheses of the function call.</strong>  If you need to pass a closure expression to a function as the function’s final argument and the closure expression is long, it can be useful to write it as a trailing closure instead.</li>
-  <li>Trailing closure more simpler style,If a closure expression is provided as the function or method’s only argument and you provide that expression as a trailing closure, <em>you do not need to write a pair of parentheses ()</em> after the function or method’s name when you call the function</li>
-</ul>
-
-<blockquote>
-  <p>Collection classes’ sort(_:) method_will produce a new collection that has the same size and type as the old one. the original collection is not modified by the sort(_:) method._</p>
-</blockquote>
-
-<h2 id="function-parameter-names">Function Parameter Names</h2>
-<p>Function has two kind of parameter name,one is external parameter name,the other is local parameter name.
-- external parameter name is used to label arguments passed to a function call
-- local parameter name  is used in the implementation of the function</p>
 
   </div>
   
