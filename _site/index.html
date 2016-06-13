@@ -285,6 +285,62 @@ default:
 </code></pre>
 </div>
 
+<h2 id="control-transfer-statement---swift">Control Transfer Statement - Swift</h2>
+<p>Control transfer statements are used to <strong>transfer control to another part of the
+code</strong>. Swift offers  ve control transfer statements; these are continue, break, fallthrough, guard, throws, and return.</p>
+
+<h3 id="the-fallthrough-statement-">The fallthrough statement (“强行通过”)</h3>
+<p>In Swift, the switch statements do not fall through like other languages; however,
+we can use the fallthrough statement to <strong>force them to fall through</strong>. The fallthrough statement can be very <strong><em>dangerous</em></strong> because once a match is found, <strong>the next case defaults to true</strong> and that* code block is executed*. The following example illustrates this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var name = "Jon"
+   var sport = "Baseball"
+   switch sport {
+   case "Baseball":
+       print("\(name) plays Baseball")
+       fallthrough
+   case "Basketball":
+       print("\(name) plays Basketball")
+       fallthrough   //fallthrough告诉代码执行下面的case代码段
+   default:
+       print("Unknown sport")
+   }
+</code></pre>
+</div>
+
+<h3 id="guard-statement">Guard Statement</h3>
+<p>With Swift 2, Apple introduced the new guard statement. The guard statement focuses on performing a function if a condition is false; this allows us to trap errors and perform the error conditions early in our functions:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var x = 9
+   guard x &gt; 10 else {
+     // Do error condition
+return }
+   // Functional code here
+   
+//下面为if condition实现，对比一下优劣
+var x = 9
+   if x &gt; 10 {
+     // Functional code here
+   } else {
+      // Do error condition
+   }
+
+</code></pre>
+</div>
+
+<p>Let’s look at some more examples of the guard statement. The following example shows <strong><em>how we would use the guard statement to verify that an optional contains a valid value</em></strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>func guardFunction(str: String?) {
+       guard let goodStr = str else {
+            print("Input was nil")
+            return 
+        }
+        print("Input was \(goodStr)")
+   }
+</code></pre>
+</div>
+
+
   </div>
   
   <div class="post">

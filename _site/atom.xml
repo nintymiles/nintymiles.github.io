@@ -4,7 +4,7 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-06-13T15:30:45+08:00</updated>
+ <updated>2016-06-13T17:58:44+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>SeanRen</name>
@@ -139,6 +139,62 @@ default:
    }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;h2 id=&quot;control-transfer-statement---swift&quot;&gt;Control Transfer Statement - Swift&lt;/h2&gt;
+&lt;p&gt;Control transfer statements are used to &lt;strong&gt;transfer control to another part of the
+code&lt;/strong&gt;. Swift offers  ve control transfer statements; these are continue, break, fallthrough, guard, throws, and return.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-fallthrough-statement-&quot;&gt;The fallthrough statement (“强行通过”)&lt;/h3&gt;
+&lt;p&gt;In Swift, the switch statements do not fall through like other languages; however,
+we can use the fallthrough statement to &lt;strong&gt;force them to fall through&lt;/strong&gt;. The fallthrough statement can be very &lt;strong&gt;&lt;em&gt;dangerous&lt;/em&gt;&lt;/strong&gt; because once a match is found, &lt;strong&gt;the next case defaults to true&lt;/strong&gt; and that* code block is executed*. The following example illustrates this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var name = &quot;Jon&quot;
+   var sport = &quot;Baseball&quot;
+   switch sport {
+   case &quot;Baseball&quot;:
+       print(&quot;\(name) plays Baseball&quot;)
+       fallthrough
+   case &quot;Basketball&quot;:
+       print(&quot;\(name) plays Basketball&quot;)
+       fallthrough   //fallthrough告诉代码执行下面的case代码段
+   default:
+       print(&quot;Unknown sport&quot;)
+   }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;guard-statement&quot;&gt;Guard Statement&lt;/h3&gt;
+&lt;p&gt;With Swift 2, Apple introduced the new guard statement. The guard statement focuses on performing a function if a condition is false; this allows us to trap errors and perform the error conditions early in our functions:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var x = 9
+   guard x &amp;gt; 10 else {
+     // Do error condition
+return }
+   // Functional code here
+   
+//下面为if condition实现，对比一下优劣
+var x = 9
+   if x &amp;gt; 10 {
+     // Functional code here
+   } else {
+      // Do error condition
+   }
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Let’s look at some more examples of the guard statement. The following example shows &lt;strong&gt;&lt;em&gt;how we would use the guard statement to verify that an optional contains a valid value&lt;/em&gt;&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func guardFunction(str: String?) {
+       guard let goodStr = str else {
+            print(&quot;Input was nil&quot;)
+            return 
+        }
+        print(&quot;Input was \(goodStr)&quot;)
+   }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 </content>
  </entry>
  

@@ -121,3 +121,59 @@ Product {
        print("You ordered the Puzzle \(name) for \(price)")
    }
 ```
+
+## Control Transfer Statement - Swift
+Control transfer statements are used to **transfer control to another part of the
+code**. Swift offers  ve control transfer statements; these are continue, break, fallthrough, guard, throws, and return. 
+
+### The fallthrough statement ("强行通过")
+In Swift, the switch statements do not fall through like other languages; however,
+we can use the fallthrough statement to **force them to fall through**. The fallthrough statement can be very ***dangerous*** because once a match is found, **the next case defaults to true** and that* code block is executed*. The following example illustrates this:
+  
+```
+var name = "Jon"
+   var sport = "Baseball"
+   switch sport {
+   case "Baseball":
+       print("\(name) plays Baseball")
+       fallthrough
+   case "Basketball":
+       print("\(name) plays Basketball")
+       fallthrough   //fallthrough告诉代码执行下面的case代码段
+   default:
+       print("Unknown sport")
+   }
+```
+
+### Guard Statement
+With Swift 2, Apple introduced the new guard statement. The guard statement focuses on performing a function if a condition is false; this allows us to trap errors and perform the error conditions early in our functions:
+
+```
+var x = 9
+   guard x > 10 else {
+     // Do error condition
+return }
+   // Functional code here
+   
+//下面为if condition实现，对比一下优劣
+var x = 9
+   if x > 10 {
+     // Functional code here
+   } else {
+      // Do error condition
+   }
+
+```
+
+Let's look at some more examples of the guard statement. The following example shows ***how we would use the guard statement to verify that an optional contains a valid value***:
+   
+```
+func guardFunction(str: String?) {
+       guard let goodStr = str else {
+            print("Input was nil")
+            return 
+        }
+        print("Input was \(goodStr)")
+   }
+```
+
