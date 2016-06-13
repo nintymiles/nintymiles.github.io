@@ -117,6 +117,12 @@
         
       
     
+      
+         
+        	
+        
+      
+    
 
     <!--<a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>
     <a class="sidebar-nav-item" href="">GitHub project</a>-->
@@ -146,6 +152,212 @@
 
       <div class="container content">
         <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/05/01/swift-overview-2/">
+        Swift概要2（Swift Overview 2）
+      </a>
+    </h1>
+
+    <span class="post-date">01 May 2016</span>
+
+    <h1 id="swift-overview-2">Swift Overview 2</h1>
+<hr />
+<blockquote>
+  <p>Swift can be thought of as Objective-C reimagined using modern concepts and safe programming patterns. In Apple’s own words, Swift is like Objective-C without
+the C. Chris Lattner, the creator of Swift, said Swift took language ideas from Objective-C, Rust, Haskell, Ruby, Python, C#, CLU, and far too many others to list. At WWDC 2014, Apple really stressed that Swift was safe by default. Swift was designed to eliminate many common programming errors, making applications more secure and less prone to bugs. Swift 2 added two additional core features to the language—availability and error handling—which are designed to make it even easier to write safe code.</p>
+</blockquote>
+
+<h2 id="comparison-operators">比较操作符 （Comparison Operators)</h2>
+
+<p>Swift中的比较操作符用于执行简单的数学操作，比如比较数字和值。常用的操作符有：</p>
+
+<ul>
+  <li><strong>&gt;</strong>     大于（Greater Than）</li>
+  <li><strong>&lt;</strong>     小于（Less Than）</li>
+  <li><strong>==</strong>    等于（Equal To）</li>
+  <li><strong>&gt;=</strong>    大于等于（Greater Than or Equal To ）</li>
+  <li><strong>&amp;&amp;</strong>    和（AND）</li>
+  <li><strong>||</strong>    或（OR）</li>
+</ul>
+
+<h2 id="string-interpolation">字符插入 （String Interpolation）</h2>
+
+<p>将String输出到控制台意义重大^_^,如何在print语句中将变量组合为String或者合适的值将更有价值。在Swift中，这种操作称为String Interpolation。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">apples</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"Sally has </span><span class="se">\(</span><span class="n">apples</span><span class="se">)</span><span class="s"> apples"</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>看到上面的例子吗？使用格式：<strong>\(variable name)</strong>，就可以将任意变量的值转换为String。是不是很容易。在括号中甚至可以进行数学操作，如下：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="s">"Sally has </span><span class="se">\(</span><span class="n">apples</span> <span class="o">-</span> <span class="mi">5</span><span class="se">)</span><span class="s"> apples"</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h2 id="ifelse-ifelse-statements">If/else语句 (If/else statements)</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">batmanCoolness</span> <span class="o">&gt;</span> <span class="n">spidermanCoolness</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">spidermanCoolness</span> <span class="o">=</span> <span class="n">spidermanCoolness</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">batmanCoolness</span> <span class="o">&gt;=</span> <span class="n">spidermanCoolness</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">spidermanCoolness</span> <span class="o">=</span> <span class="n">spidermanCoolness</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="n">spidermanCoolness</span> <span class="o">=</span> <span class="n">spidermanCoolness</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="while-while-loops">While循环 （While Loops）</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">secondsLeft</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">secondsLeft</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">secondsLeft</span><span class="p">)</span>
+  <span class="n">secondsLeft</span> <span class="o">=</span> <span class="n">secondsLeft</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"Blast off!"</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h2 id="breakcontinue">Break和Continue语句</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">cokesLeft</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="k">var</span> <span class="nv">fantasLeft</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="k">while</span><span class="p">(</span><span class="n">cokesLeft</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>  <span class="p">{</span>
+  <span class="nf">print</span><span class="p">(</span><span class="s">"You have </span><span class="se">\(</span><span class="n">cokesLeft</span><span class="se">)</span><span class="s"> Cokes left."</span><span class="p">)</span>
+  <span class="n">cokesLeft</span> <span class="o">=</span> <span class="n">cokesLeft</span> <span class="o">-</span> <span class="mi">1</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">cokesLeft</span> <span class="o">&lt;=</span> <span class="n">fantasLeft</span><span class="p">)</span>  <span class="p">{</span>
+<span class="k">break</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"You stop drinking Cokes."</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">numbers</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span><span class="p">(</span><span class="n">numbers</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)</span>  <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">numbers</span> <span class="o">==</span> <span class="mi">9</span><span class="p">)</span>  <span class="p">{</span>
+    <span class="n">numbers</span> <span class="o">=</span> <span class="n">numbers</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">continue</span>
+  <span class="p">}</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+  <span class="n">numbers</span> <span class="o">=</span> <span class="n">numbers</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/04/28/swift-overview/">
+        Swift概要（Swift Overview）
+      </a>
+    </h1>
+
+    <span class="post-date">28 Apr 2016</span>
+
+    <h1 id="swift-overview">Swift Overview</h1>
+<hr />
+<blockquote>
+  <p>Swift是一门新语言.Swift在设计时结合了C和ObjectiveC的许多特性，但又不受C的各种限制，Swift采用了安全的编程模型并且添加了许多新特性。</p>
+</blockquote>
+
+<!-- -->
+<blockquote>
+  <p>Swift采用了ObjectiveC的命名参数以及动态对象模型，从而可以无缝对接到现有的Cocoa框架。</p>
+</blockquote>
+
+<!-- -->
+<blockquote>
+  <p>Swift使用自动引用计数（Automatic Reference Counting, ARC）来简化内存管理。</p>
+</blockquote>
+
+<!--开头 -->
+<p>通常来说，编程语言教程中的第一个程序应该在屏幕上打印“Hello, world”。在 Swift 中，可以用一行代码实现：</p>
+
+<blockquote>
+  <p>print(“Hello, world!”)</p>
+</blockquote>
+
+<p>在 Swift 中，这行代码就是一个完整的程序。你不需要为了输入输出或者字符串处理导入一个单独的库。全局作用域中的代码会被自动当做程序的入口点，所以你也不需要main()函数。</p>
+
+<p>你同样不需要在每个语句结尾写上分号。</p>
+
+<h2 id="variable">变量（Variable）声明</h2>
+
+<p>变量声明语法：
+&gt;var 你的变量名称:数据类型=变量初始值</p>
+
+<p>变量要符合下面的原则：</p>
+
+<ul>
+  <li><strong>你的变量名称</strong>：你可以用任何字符命名变量，比如age和🐶🐱</li>
+  <li><strong>变量类型</strong>：变量类型，比如Int和String,更多类型会在后面列出</li>
+  <li><strong>变量初始值</strong>：你要赋给变量的初始值，根据类型。</li>
+</ul>
+
+<h2 id="types">数据类型（Types）</h2>
+
+<p>Swift提供下面的基础数据类型</p>
+
+<ul>
+  <li><strong>Int</strong>：整数</li>
+  <li><strong>Double</strong>：十进位数</li>
+  <li><strong>Boolean</strong>：true,false</li>
+  <li><strong>String</strong>：string (letters and words)</li>
+</ul>
+
+<h2 id="constants">常量 （Constants）</h2>
+
+<p>特定类型的变量称为常量，常量是指你只需要决定一次，但是可以使用很多次的特殊变量。</p>
+
+<p>使用关键字<strong>let</strong>来声明常量。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">life</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="k">let</span> <span class="nv">pi</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="k">let</span> <span class="nv">canTouchThis</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="k">let</span> <span class="nv">captain</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"Kirk"</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>如果尝试给常量赋值，会得到编译器错误。</p>
+</blockquote>
+
+<h2 id="inferred-typing">推断类型（Inferred Typing）</h2>
+
+<p>Swift提供一种新特性称之为<strong>推断类型（Inferred Typing）</strong>。这意味着如果在定义和初始化变量时<strong>提供足够的信息</strong>，Swift可以自动预测数据类型，从而不需要每次都输入类型。
+在这个特性的支持下，之前的变量声明语法可以变为：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">你的变量名称</span><span class="o">=</span><span class="n">变量初始值</span>
+<span class="k">let</span> <span class="nv">你的常量名称</span><span class="o">=</span><span class="n">常量初始值</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>注意描述推断类型的“<strong>提供足够的信息</strong>”，如果 “var intNumber=7”没有问题，但是”var doubleNumber=7“则可能达不到你的类型预期，doubleNumber会被默认推断为Int类型，提供足够的信息则需要”var doubleNumber=7.0“。</p>
+</blockquote>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/04/23/kid-portrait-copying-painting/">
+        A kid portrait copying painting
+      </a>
+    </h1>
+
+    <span class="post-date">23 Apr 2016</span>
+
+    <h5 id="willies-kid-portrait-copying-painting-in-class">Willie’s kid portrait copying painting in class</h5>
+
+<p><img src="/asset/painting/kid_portrait_copying_painting.jpg" alt="image description" /></p>
+
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -184,87 +396,6 @@
 </blockquote>
 
 <p><img src="/asset/xizang/2-guide_mountains.jpg" alt="image description" /></p>
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/04/13/willie-blue-and-white-porcelain/">
-        Willie's Blue and White Porcelain
-      </a>
-    </h1>
-
-    <span class="post-date">13 Apr 2016</span>
-
-    <h5 id="section">青花瓷</h5>
-
-<blockquote>
-  <p>Just records the grown up tracks.</p>
-</blockquote>
-
-<p><img src="/asset/painting/blueandwhiteporcelain.jpg" alt="image description" /></p>
-
-<hr />
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/04/10/spring-flowers/">
-        This Spring Flowers
-      </a>
-    </h1>
-
-    <span class="post-date">10 Apr 2016</span>
-
-    <h5 id="so-many-kinds-of-flowers-blossom">So many kinds of flowers blossom.</h5>
-
-<blockquote>
-  <p>I was collecting all kinds of flowers this spring,so the below shows are.</p>
-</blockquote>
-
-<h6 id="the-flowers-people-wont-see">The flowers people wont see</h6>
-
-<p><img src="/asset/springflowers2016/flowers_invisible_1000.jpg" alt="image description" /></p>
-
-<h6 id="peach-blossom">peach blossom</h6>
-
-<p><img src="/asset/springflowers2016/peach_flowers1.jpg" alt="image description" />
-<img src="/asset/springflowers2016/peach_flower2.jpg" alt="image description" /></p>
-
-<h6 id="tulip-blossom">tulip blossom</h6>
-
-<p><img src="/asset/springflowers2016/tulip_flowers.jpg" alt="image description" /></p>
-
-<h6 id="cherry-apple-blossom">cherry-apple blossom</h6>
-
-<p><img src="/asset/springflowers2016/cherry_apple_flowers.jpg" alt="image description" /></p>
-
-<h6 id="so-many-kinds-of-other-flowers">so many kinds of other flowers</h6>
-
-<p><img src="/asset/springflowers2016/all_kinds_of_flowers.jpg" alt="image description" />
-<img src="/asset/springflowers2016/all_kinds_of_flowers2.jpg" alt="image description" />
-—</p>
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/04/06/ultraman-in-willie-eyes/">
-        The Ultramans in Willie's painting
-      </a>
-    </h1>
-
-    <span class="post-date">06 Apr 2016</span>
-
-    <h5 id="the-kids-always-have-extraordinary-imagination">The kids always have extraordinary imagination.</h5>
-
-<p><img src="/asset/painting/ultranman-drawing0406.jpg" alt="image description" /></p>
-
-<hr />
 
 
   </div>

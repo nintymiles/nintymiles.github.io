@@ -117,6 +117,12 @@
         
       
     
+      
+         
+        	
+        
+      
+    
 
     <!--<a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>
     <a class="sidebar-nav-item" href="">GitHub project</a>-->
@@ -146,6 +152,146 @@
 
       <div class="container content">
         <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/06/07/surfing-notes/">
+        Mac快速锁屏及其它
+      </a>
+    </h1>
+
+    <span class="post-date">07 Jun 2016</span>
+
+    <h2 id="mac">Mac如何快捷锁屏的实现方式</h2>
+<p>Mac快速锁屏的设置步骤：</p>
+
+<ol>
+  <li>在security&amp;privacy-&gt;general中启用‘required password immediately after sleep or screen save launched</li>
+  <li>使用command+option+power(eject)快捷键进入睡眠</li>
+</ol>
+
+<blockquote>
+  <p>注：ctrl＋shift＋power（eject）是休眠快捷键</p>
+</blockquote>
+
+<h2 id="jekyll-post">Jekyll post如何使用草稿模式</h2>
+<p>草稿是没有日期的文章。它们是你还在创作中而暂时不想发表的文章。想要开始使用草稿，你需要在网站根目录下创建一个名为 _drafts 的文件夹（如在目录结构章节里描述的），并新建你的第一份草稿：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>|-- _drafts/
+|   |-- a-draft-post.md
+</code></pre>
+</div>
+
+<p>为了预览你拥有草稿的网站，运行 jekyll serve 或者带有 –drafts 配置选项的 jekyll build。此两种方法皆会将 Time.now 的值赋予草稿文章，作为其发布日期，所以你将看到草稿文章作为最新文章被生成。</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/06/07/learning-notes/">
+        Learning notes
+      </a>
+    </h1>
+
+    <span class="post-date">07 Jun 2016</span>
+
+    <h2 id="section">计数排序的理解</h2>
+<ol>
+  <li>先找出数组中的最大元素，然后以最大元素值加1建立计数数组</li>
+  <li>将实际元素在计数数组作为索引值，并将此位置存储出现次数计数</li>
+  <li>把从头到尾的索引值的出现次数一次当前一个和后一个相加（从1开始），然后得到每个元素的其实际索引位置。最后在1:1的新数组中将是实际值赋值到实际索引位置。</li>
+  <li>因为实际计数每个数值的出现都计算在内，而数组索引从零开始，所以计算出的索引值实际使用时都要减1？</li>
+</ol>
+
+<h2 id="counting-sort">Counting sort</h2>
+<p>To understand the algorithm let’s walk through a small example.</p>
+
+<p>Consider the array: <code class="highlighter-rouge">[ 10, 9, 8, 7, 1, 2, 7, 3 ]</code></p>
+
+<h3 id="step-1">Step 1:</h3>
+
+<p>The first step is to count the total number of occurrences for each item in the array. The output for the first step would be a new array that looks as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Index 0 1 2 3 4 5 6 7 8 9 10
+</code></pre>
+</div>
+
+<p>Here is the code to accomplish this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">maxElement</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="nf">maxElement</span><span class="p">()</span> <span class="p">??</span> <span class="mi">0</span>
+  
+  <span class="k">var</span> <span class="nv">countArray</span> <span class="o">=</span> <span class="err">\</span><span class="p">[</span><span class="kt">Int</span><span class="p">](</span><span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">(</span><span class="n">maxElement</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="nv">repeatedValue</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">element</span> <span class="k">in</span> <span class="n">array</span> <span class="p">{</span>
+     <span class="n">countArray</span><span class="p">[</span><span class="n">element</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="step-2">Step 2:</h3>
+
+<p>In this step the algorithm tries to determine the number of elements that are placed before each element. Since, you already know the total occurrences for each element you can use this information to your advantage. The way it works is to sum up the previous counts and store them at each index.</p>
+
+<p>The count array would be as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Index 0 1 2 3 4 5 6 7 8 9 10
+Count 0 1 2 3 3 3 3 5 6 7 8
+</code></pre>
+</div>
+
+<p>The code for step 2 is:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="k">for</span> <span class="n">index</span> <span class="k">in</span> <span class="mi">1</span> <span class="o">..&lt;</span> <span class="n">countArray</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">sum</span> <span class="o">=</span> <span class="n">countArray</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="n">countArray</span><span class="p">[</span><span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">countArray</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">sum</span>
+  <span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="step-3">Step 3:</h3>
+
+<p>This is the last step in the algorithm. Each element in the original array is placed at the position defined by the output of step 2. For example, the number 10 would be placed at an index of 7 in the output array. Also, as you place the elements you need to reduce the count by 1 as those many elements are reduced from the array.</p>
+
+<p>The final output would be:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Index  0 1 2 3 4 5 6 7
+Output 1 2 3 7 7 8 9 10
+</code></pre>
+</div>
+
+<p>Here is the code for this final step:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">sortedArray</span> <span class="o">=</span> <span class="err">\</span><span class="p">[</span><span class="kt">Int</span><span class="p">](</span><span class="nv">count</span><span class="p">:</span> <span class="n">array</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="nv">repeatedValue</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">element</span> <span class="k">in</span> <span class="n">array</span> <span class="p">{</span>
+    <span class="n">countArray</span><span class="p">[</span><span class="n">element</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="n">sortedArray</span><span class="p">[</span><span class="n">countArray</span><span class="p">[</span><span class="n">element</span><span class="p">]]</span> <span class="o">=</span> <span class="n">element</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">sortedArray</span>
+</code></pre>
+</div>
+
+<h2 id="performance">Performance</h2>
+
+<p>The algorithm uses simple loops to sort a collection. Hence, the time to run the entire algorithm is <strong>O(n+k)</strong> where <strong>O(n)</strong> represents the loops that are required to initialize the output arrays and <strong>O(k)</strong> is the loop required to create the count array.</p>
+
+<p>The algorithm uses arrays of length <strong>n + 1</strong> and <strong>n</strong>, so the total space required is <strong>O(2n)</strong>. Hence for collections where the keys are scattered in a dense area along the number line it can be space efficient.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/06/04/reading-notes/">
+        Reading notes
+      </a>
+    </h1>
+
+    <span class="post-date">04 Jun 2016</span>
+
+    <h2 id="section">房间里的大象 - 刘瑜</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>沉默可能来源于善意，也可能来源于怯懦，沉默也可能是群体认同需要。沉默的人越多，打破沉默越困难。皇帝的新装，屋里的大象，沉默的大多数。
+</code></pre>
+</div>
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -193,111 +339,6 @@
 
 <h2 id="fed-likely-to-avoid-rate-hike-before-britain-votes-on-leaving-eu">Fed likely to avoid rate hike before Britain votes on leaving EU</h2>
 <p>The Fed Reserve will be <strong>forced?</strong> to delay a rate hike on its June meeting because mounting concern over the economic fallout from Britain’s vote on whether to leave the European Union.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/06/03/swift-notes/">
-        Swfit Notes - Lazy关键字
-      </a>
-    </h1>
-
-    <span class="post-date">03 Jun 2016</span>
-
-    <h2 id="lazy-stored-properties">Lazy stored properties</h2>
-<p>A <strong>lazy</strong> stored property is a property whose initial value is not calculated <strong>until the first time it is used</strong>. You indicate a lazy stored property <em>by writing the <strong>lazy modifier</strong> before its declaration</em>.</p>
-
-<blockquote>
-  <p>lazy关键字标识的属性的含义是，这个属性的值将在第一次使用前才会被初始化，虽然可能已经填写了初始化代码。</p>
-</blockquote>
-
-<blockquote>
-  <p>另注：lazy 属性只能声明为变量，常量无效报错。</p>
-</blockquote>
-
-<p>Lazy properties are useful when the initial value for a property is dependent on <strong>outside factors</strong> whose values are not known until after an <em>instance’s initialization is complete</em>.</p>
-
-<h2 id="swifts-properties">Swift’s Properties</h2>
-<p>Properties associate values with a particular <em>class</em>, <em>structure</em>, or <em>enumeration</em>. There are two kind of properties:
-- stored properties, Stored properties store constant and variable values as part of an instance, Stored properties are provided only by classes and structures.
-- computed properties,whereas computed properties calculate (rather than store) a value. Computed properties are provided by classes, structures, and <strong><em>enumerations</em></strong>.</p>
-
-<h2 id="how-to-access-properties">How to access properties</h2>
-<p>You can access the properties of an instance using <strong>dot syntax</strong>. In dot syntax, you write the property name immediately after the instance name, separated by a period (.), <strong>without any spaces</strong>.</p>
-
-<h2 id="reference-types">Reference Types</h2>
-<p>Effectively,reference types are just the different names for the same instance.</p>
-
-<h2 id="choosing-between-classes-and-structures">Choosing Between Classes and Structures</h2>
-<p>Both classes and structures can be use as the build blocks of programmer’s code.</p>
-
-<p>Normally, structure instances are always passed by value, and class instances are always passed by reference. This means that they are suited to different kinds of tasks.</p>
-
-<p>A general guideline for using structures:
-- The structure’s primary purpose is to encapsulate a few relatively simple data values.
-- It is reasonable to expect that the encapsulated values will be copied rather than referenced when you assign or pass around an instance of that structure.
-- Any properties stored by the structure are themselves value types, which would also be expected to be copied rather than referenced.
-- The structure does not need to inherit properties or behavior from another existing type.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/06/03/learning-notes/">
-        Learning notes
-      </a>
-    </h1>
-
-    <span class="post-date">03 Jun 2016</span>
-
-    <h2 id="sketchscale-tool">Sketch的Scale Tool</h2>
-<p>使用Cmd+K激活。The tool isn’t same as resizing,it actually scales every property,size,radius,border,<strong>shadow</strong> and inner <strong>shadow</strong></p>
-
-<blockquote>
-  <p>The Sacle Tool even can take effect on Artboard.</p>
-</blockquote>
-
-<h2 id="sketchalt">Sketch的Alt键</h2>
-<p>选中图层后，摁住alt键，会显示选中图层和其他图层的距离(dist)</p>
-
-<h2 id="markdown">MarkDown格式问题</h2>
-<p>普通正文和有格式正文中间须有空行。比如普通正文和unordered list格式之间，但是xxx list格式及缩进xxx list格式之间不需要空行区隔，如果有空行则实际解析也为空行，但是正常的回车符区隔是少不了的。</p>
-
-<blockquote>
-  <p>对于jekyll post尤其要注意这点。</p>
-</blockquote>
-
-<h2 id="mac-os-x-ios-">开发Mac OS X ／iOS 图片文件归档应用</h2>
-
-<h2 id="android-activities">Android Activities怎样工作？</h2>
-
-<ul>
-  <li>An app is a collection of activities, layouts, and other resources.</li>
-  <li>By default, each app runs within its own process.</li>
-  <li>You can start an activity in another application by passing an intent with startActivity().（startActivity能力超出预期？）</li>
-  <li>When an activity needs to start, Android checks if there’s already a process for that app.</li>
-  <li>When Android starts an activity, it calls its onCreate() method.(此处入口)</li>
-</ul>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/06/03/developer-resource-collections/">
-        如何阻止恶意数据爬虫
-      </a>
-    </h1>
-
-    <span class="post-date">03 Jun 2016</span>
-
-    <h2 id="section">针对恶意数据爬虫，有好的方法吗？</h2>
-<p>问了一下专门搞安全的，有两种方式：</p>
-
-<ul>
-  <li>一种是使用robot协议，过滤一下，只允许你希望的</li>
-  <li>另一种是在Nigix之类的配置中写href过滤</li>
-</ul>
 
   </div>
   

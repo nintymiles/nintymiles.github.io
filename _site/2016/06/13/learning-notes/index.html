@@ -11,7 +11,7 @@
 
   <title>
     
-      Willie's Painting in Kindergarten &middot; 九十里
+      Learning Notes &middot; 九十里
     
   </title>
 
@@ -152,16 +152,31 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Willie's Painting in Kindergarten</h1>
-  <span class="post-date">01 Apr 2016</span>
-  <h5 id="willie-naming-it">Willie naming it：</h5>
-<blockquote>
-  <p>《葡萄与蜗牛》</p>
-</blockquote>
+  <h1 class="post-title">Learning Notes</h1>
+  <span class="post-date">13 Jun 2016</span>
+  <h2 id="swifthow-curly-brackets-and-parentheses-are-used-in-swift">Swift中大括号和括号的用法（how curly brackets and parentheses are used in Swift）</h2>
 
-<p><img src="/asset/painting/xuan_painting0401.jpg" alt="image description" /></p>
+<ul>
+  <li>In Swift, unlike other C-like languages, curly brackets are <strong><em>required</em></strong> for <em>conditional statements</em> and <em>loops</em>.</li>
+  <li>Unlike other C-like languages, the parentheses <strong>around</strong> <em>conditional expressions</em> in Swift are <strong><em>optional</em></strong>.</li>
+</ul>
 
-<hr />
+<h2 id="repeat-while">Repeat-While</h2>
+<p>The difference between the while and repeat-while loops is that the while loops check the conditional statement prior to executing the block of code the  rst time; therefore, all the variables in the conditional statements need to be initialized prior to executing the while loop. The repeat-while loop will run through the loop block prior to checking the conditional statement for the  rst time; this means that we can initialize the variables in the conditional block of code. Use of the repeat-while loop is preferred when the conditional statement is dependent on the code in the loop block. The repeat-while loop takes the following format:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>//syntax
+repeat {
+      block of code
+   } while condition
+   
+//example
+var ran: Int
+   repeat {
+       ran = Int(arc4random() % 5)
+   } while ran &lt; 4
+   
+</code></pre>
+</div>
 
 
 </div>
@@ -169,15 +184,6 @@
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/2016/06/13/learning-notes/">
-            Learning Notes
-            <small>13 Jun 2016</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -193,6 +199,15 @@
           <a href="/2016/06/09/tourist-guide-notes/">
             Tokyo Tourist Guide Notes
             <small>09 Jun 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/06/08/surfing-notes/">
+            Surfing Notes
+            <small>08 Jun 2016</small>
           </a>
         </h3>
       </li>
