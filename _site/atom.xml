@@ -4,7 +4,7 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-06-13T14:04:14+08:00</updated>
+ <updated>2016-06-13T15:30:45+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>SeanRen</name>
@@ -41,6 +41,104 @@ var ran: Int
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
+&lt;h2 id=&quot;switch-statement&quot;&gt;Switch Statement&lt;/h2&gt;
+&lt;p&gt;The switch statement takes a value and then compares it to the several possible matches, and executes the appropriate block of code based on the  rst successful match. The switch statement is an alternative to using the if-else statement when there could be several possible matches. The switch statement takes the following format:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;switch value {
+     case match1 :
+       block of code
+     case match2 :
+       block of code
+     ...... as many cases as needed
+     default :
+       block of code
+   }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Unlike&lt;/em&gt;&lt;/strong&gt; the switch statements in most other languages, in Swift, it &lt;strong&gt;does not fall through to the next case statement&lt;/strong&gt;; therefore, we &lt;strong&gt;do not need&lt;/strong&gt; to use a &lt;strong&gt;break&lt;/strong&gt; statement to prevent the fall through. This is** another safety feature that is built into Swift** since one of the most common programming mistakes, with the switch statement, made by beginner programmers is to forget the break statement at the end of the case statement.&lt;/p&gt;
+
+&lt;p&gt;It is possible to include multiple items in a single case. To set multiple items within a single case, we would need to separate the items with a comma. Let’s look at how we would use the switch statement to tell us if a character was a vowel or a consonant:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var char : Character = &quot;e&quot;
+   switch char {
+   case &quot;a&quot;, &quot;e&quot;, &quot;i&quot;, &quot;o&quot;, &quot;u&quot;:
+       print(&quot;letter is a vowel&quot;)
+   case &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;f&quot;, &quot;g&quot;, &quot;h&quot;, &quot;j&quot;, &quot;k&quot;, &quot;l&quot;, &quot;m&quot;,
+   &quot;n&quot;, &quot;p&quot;, &quot;q&quot;, &quot;r&quot;, &quot;s&quot;, &quot;t&quot;, &quot;v&quot;, &quot;w&quot;, &quot;x&quot;, &quot;y&quot;, &quot;z&quot;:
+       print(&quot;letter is a consonant&quot;)
+   default:
+       print(&quot;unknown letter&quot;)
+   }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It is also possible to check the value of a switch statement to see whether it is included in a &lt;strong&gt;&lt;em&gt;range&lt;/em&gt;&lt;/strong&gt;. To do this, we would use a range operator in the case statement, as shown in the following example:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var grade = 93
+   switch grade {
+   case 90...100:
+       print(&quot;Grade is an A&quot;)
+   case 80...89:
+       print(&quot;Grade is a B&quot;)
+   case 70...79:
+       print(&quot;Grade is an C&quot;)
+   case 60...69:
+ print(&quot;Grade is a D&quot;)
+[ 94 ]
+  
+case 0...59:
+    print(&quot;Grade is a F&quot;)
+default:
+    print(&quot;Unknown Grade&quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In Swift, any case statement can contain** an optional guard condition** that can provide an additional condition to validate. The guard condition is defined with the &lt;strong&gt;where&lt;/strong&gt; keyword. Let’s say, in our preceding example, we had students who were receiving special assistance in the class and we wanted to de ne a grade of D for them in the range of 55 to 69. The following example shows how to do this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var studentId = 4
+   var grade = 57
+   switch grade {
+   case 90...100:
+       print(&quot;Grade is an A&quot;)
+   case 80...89:
+       print(&quot;Grade is a B&quot;)
+   case 70...79:
+       print(&quot;Grade is an C&quot;)
+   case 55...69 where studentId == 4:
+       print(&quot;Grade is a D for student 4&quot;)
+   case 60...69:
+       print(&quot;Grade is a D&quot;)
+   case 0...59:
+       print(&quot;Grade is a F&quot;)
+   default:
+       print(&quot;Unknown Grade&quot;)
+   }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;One thing to keep in mind with the guard expression is that Swift will attempt to match the value starting with the  rst case statement and working its way down checking each case statement in order. This means that if we put the case statement with the guard expression after the Grade F case statement, then the case statement with the guard expression would &lt;strong&gt;never be reached&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Every switch statement must have a match for all the possible values. This means that unless we are matching against an enum, each switch statement must have a &lt;strong&gt;default&lt;/strong&gt; case.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Switch statements are also &lt;strong&gt;extremely useful&lt;/strong&gt; for evaluating &lt;strong&gt;enumerations&lt;/strong&gt;. Since an enumeration has a  nite number of values, if we provide a case statement for all the values in the enumeration, we do not need to provide a default case. The following example shows how we can use a switch statement to evaluate an enumeration:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Product {
+       case Book(String, Double, Int)
+       case Puzzle(String, Double)
+   }
+   var order = Product.Book(&quot;Mastering Swift 2&quot;, 49.99, 2015)
+   switch order {
+   case .Book(let name, let price, let year):
+       print(&quot;You ordered the book \(name) for \(price)&quot;)
+   case .Puzzle(let name, let price):
+       print(&quot;You ordered the Puzzle \(name) for \(price)&quot;)
+   }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 </content>
  </entry>
  
@@ -98,7 +196,8 @@ var ran: Int
     上野公园周边美食选择极多，从物美价廉的街巷美食到赫赫有名的人气料理，均能一饱口福，浅草寺与秋叶原周边也有许多平民美食    
 上野公园周边美食
  
-    盖饭－吉野家日本牛肉饭专门店(上野站前店)
+    盖饭
+吉野家日本牛肉饭专门店(上野站前店)
 位置：JR上野站下站后步行约160m，从上野公园步行过来约7分钟
 价格：人均40RMB
 百年名店，性价比极高，蚂蜂窝人气美食

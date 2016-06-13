@@ -178,6 +178,104 @@ var ran: Int
 </code></pre>
 </div>
 
+<h2 id="switch-statement">Switch Statement</h2>
+<p>The switch statement takes a value and then compares it to the several possible matches, and executes the appropriate block of code based on the  rst successful match. The switch statement is an alternative to using the if-else statement when there could be several possible matches. The switch statement takes the following format:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>switch value {
+     case match1 :
+       block of code
+     case match2 :
+       block of code
+     ...... as many cases as needed
+     default :
+       block of code
+   }
+</code></pre>
+</div>
+
+<p><strong><em>Unlike</em></strong> the switch statements in most other languages, in Swift, it <strong>does not fall through to the next case statement</strong>; therefore, we <strong>do not need</strong> to use a <strong>break</strong> statement to prevent the fall through. This is** another safety feature that is built into Swift** since one of the most common programming mistakes, with the switch statement, made by beginner programmers is to forget the break statement at the end of the case statement.</p>
+
+<p>It is possible to include multiple items in a single case. To set multiple items within a single case, we would need to separate the items with a comma. Let’s look at how we would use the switch statement to tell us if a character was a vowel or a consonant:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var char : Character = "e"
+   switch char {
+   case "a", "e", "i", "o", "u":
+       print("letter is a vowel")
+   case "b", "c", "d", "f", "g", "h", "j", "k", "l", "m",
+   "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z":
+       print("letter is a consonant")
+   default:
+       print("unknown letter")
+   }
+</code></pre>
+</div>
+
+<p>It is also possible to check the value of a switch statement to see whether it is included in a <strong><em>range</em></strong>. To do this, we would use a range operator in the case statement, as shown in the following example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var grade = 93
+   switch grade {
+   case 90...100:
+       print("Grade is an A")
+   case 80...89:
+       print("Grade is a B")
+   case 70...79:
+       print("Grade is an C")
+   case 60...69:
+ print("Grade is a D")
+[ 94 ]
+  
+case 0...59:
+    print("Grade is a F")
+default:
+    print("Unknown Grade")
+}
+</code></pre>
+</div>
+
+<p>In Swift, any case statement can contain** an optional guard condition** that can provide an additional condition to validate. The guard condition is defined with the <strong>where</strong> keyword. Let’s say, in our preceding example, we had students who were receiving special assistance in the class and we wanted to de ne a grade of D for them in the range of 55 to 69. The following example shows how to do this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var studentId = 4
+   var grade = 57
+   switch grade {
+   case 90...100:
+       print("Grade is an A")
+   case 80...89:
+       print("Grade is a B")
+   case 70...79:
+       print("Grade is an C")
+   case 55...69 where studentId == 4:
+       print("Grade is a D for student 4")
+   case 60...69:
+       print("Grade is a D")
+   case 0...59:
+       print("Grade is a F")
+   default:
+       print("Unknown Grade")
+   }
+</code></pre>
+</div>
+
+<p>One thing to keep in mind with the guard expression is that Swift will attempt to match the value starting with the  rst case statement and working its way down checking each case statement in order. This means that if we put the case statement with the guard expression after the Grade F case statement, then the case statement with the guard expression would <strong>never be reached</strong>.</p>
+
+<blockquote>
+  <p>Every switch statement must have a match for all the possible values. This means that unless we are matching against an enum, each switch statement must have a <strong>default</strong> case.</p>
+</blockquote>
+
+<p>Switch statements are also <strong>extremely useful</strong> for evaluating <strong>enumerations</strong>. Since an enumeration has a  nite number of values, if we provide a case statement for all the values in the enumeration, we do not need to provide a default case. The following example shows how we can use a switch statement to evaluate an enumeration:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Product {
+       case Book(String, Double, Int)
+       case Puzzle(String, Double)
+   }
+   var order = Product.Book("Mastering Swift 2", 49.99, 2015)
+   switch order {
+   case .Book(let name, let price, let year):
+       print("You ordered the book \(name) for \(price)")
+   case .Puzzle(let name, let price):
+       print("You ordered the Puzzle \(name) for \(price)")
+   }
+</code></pre>
+</div>
 
 </div>
 
