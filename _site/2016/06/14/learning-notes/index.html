@@ -11,7 +11,7 @@
 
   <title>
     
-      A kid portrait copying painting &middot; 九十里
+      Learning Notes &middot; 九十里
     
   </title>
 
@@ -152,27 +152,35 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">A kid portrait copying painting</h1>
-  <span class="post-date">23 Apr 2016</span>
-  <h5 id="willies-kid-portrait-copying-painting-in-class">Willie’s kid portrait copying painting in class</h5>
+  <h1 class="post-title">Learning Notes</h1>
+  <span class="post-date">14 Jun 2016</span>
+  <h2 id="nsurlsession">NSURLSession</h2>
+<p>Prior to iOS 7 and OS X 10.9, when a developer wanted to retrieve contents from a URL, he/she used the NSURLConnection API. Starting with iOS 7 and OS X 10.9, NSURLSession became the <strong>preferred</strong> API. The NSURLSession API can be thought of as an improvement to the older NSURLConnection API.</p>
 
-<p><img src="/asset/painting/kid_portrait_copying_painting.jpg" alt="image description" /></p>
+<ul>
+  <li>NSURLSession: This is the main session object. It was written as a replacement for the older NSURLConnection API.</li>
+  <li>NSURLSessionConfiguration: This is used to configure the behavior of the NSURLSession object.</li>
+  <li>NSURLSessionTask: This is a base class to handle the data being retrieved from the URL. Apple provides three concrete subclasses of the NSURLSessionTask class.</li>
+  <li>NSURL: This is an object that represents the URL to connect to.</li>
+  <li>NSMutableURLRequest: This class contains information about the request that we are making and is <strong>used by the NSURLSessionTask service to make the request</strong>.</li>
+  <li>NSHTTPURLResponse: This class contains the response to our request.</li>
+</ul>
 
+<p>In addition, the NSURLSession API provides four protocols that define delegate methods your app can implement to provide more fine-grained control over session and task behavior.</p>
+
+<ul>
+  <li>NSURLSessionDelegate—Defines delegate methods to handle session-level events</li>
+  <li>NSURLSessionTaskDelegate—Defines delegate methods to handle task-level events common to all task types</li>
+  <li>NSURLSessionDataDelegate—Defines delegate methods to handle task-level events specific to data and upload tasks</li>
+  <li>NSURLSessionDownloadDelegate—Defines delegate methods to handle task-level events specific to download tasks</li>
+  <li>NSURLSessionStreamDelegate—Defines delegate methods to handle task-level events specific to stream tasks</li>
+</ul>
 
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/2016/06/14/learning-notes/">
-            Learning Notes
-            <small>14 Jun 2016</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -188,6 +196,15 @@
           <a href="/2016/06/10/learning-notes/">
             Learning Notes
             <small>10 Jun 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/06/09/tourist-guide-notes/">
+            Tokyo Tourist Guide Notes
+            <small>09 Jun 2016</small>
           </a>
         </h3>
       </li>

@@ -155,6 +155,39 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="http://nintymiles.github.io//2016/06/14/learning-notes/">
+        Learning Notes
+      </a>
+    </h1>
+
+    <span class="post-date">14 Jun 2016</span>
+
+    <h2 id="nsurlsession">NSURLSession</h2>
+<p>Prior to iOS 7 and OS X 10.9, when a developer wanted to retrieve contents from a URL, he/she used the NSURLConnection API. Starting with iOS 7 and OS X 10.9, NSURLSession became the <strong>preferred</strong> API. The NSURLSession API can be thought of as an improvement to the older NSURLConnection API.</p>
+
+<ul>
+  <li>NSURLSession: This is the main session object. It was written as a replacement for the older NSURLConnection API.</li>
+  <li>NSURLSessionConfiguration: This is used to configure the behavior of the NSURLSession object.</li>
+  <li>NSURLSessionTask: This is a base class to handle the data being retrieved from the URL. Apple provides three concrete subclasses of the NSURLSessionTask class.</li>
+  <li>NSURL: This is an object that represents the URL to connect to.</li>
+  <li>NSMutableURLRequest: This class contains information about the request that we are making and is <strong>used by the NSURLSessionTask service to make the request</strong>.</li>
+  <li>NSHTTPURLResponse: This class contains the response to our request.</li>
+</ul>
+
+<p>In addition, the NSURLSession API provides four protocols that define delegate methods your app can implement to provide more fine-grained control over session and task behavior.</p>
+
+<ul>
+  <li>NSURLSessionDelegate—Defines delegate methods to handle session-level events</li>
+  <li>NSURLSessionTaskDelegate—Defines delegate methods to handle task-level events common to all task types</li>
+  <li>NSURLSessionDataDelegate—Defines delegate methods to handle task-level events specific to data and upload tasks</li>
+  <li>NSURLSessionDownloadDelegate—Defines delegate methods to handle task-level events specific to download tasks</li>
+  <li>NSURLSessionStreamDelegate—Defines delegate methods to handle task-level events specific to stream tasks</li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="http://nintymiles.github.io//2016/06/13/learning-notes/">
         Learning Notes
       </a>
@@ -617,29 +650,6 @@ JR:JIE ALU(姐~阿鲁）
 
     <h2 id="linux---wikipedia">Linux的发音及由来 - Wikipedia</h2>
 <p>Linux (pronounced /ˈlɪnəks/ lin-əks or, less frequently, /ˈlaɪnəks/ lyn-əks) is a Unix-like and mostly POSIX-compliant computer operating system (OS) assembled under the model of free and open-source software development and distribution. The defining component of Linux is the Linux kernel, an operating system kernel first released on 5 October 1991 by Linus Torvalds.The Free Software Foundation uses the name GNU/Linux to describe the operating system, which has led to some controversy.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://nintymiles.github.io//2016/06/08/learning_notes/">
-        Learning Notes
-      </a>
-    </h1>
-
-    <span class="post-date">08 Jun 2016</span>
-
-    <h2 id="sublime-text-3">如何禁用sublime text 3的升级检测功能？</h2>
-<p>使用Sublime Text 3时，每次打开会默认进行更新监测，若有更新则每次都会弹出更新提醒框，若不想更新检测则需要如下步骤：</p>
-
-<ol>
-  <li>进入Preferences -&gt; Settings-User（用户设置）</li>
-  <li>在JSON数据格式中（即curly braces（｛｝）所包括区域）添加一句Json格式配置：”update_check”:false</li>
-  <li>然后关闭且重启Submine Text 3即可</li>
-</ol>
-
-<h2 id="twitter">Twitter的视频缓存印象</h2>
-<p>用twitter浏览一些新闻视频时，观察了一下twitrer的线程所打开的文件和端口。尤其看见了其视频缓存路径/Users/seanren/Library/Containers/com.twitter.twitter-mac/Data/Library/Caches/com.twitter.mac.videos/，当中的视频文件时根据列表中可见视频而进行预加载的。可以看到twitter并没有使用很花哨的手段。</p>
 
   </div>
   

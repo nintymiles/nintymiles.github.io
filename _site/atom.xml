@@ -4,13 +4,42 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-06-13T17:58:44+08:00</updated>
+ <updated>2016-06-14T18:13:53+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>SeanRen</name>
    <email>nintymiles@icloud.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Learning Notes</title>
+   <link href="http://nintymiles.github.io/2016/06/14/learning-notes/"/>
+   <updated>2016-06-14T00:00:00+08:00</updated>
+   <id>http://nintymiles.github.io/2016/06/14/learning-notes</id>
+   <content type="html">&lt;h2 id=&quot;nsurlsession&quot;&gt;NSURLSession&lt;/h2&gt;
+&lt;p&gt;Prior to iOS 7 and OS X 10.9, when a developer wanted to retrieve contents from a URL, he/she used the NSURLConnection API. Starting with iOS 7 and OS X 10.9, NSURLSession became the &lt;strong&gt;preferred&lt;/strong&gt; API. The NSURLSession API can be thought of as an improvement to the older NSURLConnection API.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;NSURLSession: This is the main session object. It was written as a replacement for the older NSURLConnection API.&lt;/li&gt;
+  &lt;li&gt;NSURLSessionConfiguration: This is used to configure the behavior of the NSURLSession object.&lt;/li&gt;
+  &lt;li&gt;NSURLSessionTask: This is a base class to handle the data being retrieved from the URL. Apple provides three concrete subclasses of the NSURLSessionTask class.&lt;/li&gt;
+  &lt;li&gt;NSURL: This is an object that represents the URL to connect to.&lt;/li&gt;
+  &lt;li&gt;NSMutableURLRequest: This class contains information about the request that we are making and is &lt;strong&gt;used by the NSURLSessionTask service to make the request&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;NSHTTPURLResponse: This class contains the response to our request.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In addition, the NSURLSession API provides four protocols that define delegate methods your app can implement to provide more fine-grained control over session and task behavior.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;NSURLSessionDelegate—Defines delegate methods to handle session-level events&lt;/li&gt;
+  &lt;li&gt;NSURLSessionTaskDelegate—Defines delegate methods to handle task-level events common to all task types&lt;/li&gt;
+  &lt;li&gt;NSURLSessionDataDelegate—Defines delegate methods to handle task-level events specific to data and upload tasks&lt;/li&gt;
+  &lt;li&gt;NSURLSessionDownloadDelegate—Defines delegate methods to handle task-level events specific to download tasks&lt;/li&gt;
+  &lt;li&gt;NSURLSessionStreamDelegate—Defines delegate methods to handle task-level events specific to stream tasks&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Learning Notes</title>
