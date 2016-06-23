@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Learning notes
+title: Learning notes - 计数排序的理解
 ---
 
 ## 计数排序的理解
