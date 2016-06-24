@@ -4,13 +4,93 @@
  <title>九十里</title>
  <link href="http://nintymiles.github.io/atom.xml" rel="self"/>
  <link href="http://nintymiles.github.io/"/>
- <updated>2016-06-14T18:13:53+08:00</updated>
+ <updated>2016-06-24T11:19:53+08:00</updated>
  <id>http://nintymiles.github.io</id>
  <author>
    <name>SeanRen</name>
    <email>nintymiles@icloud.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Notes</title>
+   <link href="http://nintymiles.github.io/2016/06/23/notes/"/>
+   <updated>2016-06-23T00:00:00+08:00</updated>
+   <id>http://nintymiles.github.io/2016/06/23/notes</id>
+   <content type="html">&lt;h2 id=&quot;section&quot;&gt;古汉语发音标记方法&lt;/h2&gt;
+&lt;p&gt;在孩提时期被父母长辈教了说话以后。对于不认识的字，按照时间顺序经过了&lt;strong&gt;&lt;em&gt;读若&lt;/em&gt;&lt;/strong&gt;、&lt;strong&gt;&lt;em&gt;反切&lt;/em&gt;&lt;/strong&gt;、&lt;strong&gt;&lt;em&gt;韵图&lt;/em&gt;&lt;/strong&gt;三个时代。&lt;/p&gt;
+
+&lt;p&gt;作者：著微
+链接：http://www.zhihu.com/question/20802912/answer/16232419&lt;/p&gt;
+
+&lt;p&gt;拼音的本质是汉字的拉丁转写，而不是记录发音。&lt;/p&gt;
+
+&lt;p&gt;在古代汉语当然有自己记录发音的方式，比如反切。但这种注音只是用于字书，而从来不是为了学认字用的。&lt;/p&gt;
+
+&lt;p&gt;自古中国人都是一上来就识字的，三字经、百家姓、千字文就是做这个的。
+反倒现在小孩识字要先学汉语拼音，等于是先学自己母语用另一种文字的转写，才学自己的母语文字。这种把母语当外语学的方式，真是莫名奇妙。这其实是近百年来汉语文界「音重于文」思潮的「流毒」，背后则是西方表音文字的思维方式。而传统「小学」，一直是以「字」为中心。&lt;/p&gt;
+
+&lt;p&gt;一个人对自己的母语并不需要学发音。&lt;/p&gt;
+
+&lt;p&gt;比如学「古」这个字，告诉学生这是「古人」、「古代」的古即可。学生自然知道怎么读，因为这是他的母语，发音自然习得，他只是需要「识字」。
+诸如小学里「歌-屋-古」这种学法，大概只是为了推广普通话吧。从这个意义上，倒也无可厚非，毕竟没有一个中国人的母语是普通话。&lt;/p&gt;
+
+&lt;p&gt;一些朋友喜欢举认生僻字的例子。但是「认生僻字」和「学汉语发音」完全是两回事。首先，如果你本来就不会汉语发音，那给你任何注音方式你仍然不会说汉语。其次，各种字书的功能之一就是认生僻字，包括这个字的发音，而前已述，古代有诸如「反切」的注音方式。&lt;/p&gt;
+
+&lt;p&gt;事实摆在哪里，中国人说汉语的年头，比拼音、注音符号、乃至反切都要久得多。重要的是，这些注音方式从不是为（一个母语为汉语的人）学汉语发音发明的，因为根本不需要学。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Learning Notes - 关于tuple的赋值形式</title>
+   <link href="http://nintymiles.github.io/2016/06/23/learning-notes/"/>
+   <updated>2016-06-23T00:00:00+08:00</updated>
+   <id>http://nintymiles.github.io/2016/06/23/learning-notes</id>
+   <content type="html">&lt;h2 id=&quot;tuple&quot;&gt;tuple中变量的赋值过程&lt;/h2&gt;
+
+&lt;h3 id=&quot;assignment-operator&quot;&gt;赋值表达式(Assignment Operator)&lt;/h3&gt;
+&lt;p&gt;赋值表达式(=)会对某个给定的表达式赋值。 它有如下的形式；&lt;/p&gt;
+
+&lt;p&gt;expression = value&lt;/p&gt;
+
+&lt;p&gt;赋值操作符（＝）把右边的 &lt;strong&gt;value&lt;/strong&gt; 赋值给左边的 &lt;strong&gt;expression&lt;/strong&gt;. 如果左边的expression 需要接收多个参数(比如是一个tuple)，那么右边必须也是一个具有同样数量参数的tuple. (&lt;strong&gt;&lt;em&gt;允许嵌套的tuple&lt;/em&gt;&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(a, _, (b, c)) = (&quot;test&quot;, 9.45, (12, 3))
+// a is &quot;test&quot;, b is 12, c is 3, and 9.45 is ignored
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;tuple的这种赋值形式对于批量赋值来说很简洁有效，但是并不直观容易理解。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;赋值运算符不返回任何值&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;assignment-operator-1&quot;&gt;Assignment Operator&lt;/h3&gt;
+&lt;p&gt;The assignment operator (a = b) initializes or updates the value of a with the value of b:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let b = 10
+var a = 5
+a = b
+// a is now equal to 10
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If the right side of the assignment is a tuple with multiple values, its elements can be decomposed into multiple constants or variables at once:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let (x, y) = (1, 2)
+// x is equal to 1, and y is equal to 2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Unlike the assignment operator in C and Objective-C, &lt;strong&gt;the assignment operator in Swift &lt;em&gt;does not itself return a value&lt;/em&gt;&lt;/strong&gt;. The following statement is not valid:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if x = y {
+    // this is not valid, because x = y does not return a value
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Learning Notes</title>
@@ -541,7 +621,7 @@ JR:JIE ALU(姐~阿鲁）
  </entry>
  
  <entry>
-   <title>Learning notes</title>
+   <title>Learning notes - 计数排序的理解</title>
    <link href="http://nintymiles.github.io/2016/06/07/learning-notes/"/>
    <updated>2016-06-07T00:00:00+08:00</updated>
    <id>http://nintymiles.github.io/2016/06/07/learning-notes</id>
