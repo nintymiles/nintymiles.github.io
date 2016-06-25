@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Learning Notes
+title: Learning Notes - 禁用Sublime Text3的升级检测功能以及Twitter缓存印象
 ---
 
 ## 如何禁用sublime text 3的升级检测功能？
