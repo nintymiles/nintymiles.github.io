@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  Learning Notes - Gradle插件 “com.android.application” 和 “com.android.library”
+title:  Learning Notes - Gradle's two main plugins 
+---
 
 ## Android Studio中gradle两个核心插件的功能标记
 > apply plugin: 'com.android.application'  
