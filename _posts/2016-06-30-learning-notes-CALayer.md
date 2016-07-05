@@ -21,6 +21,18 @@ A layer is different from a view (with respect to animations) for the following 
 - It has pre-defined visible traits – these traits are a number of data properties that affect how the contents is rendered on screen, such as border line, border color, position and shadow.
 - Finally, Core Animation optimizes the caching of layer contents and fast drawing directly on the GPU.
 
+>UIView is simply a wrapper, providing iOS-specific functionality such as touch handling and high-level interfaces for some of Core Animation’s low-level functionality.
+
+---
+
+The layers cannot handle touch events like UIView can,but here are some features of CALayer that are not exposed by UIView:
+- Drop shadows, rounded corners, and colored borders ▪ 3D transforms and positioning
+- Nonrectangular bounds
+- Alpha masking of content
+- Multistep, nonlinear animations
+
+---
+
 ## Layer Animation Delegate
 With Core Animation, however, you can easily inspect animations that are running on a layer and stop them if you need to.
 
@@ -81,3 +93,6 @@ The topic is about how the layer itself is **positioned** and **sized** with res
 - CALayer has equivalents called frame, bounds, and position
 
 > The frame represents the outer coordinates of the layer (that is, the space it occupies within its superlayer), the bounds property represents the inner coordinates (with {0, 0} typically equating to the top-left corner of the layer, although this is not always the case), and the center and position both represent the location of the anchorPoint relative to the superlayer. 
+
+### AnchorPoint
+You can think of the **anchorPoint** as being the handle used to move the layer around.
