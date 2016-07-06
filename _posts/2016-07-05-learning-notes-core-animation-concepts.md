@@ -59,3 +59,20 @@ the -drawRect: method is present, it allocates a new backing image for the view,
 - **Points**—The *most commonly* used coordinate type on iOS and Mac OS. Points are **virtual pixels**, also known as **logical pixels**. On standard-definition devices, 1 point equates to 1 pixel, but on Retina devices, a point equates to 2×2 physical pixels. iOS uses points for all screen coordinate measurements so that layouts work seamlessly on both Retina and non-Retina devices.
 - **Pixels**—*Physical pixel coordinates* are ***not used for screen layout***, but they are often still relevant when working with images. UIImage is screen-resolution aware, and specifies its size in points, but some lower-level image representations such as **CGImage use pixel dimensions**, so you should keep in mind that their stated size will not match their display size on a Retina device.
 - **Unit**—Unit coordinates are a convenient way to specify measurements that are relative to the size of an image or a layer’s bounds, and so do not need to be adjusted if that size changes. Unit coordinates are used a lot in OpenGL for things like texture coordinates, and they are also used frequently in Core Animation.
+
+## Coordinate systems
+Layers, like views, are positioned hierarchically, with each placed relative to its parent in the layer tree. **The position of a layer is relative to the bounds of its superlayer**. If the superlayer moves, so do all of its sublayers.
+
+Sometimes you need to know the absolute position of a layer or (more commonly) its position relative to a layer other than its immediate parent.
+CALayer provides some utility methods for converting between different layers’ coordinate systems:
+-  \- (CGPoint)convertPoint:(CGPoint)point fromLayer:(CALayer *)layer; 
+-  \- (CGPoint)convertPoint:(CGPoint)point toLayer:(CALayer *)layer; 
+-  \- (CGRect)convertRect:(CGRect)rect fromLayer:(CALayer *)layer;
+-  \- (CGRect)convertRect:(CGRect)rect toLayer:(CALayer *)layer;
+
+## Flipped Geometry
+Conventionally, on iOS the position of a layer is specified relative to the **top-left** corner of its superlayer’s bounds. On Mac OS, the convention is that the position is relative to
+the **bottom-left** corner. Core Animation can support **either** of these conventions by virtue of the **geometryFlipped** property. This is a BOOL value that determines whether the geometry of a layer is **vertically flipped** with respect to its superlayer. 
+
+## The Z Axis
+Unlike UIView,which is strictly two-dimensional,CALayer exists in three-dimensional space,CALayer also has two additional properties,zPosition and anchorPointZ,both of which are floating-point values describing the layer's postion on the Z axis.
