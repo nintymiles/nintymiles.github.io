@@ -38,6 +38,23 @@ Jenkins 提供了丰富的管理和配置的功能，包括系统配置、管理
 
 The main aim of CI is to prevent integration problems, referred to as "integration hell" in early descriptions of XP. In XP, CI was intended to be used in combination with automated unit tests written through the practices of test-driven development.
 
+## iOS Build Plugin - XCode Plugin
+[XCode Plugin](http://wiki.jenkins-ci.org/display/JENKINS/Xcode+Plugin#XcodePlugin-Installationguide)
+
+[CocoaPods Plugin](https://wiki.jenkins-ci.org/display/JENKINS/CocoaPods+Plugin)
+
+### System Requirements
+Obviously, the build machine for iOS has to be an OS X machine with XCode developer tools installed.
+
+**Certificates**, **Identities** and **Provisions** must be installed on the build machine separately.
+
+If xcode related binaries aren't stored in the **default** location, update the global configuration of the plugin (Manage Jenkins -> Configure System)
+
+### Source Code Management
+Android设置
+- Repository URL:svn://192.168.20.91:9999/mobile/android/trunk/HL_app_Tzbao
+- Credentials: svn的用户名密码 	
+- Local module directory:检出的源码放置的目录	
 
 ## Jekins的一些最佳实践记录
 Jenkins最佳实践，其实大部分对于其他的CI工具同样的适用：
