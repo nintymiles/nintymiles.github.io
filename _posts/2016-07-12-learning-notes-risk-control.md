@@ -95,7 +95,7 @@ title:  Learning Notes - 互联网金融平台风控及信用评价体系
 ---
 
 ### Leading Club的风控体系
-![](/asset/financial/riskcontrol1.png)
+![](/asset/financial/riskcontrol4.png)
 
 
 ---
