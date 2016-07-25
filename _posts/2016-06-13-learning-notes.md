@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Learning Notes
+title: Learning Notes - Swift Basic Syntax
 ---
 
 ## Swift中大括号和括号的用法（how curly brackets and parentheses are used in Swift）

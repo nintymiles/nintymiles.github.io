@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Learning Notes
+title: Learning Notes - NSURLSession
 ---
 
 ## NSURLSession
@@ -20,3 +20,4 @@ In addition, the NSURLSession API provides four protocols that define delegate m
 - NSURLSessionDataDelegate—Defines delegate methods to handle task-level events specific to data and upload tasks
 - NSURLSessionDownloadDelegate—Defines delegate methods to handle task-level events specific to download tasks
 - NSURLSessionStreamDelegate—Defines delegate methods to handle task-level events specific to stream tasks
+

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Swift Operators
+title: Learning Notes - Swift Operators
 ---
 
 ## Nil Coalescing operator (??)
@@ -51,3 +51,5 @@ for i in 0..<count {
 ```
 
 > Half-open ranges are particularly useful when you work with zero-based lists such as arrays
+
+

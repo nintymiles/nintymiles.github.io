@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Learning Notes
+title: Learning Notes - UIBezierPath简单理解
 ---
 
 ## UIBezierPath
@@ -20,3 +20,4 @@ The UIBezierPath class lets you define a path consisting of **straight** and **c
 
 ## Pop扩展开源项目*MMTweenAnimation*
 MMTweenAnimation实际实现为数学曲线公式动画，非简单路径叠加，挺有意思。
+

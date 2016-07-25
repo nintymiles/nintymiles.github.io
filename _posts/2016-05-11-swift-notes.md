@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Swift Learning Notes 2 - Optional and Enumeration
+title: Swift Learning Notes - Optional and Enumeration
 ---
 
 
@@ -166,3 +166,5 @@ You can match an enum value using the traditional equals (==) operator or use a 
 ```
    
    
+
+

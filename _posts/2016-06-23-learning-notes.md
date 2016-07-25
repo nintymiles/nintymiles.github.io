@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Learning Notes - 关于tuple的赋值形式
+title:  Learning Notes - Swift中关于tuple的赋值形式
 ---
 
 ## tuple中变量的赋值过程
@@ -47,3 +47,5 @@ if x = y {
     // this is not valid, because x = y does not return a value
 }
 ```
+
+

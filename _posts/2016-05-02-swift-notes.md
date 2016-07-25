@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Swift Learning Notes
+title: Swift Learning Notes - Basic Syntax
 ---
 
 # Swift Learning Notes
@@ -153,5 +153,7 @@ Swift contains many of the standard numeric types that are suitable for storing 
 
 #### Swift REPL
 You can set up and run a REPL — read, eval, print, loop — in order to write interactive Swift code in the command line. To enable this capability, open the Terminal app from your /Applications/Utilities folder and type *xcrun swift* (or *lldb --repl*) at the command prompt and press return.
+
+
 
 
