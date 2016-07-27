@@ -35,7 +35,7 @@ CGPoint point = CGPointMake(1, 1);
  NSValue *pointObj = [NSValue valueWithCGPoint:point];
 ```
 
-## Swift Charactr(字符） 变量
+## Swift Character(字符） 变量
 Swift的字符可以理解为**只有一个字符**的字符串，数据类型为 Character，如果尝试在 Character（字符） 类型中存储更多的字符，则程序会报错。
 
 ```
