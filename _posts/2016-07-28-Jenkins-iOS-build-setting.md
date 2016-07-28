@@ -15,6 +15,8 @@ title:  Learning Notes - Jenkins iOS build setting
 	**Xcode Project Directory**＝HL_App_Tzbao，此处指的是项目目录。但此处也可以用于将有些偏离的工作目录指定到当前**project**或**workspace**根目录
 	**Xcode Schema File**＝＝HL_App_Tzbao，此处指＝HL_App_Tzbao.xcscheme文件， 有时候使用pod时，会对单Project项目将workspace和project放置在同目录，此时cocoapods可能并没有对project产生对应的scheme 文件，那么当指定Workspace File时，此处也会报错，需要手工产生项目对应的scheme。
 	
+- General Tab 的 ***Use custom workspace*** 条目，应该也可以设置working directory。可以代替`Xcode Project Directory`的work around 用法
+	
 ## Jenkins Log
 下面时一些Jenkins log，显示的原理是底层基本通过XCodeBuild工具集来实现。注意一些常用的build 命令。
 - /usr/bin/xcodebuild -version
@@ -95,4 +97,9 @@ Build step 'Xcode' marked build as failure
 Finished: FAILURE	
 ```
 	
+
+## 关于 Gradle plugin 的一些设置
+Android构建时Gradle plugin的设置最为重要。首先在系统级的`global tool config`设置gradle路径并命名。 然后在andorid的build设置中选择`invoke gradle script`，之后在相应的选项卡中选择设置的gradle plugin名称。
+
+> 注： Android gradle构建时最重要的属性时`local.properties`，其中指定了Android SDK路径，其他地方的设置应该是无效的。Mac搭建环境时，尤其要注意svn上的local.properties属性是否正确。
 
