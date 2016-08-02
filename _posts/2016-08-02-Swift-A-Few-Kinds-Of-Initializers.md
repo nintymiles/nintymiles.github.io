@@ -42,7 +42,7 @@ let magenta = Color(red: 1.0, green: 0.0, blue: 1.0)
 let halfGray = Color(white: 0.5)
 ```
 
-## Initializer Parameters Without External Names(必须特殊处理，才可以不适用External names)
+## Initializer Parameters Without External Names(必须特殊处理，才可以不使用External names)
 If you ***do not want*** to use an external name for an initializer parameter, write an **underscore (_)** instead of an explicit external name for that parameter to override the default behavior.
 
 ```
@@ -60,5 +60,11 @@ struct Celsius {
 }
 let bodyTemperature = Celsius(37.0)
 ```
+## Optional Property types during initialization 
+Properties of optional type are *automatically initialized* with a value of **nil**, indicating that the property is **deliberately(故意的)** intended to have “no value yet” during initialization. 
 
+## Assigning Constant Properties During Initialization
+***You can assign a value to a constant property at any point during initialization***, as long as it is set to a **definite**(明确的) value by the time initialization finishes. Once a constant property is assigned a value, **it can’t be further modified**.
+
+## 初始化过程中加入了各种语言意图，渗透于编译过程中。
 
