@@ -66,9 +66,7 @@ Properties of optional type are *automatically initialized* with a value of **ni
 ## Assigning Constant Properties During Initialization
 ***You can assign a value to a constant property at any point during initialization***, as long as it is set to a **definite**(明确的) value by the time initialization finishes. Once a constant property is assigned a value, **it can’t be further modified**.
 
-## 初始化过程中加入了各种语言意图，渗透于编译过程中。swift语法偏复杂，光初始化就有多种形态和细则。
-
-## Failable Initializers(应对初始化可能失败设计的初始化方法机制，初始化后声称optioanl类型，以此包容初始化失败。表现形式为init?(...))
+## Failable Initializers(应对初始化可能失败设计的初始化方法机制，初始化后生成optioanl类型，以此包容初始化失败。表现形式为init?(...))
 It is *sometimes* useful to define a class, structure, or enumeration for which initialization can fail. This failure might be triggered by invalid initialization parameter values, the absence of a required external resource, or some other condition that prevents initialization from succeeding.
 
 ```
@@ -161,4 +159,5 @@ struct Chessboard2 {
 
 ```
 
+## 初始化过程中加入了各种语言意图，渗透于编译过程中。swift语法偏复杂，光初始化就有多种形态和细则。
 
