@@ -3,21 +3,46 @@ layout: post
 title:  Learning Notes - Jenkins iOS build setting 
 ---
 
-## Jenkins XCode Plugin 的一些设置
+## Jenkins iOS 构建设置过程（注解截图）
+使用Jenkins构建iOS App时要注意安装方式，一定要使用brew install jenkins的途径来安装。千万不要使用pkg包的方式安装，使用pkg包的方式安装时将会为jenkins建立独立用户和组，然后将会因为权限问题埋下很多大坑。
+
+Jenkins构建iOS APP时需要安装两个额外插件：[CocoaPods Jenkins Integration](https://wiki.jenkins-ci.org/display/JENKINS/CocoaPods+Integration)，[Xcode integration](https://wiki.jenkins-ci.org/display/JENKINS/Xcode+Plugin)
+
+实现的过程大概是这样的，首先check out项目到工作目录，然后使用cocoapods更新依赖库，随后通过解锁当前用户keychain的方式获取已经设置到本机的code sign信息（已经使用xcode至少成功的debug building到真机上），最后使用xcodebuild命令行构建出iOS App。具体设置过程如下图：
+
+![jenkins-ios-setting-1](/asset/technical/jenkins-ios/jenkins-ios-setting-1.jpg)
+
+![jenkins-ios-setting-2](/asset/technical/jenkins-ios/jenkins-ios-setting-2.jpg)
+
+![jenkins-ios-setting-3](/asset/technical/jenkins-ios/jenkins-ios-setting-3.jpg)
+
+![jenkins-ios-setting-4](/asset/technical/jenkins-ios/jenkins-ios-setting-4.jpg)
+
+![jenkins-ios-setting-5](/asset/technical/jenkins-ios/jenkins-ios-setting-5.jpg)
+
+![jenkins-ios-setting-6](/asset/technical/jenkins-ios/jenkins-ios-setting-6.jpg)
+
+## Jenkins 设置的一些注意事项
+
+- General Tab 的 ***Use custom workspace*** 条目，可以设置***working directory***。
+
+	> 当然也可以通过XCode Integration的Advanced Xcode build options的project directory来达到workaround的设置效果
 
 - Subversion插件的Module设置
 	
 	***Local module directory***一般设置为 **"."**,若设置为其他名称，则会在check out时新建对目录。一般check out的路径（mac）为**/Users/Shared/Jenkins/Home/workspace/zbj_ios_app_project／xxx（若设置则有）	**	
-	
+
+## XCode Plugin 设置的一些注意事项	
+
 - Advanced Xcode build options 设置
 
 	**Xcode Workspace File**＝HL_App_Tzbao，此处指定的是HL_App_Tzbao.xcworkspace 文件
 	**Xcode Project Directory**＝HL_App_Tzbao，此处指的是项目目录。但此处也可以用于将有些偏离的工作目录指定到当前**project**或**workspace**根目录
 	**Xcode Schema File**＝＝HL_App_Tzbao，此处指＝HL_App_Tzbao.xcscheme文件， 有时候使用pod时，会对单Project项目将workspace和project放置在同目录，此时cocoapods可能并没有对project产生对应的scheme 文件，那么当指定Workspace File时，此处也会报错，需要手工产生项目对应的scheme。
+
+> XCode的Identity->Team 的**有效性检验**及设置跟XCode Project没直接关系，也就是不体现在project文件设置上。
 	
-- General Tab 的 ***Use custom workspace*** 条目，应该也可以设置working directory。可以代替`Xcode Project Directory`的work around 用法
-	
-## Jenkins Log
+## Jenkins 部分xcodebuild Log分析
 下面时一些Jenkins log，显示的原理是底层基本通过XCodeBuild工具集来实现。注意一些常用的build 命令。
 - /usr/bin/xcodebuild -version
 - /usr/bin/xcodebuild -showsdks
