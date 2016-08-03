@@ -4,13 +4,16 @@ title:  Learning Notes - Jenkins iOS build setting
 ---
 
 ## Jenkins iOS 构建设置过程（注解截图）
-使用Jenkins构建iOS App时要注意安装方式，一定要使用brew install jenkins的途径来安装。千万不要使用pkg包的方式安装，使用pkg包的方式安装时将会为jenkins建立独立用户和组，然后将会因为权限问题埋下很多大坑。
+使用Jenkins构建iOS App时要注意安装方式，一定要使用***brew install jenkins***的途径来安装。千万不要使用pkg包的方式安装，使用pkg包的方式安装时将会为jenkins建立独立用户和组，然后将会因为权限问题埋下很多大坑。
 
 同时需要安装两个额外插件：
+
 1. [CocoaPods Jenkins Integration](https://wiki.jenkins-ci.org/display/JENKINS/CocoaPods+Integration)
 2. [Xcode integration](https://wiki.jenkins-ci.org/display/JENKINS/Xcode+Plugin)
 
-Jenkins构建iOS APP时实现的过程大概是这样的，首先check out项目到工作目录，然后使用cocoapods更新依赖库，随后通过解锁当前用户keychain的方式获取已经设置到本机的 code signing 信息（已经使用xcode至少成功的debug building到真机上或者成功exported ipa），最后使用xcodebuild命令行构建出iOS App。具体设置过程如下图：
+Jenkins构建iOS APP时实现的过程大概是这样的，首先check out项目到工作目录，然后使用cocoapods更新依赖库，随后通过解锁当前用户keychain的方式获取已经设置到本机的 code signing 信息（已经使用xcode至少成功的debug building到真机上或者成功exported ipa），最后使用xcodebuild命令行构建出iOS App。
+
+**具体设置过程如下图**：
 
 ![jenkins-ios-setting-1](/asset/technical/jenkins-ios/jenkins-ios-setting-1.jpg)
 
