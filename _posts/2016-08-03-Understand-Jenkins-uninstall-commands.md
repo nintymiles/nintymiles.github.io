@@ -11,6 +11,7 @@ title:  Learning Notes - A few of Swift Initializers
      and XPC services. launchctl 为 launchd 的管理接口，可以管理和监控daemons,agents和XPC服务
      
 	```
+	
 	比如，如果你需要停止Spotlight服务，可以运行下面的命令：
 	  launchctl unload /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
 	停止之后又要启动该服务，那么：
@@ -18,6 +19,7 @@ title:  Learning Notes - A few of Swift Initializers
 	
 	launchd是在OS X启动的时候又系统启动的，它根据自己的控制文件来启动相应的服务程序，而一般来说它的控制文件是：
 	$HOME/.launchd.conf 或者 /etc/launchd.conf
+	
 	```
 
 - sudo rm !$
