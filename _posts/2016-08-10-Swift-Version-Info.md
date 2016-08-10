@@ -1,6 +1,6 @@
 ## How to check Swift version in XCode?
 
-1. 查看Swift版本
+- 查看Swift版本
 `$ xcrun swift -version`
 
 ```
@@ -9,7 +9,7 @@ Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)
 Target: x86_64-apple-macosx10.9
 ```
 
-2. 查看 Swift utility program 在 Xcode 中的位置
+- 查看 Swift utility program 在 Xcode 中的位置
 `$ xcrun --find swift`
 
 ```
@@ -19,7 +19,7 @@ $ xcrun --find clang
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 ```
 
-3. xcrun command depiction
+- xcrun command depiction
 
 	xcrun  provides  a  means  to **locate** or **invoke** developer tools from the
 command-line, without requiring users to modify Makefiles or  otherwisetake inconvenient measures to support multiple Xcode tool chains.
