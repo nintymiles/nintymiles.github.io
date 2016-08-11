@@ -30,7 +30,7 @@ Jenkins Android Workspace截图
 ![jenkins-workspace-2](/asset/technical/jenkins-workspace-2.png)
 
 
-## Mac上Jenkins的Android路径配置(此处问题主要出现在Jenkins使用Pkg以**独立用户**安装的情形)
+## Mac上Jenkins的Android路径配置易出现的问题(此处问题主要出现在Jenkins使用Pkg以**独立用户**安装的情形)
 由于Jenkins使用了专有用户，因此Android SDK安装目录不能在Jenkins之外的用户目录中，否则会导致Jenkins无法找到Android SDK目录（权限问题）。在Android Plugin的路径配置和Gradle的local.propertis文件中都需要注意。
 
 ## Android Lint工具
