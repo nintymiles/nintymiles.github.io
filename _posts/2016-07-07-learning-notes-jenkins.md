@@ -53,7 +53,7 @@ If xcode related binaries aren't stored in the **default** location, update the 
 ### Source Code Management
 Android设置
 
-- Repository URL:svn://192.168.20.91:9999/mobile/android/trunk/HL_app_Tzbao
+- Repository URL:svn://192.168.20.91:9999/mobile/android/trunk/XX_app_xxx
  
 - Credentials: svn的用户名密码 
 
