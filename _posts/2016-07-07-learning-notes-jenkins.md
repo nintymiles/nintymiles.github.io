@@ -29,7 +29,7 @@ The leading open source **automation server**, Jenkins provides hundreds of plug
 2. 一个代码存储库，即需要版本控制软件来保障代码的可维护性，同时作为构建过程的素材库。
 3. 一个持续集成服务器。Jenkins就是一个配置简单和使用方便的持续集成服务器。
 
-##Jenkins的安装
+## Jenkins的安装
 Jenkins 的安装非常简单，只需要从 Jenkins 的主页上下载最新的 jenkins.war 文件然后运行 java -jar jenkins.war。同时，还可以点击 Jenkins 页面上的 launch 按钮完成下载和运行 Jenkins。
 
 Jenkins 还提供了非常丰富的插件支持，这使得很强大。可以方便的安装各种第三方插件，从而方便快捷的集成第三方的应用。
@@ -90,3 +90,4 @@ Jenkins最佳实践，其实大部分对于其他的CI工具同样的适用：
 * 在build成功后对源代码打tag，label或baseline。
 
 * 配置Jenkins bootstrapper来在build前更新工作目录。
+
