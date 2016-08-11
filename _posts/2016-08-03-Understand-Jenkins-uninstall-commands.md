@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Learning Notes - A few of Swift Initializers
+title:  Learning Notes - How to uninstall Jenkins(installed by pkg) on Mac 
 ---
 
 ## How to uninstall Jenkins(installed by pkg) on Mac ?
