@@ -54,7 +54,9 @@ If xcode related binaries aren't stored in the **default** location, update the 
 Android设置
 
 - Repository URL:svn://192.168.20.91:9999/mobile/android/trunk/HL_app_Tzbao
+ 
 - Credentials: svn的用户名密码 
+
 - Local module directory:检出的源码放置的目录	
 
 ## Jekins的一些最佳实践记录
