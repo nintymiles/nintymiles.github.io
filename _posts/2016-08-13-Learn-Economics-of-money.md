@@ -19,5 +19,41 @@ title:  Learning Notes - 货币金融学（The Economics of money,banking & fina
 ## The Financial Institutions
 The financial system comporises many different types of private sector financial institutions,including banks,insurance companies,mutual funds,finance companies,and investment banks,all of which are heavily regulated by the government.
 
-> financial intermediaries(中间人）
+> financial intermediaries(中间人,中介） 
+
+## Financial Crisis
+At times,the financial system *seizes up*(停止运转) and products **financial crisis**
+
+## Banks and other financial institutions
+- **Banks** are financial institutions that **accept deposits**(吸收存款) and **make loans**（放贷）.  Included under the term *banks* are firms such as commercial banks,savings and load assoications,mutual saving banks(互助储蓄银行),and credit unions. Because the banks are the largest financial intermediaries in our ecomony,they deserve the most careful study.However,banks are not the only important financial institutions.
+
+## Financial innovation 
+e-finance concepts
+
+## what is money?
+Money, also referred to as the money supply, is defined as anything that is generally accepted in **payment for *goods* or *services*** or *in the repayments of debts*.
+
+## Money and business cycles
+Evidence suggests that money plays an important role in generating business cycles.
+
+> **aggregat output(总产出）**   unemployment rate
+
+## Money and inflation
+物价水平后货币供给的走势相当一致
+
+## Money and interest rates
+
+## Conduct of monetary policy
+
+## Ficial policy and Monetary policy
+
+## The foreign exchange market (外汇市场）
+foreign exchange rate
+
+## The international financial system
+iOS Application Security The Definitive Guide for Hackers and Developers
+
+
+
+
 
