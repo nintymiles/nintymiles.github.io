@@ -34,25 +34,52 @@ e-finance concepts
 Money, also referred to as the money supply, is defined as anything that is generally accepted in **payment for *goods* or *services*** or *in the repayments of debts*.
 
 ## Money and business cycles
-Evidence suggests that money plays an important role in generating business cycles.
+Why did the economy expand from 1982 to 1990, contract in 1990 to 1991, boom again from 1991 to 2001, and then contract again in 2001? Evidence suggests that money plays an important role in generating **business cycles**
 
-> **aggregat output(总产出）**   unemployment rate
+total production of goods and services (called **aggregate output**)
+
+**unemployment** rate (the percentage of the available labor force unemployed)
+
+**recessions**(衰退期), periods of declining aggregate output. 
+
+**monetary theory**, the theory that relates changes in the quantity ofmoney to changes in aggregate economic activity and the price level.
 
 ## Money and inflation
 物价水平后货币供给的走势相当一致
 
+The *average* price of goods and services in an economy is called the **aggregate price level**, or, more simply, the *price level* (a more precise definition is found in the appendix to this chapter)
+
+**Inflation**, a continual increase in the price level, affects individuals, businesses, and the government. Inflation is generally regarded as an important problem to be solved and has often been a primary concern of politicians and policymakers. To solve the inflation problem, we need to know something about its causes.
+
+**Inflation rate** (the rate of change of the price level, usually measured as a percentage change per year) 
+
 ## Money and interest rates
+In addition to other factors, money plays an important role in interest-rate **fluctuations**, which are of great concern to businesses and consumers.
 
 ## Conduct of monetary policy
+the conduct of **monetary policy**, the management of money and interest rates. 
 
-## Ficial policy and Monetary policy
+The organization responsible for the conduct of a nation’s monetary policy is the **central bank**. The United States’ central bank is **the Federal Reserve System** (also called simply **the Fed**). 
+
+## Ficial policy and Monetary policy**Fiscal policy** involves decisions about government spending and taxation. A *budget deficit*(赤字) is the excess of government *expenditures*（开支） over tax revenues for a particular time period, typically a year, while a **budget surplus**（盈余） arises when tax revenues exceed government expenditures. 
+
+national output (as calculated by the gross domestic product, or **GDP**, a measure of aggregate output described in the appendix to this chapter)
 
 ## The foreign exchange market (外汇市场）
-foreign exchange rate
+For funds(基金－翻译不准确) to be transferred from one country to another, they have to be converted from **the currency in the country of origin** (say, dollars) into **the currency of the country they are going to** (say, euros).The foreign exchange market is where this con- version takes place, and so it is instrumental in moving funds between countries.
+
+It is also important because it is where the **foreign exchange rate**, the price of one country’s currency in terms of another’s, is determined.
 
 ## The international financial system
-iOS Application Security The Definitive Guide for Hackers and Developers
 
+
+
+---
+
+This textbook stresses the economic way of thinking by developing a unifying framework to study money, banking, and financial markets. This analytic framework uses a few basic economic concepts to organize your thinking about the determination of asset prices, the structure of financial markets, bank management, and the role of money in the economy. It **encompasses** the following basic concepts:
+- A simplified approach to the demand for assets- The concept of equilibrium(均衡)- Basic supply and demand to explain behavior in financial markets- The search for profits
+Exploring the Web
+- An approach to financial structure based on transaction costs and asymmetric（不对称） information- Aggregate supply and demand analysis
 
 
 
