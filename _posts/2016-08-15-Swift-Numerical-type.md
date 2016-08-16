@@ -61,6 +61,7 @@ Type aliases are useful when you want to refer to an existing type by a name tha
 ```
 typealias AudioSample = UInt16
 ```
+
 Once you define a type alias, you can use the alias anywhere you might use the original name:
 
 
