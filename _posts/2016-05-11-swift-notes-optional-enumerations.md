@@ -211,10 +211,11 @@ func evaluate(expression: ArithmeticExpression) -> Int {
         return evaluate(left) * evaluate(right)
     }
 }
-```
- 
+
 print(evaluate(product))
 // Prints "18"
+```
+ 
 This function evaluates a plain number by simply returning the associated value. It evaluates an addition or multiplication by evaluating the expression on the left hand side, evaluating the expression on the right hand side, and then adding them or multiplying them.
 
 
