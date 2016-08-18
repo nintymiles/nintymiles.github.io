@@ -127,7 +127,7 @@ enum Product {
 \(price)") }
 ```
 
-Enums have a **shorter** version.This shorter version lets us de ne multiple members in a single line, separated by *commas*.
+Enums have a **shorter** version.This shorter version lets us de ne multiple members in a single line, separated by *commas*. (also can called implicitly assigned raw value)
 
 ```
 enum Planets {
@@ -137,10 +137,10 @@ enum Planets {
 ```
 
 
-Once the enum variable type is inferred or defined, we can then assign a new value without the enum pre x, as shown here:
+Once the enum variable type is **inferred** or **defined**, we can then assign a new value **without the enum pre x**, as shown here:
 
 ```
-planetWeLiveOn = .Mars
+planetWeLiveOn = .Mars  //enumeration 的简写
 ```
 
 You can match an enum value using the traditional equals (==) operator or use a switch statement. 
@@ -165,6 +165,56 @@ You can match an enum value using the traditional equals (==) operator or use a 
    }
 ```
    
-   
+> Enumberation can be used in **recursive** style   
+
+## Recursive Enumerations (递归枚举有些繁琐，使用过程中可使用plain number，也可使用associated value进行**递归**，是enumberation特性的极致累加)
+A recursive enumeration is an enumeration that has another instance of the enumeration as the associated value for one or more of the enumeration cases. You indicate that an enumeration case is recursive by writing indirect before it, which tells the compiler to insert the necessary layer of indirection.
+
+For example, here is an enumeration that stores simple arithmetic expressions:
+
+```
+enum ArithmeticExpression {
+    case Number(Int)
+    **indirect** case Addition(ArithmeticExpression, ArithmeticExpression)
+    **indirect** case Multiplication(ArithmeticExpression, ArithmeticExpression)
+}
+```
+You can also write **indirect** before the beginning of the enumeration, to enable indirection for all of the enumeration’s cases that need it:
+
+```
+indirect enum ArithmeticExpression {
+    case Number(Int)
+    case Addition(ArithmeticExpression, ArithmeticExpression)
+    case Multiplication(ArithmeticExpression, ArithmeticExpression)
+}
+```
+
+This enumeration can store three kinds of arithmetic expressions: a plain number, the addition of two expressions, and the multiplication of two expressions. The Addition and Multiplication cases have associated values that are also arithmetic expressions—these associated values make it possible to nest expressions. For example, the expression (5 + 4) * 2 has a number on the right hand side of the multiplication and another expression on the left hand side of the multiplication. Because the data is nested, the enumeration used to store the data also needs to support nesting—this means the enumeration needs to be recursive. The code below shows the ArithmeticExpression recursive enumeration being created for (5 + 4) * 2:
+
+```
+let five = ArithmeticExpression.Number(5)
+let four = ArithmeticExpression.Number(4)
+let sum = ArithmeticExpression.Addition(five, four)
+let product = ArithmeticExpression.Multiplication(sum, ArithmeticExpression.Number(2))
+```
+
+A recursive function is a straightforward way to work with data that has a recursive structure. For example, here’s a function that evaluates an arithmetic expression:
+
+```
+func evaluate(expression: ArithmeticExpression) -> Int {
+    switch expression {
+    case let .Number(value):
+        return value
+    case let .Addition(left, right):
+        return evaluate(left) + evaluate(right)
+    case let .Multiplication(left, right):
+        return evaluate(left) * evaluate(right)
+    }
+}
+```
+ 
+print(evaluate(product))
+// Prints "18"
+This function evaluates a plain number by simply returning the associated value. It evaluates an addition or multiplication by evaluating the expression on the left hand side, evaluating the expression on the right hand side, and then adding them or multiplying them.
 
 
