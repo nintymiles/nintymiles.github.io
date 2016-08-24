@@ -1,3 +1,8 @@
+---
+layout: post
+title:  Learning Notes - About Swift 2.3
+---
+
 # Swift 2.3
 
 JUNE 12, 2016 Ted Kremenek

@@ -1,3 +1,8 @@
+---
+layout: post
+title:  Learning Notes - NSLog 中文输出
+---
+
 ## ［Objective-C］如何从 NSArray 和 NSDictionary 中直接 print 中文字符？
 下面这种方式较为简洁
 

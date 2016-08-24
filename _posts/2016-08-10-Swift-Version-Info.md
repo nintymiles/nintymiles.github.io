@@ -1,3 +1,8 @@
+---
+layout: post
+title:  Learning Notes - Swift Version check in XCode
+---
+
 ## How to check Swift version in XCode?
 
 - 查看Swift版本

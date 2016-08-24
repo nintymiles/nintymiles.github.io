@@ -1,3 +1,5 @@
+
+
 ## Why Writing Is ImportantWriting helps you think and learn, enhances your chances of success, contrib- utes to your personal development, and strengthens your relationships with other people. 
 ### Reflection 1. A Literacy Story
 

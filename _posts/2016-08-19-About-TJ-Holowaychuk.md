@@ -1,3 +1,7 @@
+---
+layout: post
+title:  Learning Notes - About TJ
+---
 ## Programing GURU TJ Holowaychuk 
 1. How did TJ learn to program?
 

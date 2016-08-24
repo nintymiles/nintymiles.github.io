@@ -1,3 +1,7 @@
+---
+layout: post
+title:  Learning Notes - Algorithm Binary Tree
+---
 ## Binary Tree
 
 A binary tree is a [tree](../Tree/) where each node has 0, 1, or 2 children. This is a binary tree:

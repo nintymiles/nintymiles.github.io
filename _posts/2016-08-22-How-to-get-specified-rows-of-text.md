@@ -1,3 +1,7 @@
+---
+layout: post
+title:  Learning Notes - 如何获取命令行输出特定字符后的n行文字
+---
 ## 如何获取命令行输出特定字符后的n行文字
 `ifconfig |grep en0 -A 4`
 

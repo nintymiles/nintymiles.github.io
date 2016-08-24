@@ -1,3 +1,8 @@
+---
+layout: post
+title:  Learning Notes - Swift Closure - GeneratorType,Nonescaping
+---
+
 ## About GeneratorType
 
 ```

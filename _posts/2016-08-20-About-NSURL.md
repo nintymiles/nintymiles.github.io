@@ -1,3 +1,8 @@
+---
+layout: post
+title:  Learning Notes - NSURL usage
+---
+
 ## URL Construction Using Relative Paths
 
  For HTTP convenience methods, the request serializer constructs URLs from the path relative to the `-baseURL`, using `NSURL +URLWithString:relativeToURL:`, when provided. If `baseURL` is `nil`, `path` needs to resolve to a valid `NSURL` object using `NSURL +URLWithString:`.

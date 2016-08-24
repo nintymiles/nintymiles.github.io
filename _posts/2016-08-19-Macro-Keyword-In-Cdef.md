@@ -1,3 +1,8 @@
+---
+layout: post
+title:  Learning Notes - Macro Keywords in cdef.h
+---
+
 ## Objective-C __unused __used 等关键字
 - __unused 表示变量和函数可能不会被用到，阻止编译器对遍变量和函数等没有使用而发出的警告。
 - __used 表示强制变量和函数要被包含进来，即便在编译器看来他们没有被使用（并且就这样被弃置）
