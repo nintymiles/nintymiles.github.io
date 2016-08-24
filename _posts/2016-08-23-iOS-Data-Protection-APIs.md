@@ -1,3 +1,8 @@
+---
+layout: post
+title:  Learning Notes - iOS Data Protection APIs
+---
+
 ## iOS Data Protection APIs
 There are some FileProtection options you can set when writing an NSData to disk:
 
