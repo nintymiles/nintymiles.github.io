@@ -25,7 +25,7 @@ title: Swift Learning Notes  - Closure
 }
 ```
 
-*Code implementation block* must be started on a ***new line***,*even in optimization style.* otherwise it will raise error.
+*Code implementation block* must be started on a ***new line***,*even in optimization style.* otherwise it will raise error.(重要的显示规则)
 	
 ```
 let reversed=names.sort({(s1: String,s2: String) -> Bool in
@@ -50,7 +50,7 @@ let reversed5=names.sort( < ) //The most simpliest way is operator function. no 
 > Collection classes’ sort(\_:) method_will produce a new collection that has the same size and type as the old one. the original collection is not modified by the sort(\_:) method._
 
 ## Function Parameter Names
-Function has two kind of parameter name,one is external parameter name,the other is local parameter name.
-- external parameter name is used to label arguments passed to a function call
-- local parameter name  is used in the implementation of the function
+Function has two kind of parameter name,one is **external** parameter name,the other is **local** parameter name.
+- external parameter name is used to ***label*** arguments passed to a function call
+- local parameter name is used in the **implementation** of the function
 
