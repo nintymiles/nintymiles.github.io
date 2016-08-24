@@ -45,7 +45,7 @@ func someFunctionWithNonescapingClosure(@noescape closure: () -> Void) {
     closure()
 }
 ```
-As an example, the sort(_:) method takes a closure as its parameter, which is used to compare elements. The parameter is marked @noescape because it is guaranteed not to be needed after sorting is complete.
+As an example, the sort(_:) method takes a closure as its parameter, which is used to compare elements. The parameter is marked **@noescape **because it is **guaranteed** ***not to be needed*** after sorting is complete.
 
 One way that a closure can escape is by being stored in a variable that is defined outside the function. As an example, many functions that start an asynchronous operation take a closure argument as a completion handler. The function returns after it starts the operation, but the closure isn’t called until the operation is completed—the closure needs to escape, to be called later. For example:
 
