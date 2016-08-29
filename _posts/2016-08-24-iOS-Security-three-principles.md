@@ -1,3 +1,7 @@
+---
+layout: post
+title:  Learning Notes - Three basic iOS app security tenets
+---
 ##Three basic iOS app security tenets
 For developers, three are the basic tenets of iOS app security, according to Guido:
 

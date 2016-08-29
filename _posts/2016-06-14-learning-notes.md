@@ -21,3 +21,19 @@ In addition, the NSURLSession API provides four protocols that define delegate m
 - NSURLSessionDownloadDelegate—Defines delegate methods to handle task-level events specific to download tasks
 - NSURLSessionStreamDelegate—Defines delegate methods to handle task-level events specific to stream tasks
 
+## NSURLSessionTask
+The NSURLSessionTask class is the **base** class for tasks in a URL session. **Tasks are always part of a session**; you create a task by calling one of the task creation methods on an NSURLSession object. The method you call determines the type of task.
+
+URL sessions provide three types of tasks: data tasks, upload tasks, and download tasks. These tasks are instances of the `NSURLSessionDataTask`, `NSURLSessionUploadTask`, `NSURLSessionDownloadTask`, `NSURLSessionStreamTask` **subclasses** of `NSURLSessionTask`, respectively.
+
+- Data tasks request a resource, returning the server’s response as one or more NSData objects in memory. They are supported in default, ephemeral, and shared sessions, but are not supported in background sessions.
+
+- Upload tasks are like data tasks, except that they make it easier to provide a request body so you can upload data before retrieving the server’s response. Additionally, upload tasks are supported in background sessions.
+
+- Download tasks download a resource directly to a file on disk. Download tasks are supported in any type of session.
+
+- Stream tasks **establish a TCP/IP connection** from a host name and port or a net service object.  验证链接和服务端口
+
+After you create a task, you start it by calling its ***resume*** method. The session then maintains a strong reference to the task until the request **finishes** or **fails**; you do not need to maintain a reference to the task unless it is useful to do so for your app’s internal bookkeeping purposes.
+
+
