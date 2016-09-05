@@ -43,7 +43,7 @@ title:  Learning Notes - How to draw a Mi-Character Plaid Backgournd in view
     CGContextSetStrokeColorWithColor(cx, [UIColor redColor].CGColor);
     
     CGFloat ra_dash[] = {4,2};  //第二个数组位置参数表示空线长度
-    CGContextSetLineDash(cx, minX, ra_dash, 2); //  "2" == ra count
+    CGContextSetLineDash(cx, minX, ra_dash, 2); //  "2" == ra_dash count
     
     CGContextMoveToPoint(cx, minX,thickness*0.5);
     CGContextAddLineToPoint(cx, maxX, maxY);
