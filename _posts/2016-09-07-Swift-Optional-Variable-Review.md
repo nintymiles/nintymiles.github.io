@@ -38,4 +38,26 @@ We can also test **multiple optional variables in one line**（支持一行多�
    if let myOptional = myOptional, myOptional2 = myOptional2,   myOptional3 = myOptional3 {     // only reach this if all three optionals     // have non-nil values   }
 ```
 
+### about implicitily unwrapped optional (隐含解绑optional)
+
+```
+var hasSomething:String! = “Hey there”// implicitly unwrapped optional string
+```
+
+You can think of implicitly unwrapped optionals as a present that unwraps itself. You should not use an implicitly unwrapped optional if a chance exists that it may contain nil at any point.
+
+So an implicitly unwrapped optional is something has ***no value initially ***but we ***promise that it will have a value later***.
+
+Also, sometimes you will have a constant that cannot be defined during initialization, and sometimes you will want to use an Objective-C API. For both of these reasons and more, you will find yourself using implicitly unwrapped optionals.
+
+```
+class SomeUIView:UIView { 
+@IBOutlet var someButton:UIButton! var buttonWidth:CGFloat!
+
+override func awakeFromNib() {
+
+self.buttonOriginalWidth = self.button.frame.size.width }
+
+}
+```
 
