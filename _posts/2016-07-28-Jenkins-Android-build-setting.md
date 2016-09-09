@@ -19,6 +19,8 @@ Android构建时Gradle plugin的设置最为重要。首先在系统级的`Globa
 
 ![jenkins-android-grandle-config](/asset/technical/jenkins-android-grandle-config.png)
 
+> 如果支持集成单元测试，则上面填写 `Tasks` 为 `build test` （等同于`gralde build` , `gradle test`）
+
 下面是build成功的日志截图
 
 ![jenkins-android-gradle-log-1](/asset/technical/jenkins-android-gradle-log-1.png)
