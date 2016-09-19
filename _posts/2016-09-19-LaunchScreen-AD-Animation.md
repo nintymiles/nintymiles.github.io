@@ -8,7 +8,7 @@ title:  Learning Notes - iOS 启动过程加入广告画面或者启动动画的
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //基本逻辑为：首先在启动VC中从LaunchScreen.xib中获取LaunchView，然后在launchView上叠加广告图片，再后给广告图片加入动画的出入效果或者加入其他动画效果。最后讲launchView从当前ViewController的View层次中去除，恢复正常的VC View层次。
+    //基本逻辑为：首先在启动VC中从LaunchScreen.xib中获取LaunchView，然后在launchView上叠加广告图片，再后给广告图片加入动画的出入效果或者加入其他动画效果。最后将launchView从当前ViewController的View层次中去除，恢复正常的VC View层次。
     
     //这一步是获取LaunchScreen.storyboard里的UIViewController,UIViewController 的identifer是LaunchScreen
     UIViewController *viewController = [[UIStoryboard storyboardWithName:@"LaunchScreen" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LaunchScreen"];
