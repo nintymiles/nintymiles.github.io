@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Learning Notes - <<The Courage to Act>> Learning Notes
+title:  Learning Notes - `The Courage to Act` Learning Notes
 ---
 ##生词 
 Complacency 自满
