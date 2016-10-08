@@ -24,6 +24,9 @@ extension Notification.Name {
     }
 } 
 ```
+此例扩展可以归纳所有`URLSessionTask`相关的notifications，用作命名空间. 
+> Used as a namespace for all `URLSessionTask` related notifications.
+
 
 使用扩展后的`NSNotification.Name.Task`
 
