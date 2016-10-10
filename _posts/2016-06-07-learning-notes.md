@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Learning notes - 计数排序的理解
+title: Learning notes - Algorithm-计数排序的理解
 ---
 
 ## 计数排序的理解
@@ -96,3 +96,52 @@ var sortedArray = \[Int](count: array.count, repeatedValue: 0)
 The algorithm uses simple loops to sort a collection. Hence, the time to run the entire algorithm is **O(n+k)** where **O(n)** represents the loops that are required to initialize the output arrays and **O(k)** is the loop required to create the count array.
 
 The algorithm uses arrays of length **n + 1** and **n**, so the total space required is **O(2n)**. Hence for collections where the keys are scattered in a dense area along the number line it can be space efficient.
+
+
+## Playground Code
+
+```swift
+enum CountingSortError: Error {
+  case ArrayEmpty
+}
+
+func countingSort(array: [Int]) throws -> [Int] {
+  guard array.count > 0 else {
+    throw CountingSortError.ArrayEmpty
+  }
+
+  // Step 1
+  // Create an array to store the count of each element
+
+  let maxElement = array.maxElement() ?? 0
+  
+  var countArray = [Int](count: Int(maxElement + 1), repeatedValue: 0)  //先找出数组中的最大元素，然后以最大元素值加1建立计数数组
+
+
+  for element in array {
+    countArray[element] += 1    //将实际元素在计数数组作为索引值，并将此位置存储出现次数计数
+  }
+
+  // Step 2
+  // Set each value to be the sum of the previous two values   ／／把从头到尾的索引值的出现次数相加，然后得到每个元素的其实际索引位置。最后在1:1的新数组中将是实际值赋值到实际索引位置。
+  for index in 1 ..< countArray.count {
+    let sum = countArray[index] + countArray[index - 1]
+    countArray[index] = sum
+  }
+
+  print(countArray)
+
+  // Step 3
+  // Place the element in the final array as per the number of elements before it
+  var sortedArray = [Int](repeating: 0, count: array.count)
+  for element in array {
+    countArray[element] -= 1     //因为实际计数每个数值的出现都计算在内，而数组索引从零开始，所以计算出的索引值都要减1？
+    sortedArray[countArray[element]] = element
+  }
+  return sortedArray
+}
+
+
+try countingSort(array: [10, 9, 8, 7, 1, 2, 7, 3])
+```
+
