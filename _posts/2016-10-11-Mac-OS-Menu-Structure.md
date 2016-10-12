@@ -1,3 +1,7 @@
+---
+layout: post
+title:  Learning Notes -  Mac OS Menu Programing Concepts
+---
 ## The Struture of Mac OS Menu
 Menus are constructed from three classes:• **NSMenu** represents a menu. This is a collection of items drawn in a special kind of window. Most instances display a vertical menu; however, the top- level application menu is also an NSMenu and is drawn across the top of the screen horizontally.• **NSMenuItem** represents a single item in a menu.• **NSMenuItemCell** is responsible for drawing the menu item.
 
