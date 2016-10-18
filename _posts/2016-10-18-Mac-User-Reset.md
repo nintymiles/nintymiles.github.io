@@ -1,3 +1,7 @@
+---
+layout: post
+title:  Mac用户密码重置
+---
 ## Mac用户忘记密码重置
 第一种方法
 开机，启动时按cmd+S，进入Single User Mode，出现像DOS一样的提示符#root>;
