@@ -12,3 +12,6 @@ title:  Learning Notes -  How to set status bar style to LightContent
     UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true) 
 ```
 
+## UINavigationController barStyle Setting
+`[[UINavigationBar appearance] setBarStyle:UIBarStyleBlack]`
+
