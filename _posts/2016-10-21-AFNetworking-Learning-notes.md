@@ -1,3 +1,7 @@
+---
+layout: post
+title:  AFNetworking Learning Notes
+---
 ## AFURLResponseSerialization
 The `AFURLResponseSerialization` protocol is adopted by an object that decodes data into a more useful object representation, according to details in the server response. Response serializers may additionally perform validation on the incoming response and data. 根据服务器响应的细节，解码数据为更可用的表达方式。也会对响应和数据额外执行验证。
 > 对服务器响应进行进一步封装
