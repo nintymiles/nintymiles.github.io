@@ -2,7 +2,7 @@
 layout: post
 title:  Learning Notes - Objective-C roots (Effective Objective-C) and Stack/Heap
 ---
-##Accustoming yourself to ObjC
+## Accustoming yourself to ObjC
 ObjetiveC使用众多方括号，不以长方法名为耻（鼓励使用长方法名）。
 
 Understanding the memory model of C will help you to understand the memory model of Objective-C and why reference counting works the way it does.
@@ -22,7 +22,7 @@ Objective-C的对象生成及引用模型
 > `accustom(使习惯于） sb to sth`   `verbose(冗长，啰嗦)`  `overhead()` `embark（从事，着手）`
 
 
-##Stack vs Heap
+## Stack vs Heap
 
 So far we have seen how to declare basic type variables such as int, double, etc, and complex types such as arrays and structs. The way we have been declaring them so far, with a syntax that is like other languages such as MATLAB, Python, etc, puts these variables on the stack in C.
 
