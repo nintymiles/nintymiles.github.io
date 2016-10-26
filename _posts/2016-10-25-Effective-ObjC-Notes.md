@@ -15,12 +15,14 @@ Deferring the import to where it is required enables you to limit the **scope** 
 ```
 @class EOCEmployer
 
-@interface: ...
-...
+@interface: EOCPerson
 
+...
 @property(strong) EOCEmployer *employer;
 ...
+
+@end
 ```
 
-> *class-continuation category*
+> *class-continuation category*  `alleviate(减轻，缓和）`  `chicken-and-egg(先有鸡还是先有蛋风格的）` intricacy()  paradigm()
 
