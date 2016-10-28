@@ -2,7 +2,7 @@
 layout: post
 title:  Learning Notes - How to hanle error in swift
 ---
-##How to handle error in swift
+## How to handle error in swift
 Handling Errors Using **Do-Catch** You use a do-catch statement to handle errors by running a block of code. If an error is thrown by the code in the do clause, it is matched against the catch clauses to determine which one of them can handle the error.
 
 Here is the general form of a do-catch statement:
