@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 关于Swift Coredata entity实体类及其生成方式
+title: 关于Swift Coredata entity实体类及其生成方式-另carthage importing MagicalRecord issues
 ---
 
 ## CoreData Entity Class
@@ -36,5 +36,19 @@ extension StrokeData {
 }
 ```
 
-> 由于coredata framework本身也在变化，因而entity的生成最好通过xocde automatic generating方式来进行。
+> 由于coredata framework本身也在变化，因而entity的生成最好通过xcode automatic generating方式来进行。
+
+## 使用carthage引入Magical Record导致的framework引用问题
+使用Carthage update后，不仅要进行link library，同时也要设置copy frameworks动作.
+![Screen Shot 2016-11-02 at 2.38.00 P For Copy Files](media/Screen%20Shot%202016-11-02%20at%202.38.00%20PM.png)
+
+否则出现如下的错误.
+
+```
+dyld: Library not loaded: @rpath/MagicalRecord.framework/EasyCountDownButton
+
+  Referenced from: /Users/xxxx/Library/Developer/CoreSimulator/Devices/BF041713-F171-4EE5-B455-02CB6BBBFFC8/.../xxxxx.app/xxxxx
+
+  Reason: image not found
+```
 
