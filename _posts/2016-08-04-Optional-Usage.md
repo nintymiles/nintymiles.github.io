@@ -160,5 +160,5 @@ guard let passwordString = password.text where passwordString.characters.count >
 }
 ```
 
-
+> if let/guard let是涉及optional的优先语法结构
 
