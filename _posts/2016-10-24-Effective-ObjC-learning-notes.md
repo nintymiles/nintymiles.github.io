@@ -16,7 +16,7 @@ All Objective-C objects must be declared in this way because the memory for obje
 When nonobject types are the only data to be held,a structure is usually used.(对象的生成数目有天花板overhead，而nonobject类型不会)
 
 Objective-C的对象生成及引用模型
-![ObjC-Object-Memory-Mode](asset/technical/ObjC-Object-Memory-Model.png)
+![ObjC-Object-Memory-Mode](/asset/technical/ObjC-Object-Memory-Model.png)
 
 
 > `accustom(使习惯于） sb to sth`   `verbose(冗长，啰嗦)`  `overhead()` `embark（从事，着手）`
