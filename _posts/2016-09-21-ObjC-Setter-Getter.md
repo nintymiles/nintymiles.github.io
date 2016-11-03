@@ -2,7 +2,7 @@
 layout: post
 title:  Learning Notes - ObjC属性以及初始化时机
 ---
-##ViewController中的属性以及如何初始化
+## ViewController中的属性以及如何初始化
 **所有的属性都使用getter和setter**
 
 不要在viewDidLoad里面初始化你的view然后再add，这样代码就很难看。viewDidload里面只做addSubview的事情，然后在viewWillAppear里面做布局的事情（改变位置可以放在viewWilllayoutSubview或者didLayoutSubview里），最后在viewDidAppear里面做Notification的监听之类的事情。至于属性的**初始化**，则**交给getter**去做。 

@@ -2,7 +2,7 @@
 layout: post
 title:  Learning Notes - CoreStoreError 代码解读
 ---
-##`CoreStoreError`代码解读
+## `CoreStoreError`代码解读
 Swift CoreStore 框架的Error设计，所有的错误都用`CoreStoreError`表达。`CoreStoreError`主体由2个enum组成，分别为`CoreStoreError`，`CoreStoreErrorCode`，Error的编码由`CoreStoreError`使用computed property基于`CoreStoreErrorCode`来实现。`CoreStoreError`另有一个Computed Property用来指定domain。Domain固定返回一个全局变量（`CoreStoreErrorDomain`）的值。
 
 重载 `==` 函数，判断enum是否相等。 
