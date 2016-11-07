@@ -12,7 +12,7 @@ title:  Learning Notes - Swift Properties
 A stored property is a **variable** or **constant** that is stored as part of an instance of **a class or structure**. We can provide a default value for stored properties. ~~These are de ned with the **var** keyword.~~
 
 ### Computed properties
-Computed properties are properties **that do not have backend variables** that are used to store the values associated with the property. The values of **a computed property are usually computed when code requests it**. You can think of a computed property as a function disguised(伪装) as a property. Let's take a look at how we would de ne a read-only computed property:
+Computed properties are properties **that do not have backend variables** that are used to store the values associated with the property. The values of **a computed property are usually computed when code requests it**. You can think of a computed property as a function disguised(伪装) as a property. Let's take a look at how we would define a **read-only** computed property:
 
 ```
 var salaryWeek: Double {
@@ -28,6 +28,8 @@ We can **simplify** the definition of the read-only computed property by removin
 var salaryWeek: Double {
    }
 ```
+> 只读属性可以简写。但是不能只有写属性，也就是写属性要**配对**读属性出现 
+
 Computed properties are not limited to being read-only, we can also **write** to them. To enable the salaryWeek property to be writeable, we would need to add a setter method. The following example shows how we would add a setter method that will set the salaryYear property, based on the value being passed into the salaryWeek property:
 
 ```
@@ -40,6 +42,8 @@ var salaryWeek: Double {
     } 
 } 
 ```
+> 写属性的参数也可以简写，默认值为 **newValue**
+
 We can **simplify** the setter definition by **not defining a name for the new value**. In this case, the value would be assigned to **a default variable name**, ***newValue***. The salaryWeek computed property could be rewritten like this:
 
 ```
@@ -71,3 +75,5 @@ var salaryYear: Double = 0.0 {
        else {
    } } } print("\( rstName) did not get a raise")
 ```
+
+
