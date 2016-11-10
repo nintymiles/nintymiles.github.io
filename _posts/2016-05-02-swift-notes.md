@@ -87,17 +87,17 @@ var line = ""
 
 print(name1, name2, name3, name4, separator:", ",terminator:"", toStream:&line)
 ```
-### Strings and Characters
 
+### Strings and Characters
 - A *string* is a series of characters
 - A string is an ordered collection of characters, such as Hello or Swift. 
 - Swift has the ***String*** type to represent strings
 - *String* can be accessed in various way,including as a collection of *Character* values
 - Swift's *String* and *Character* types privode a fast,Unicode-compliant way to work with text in your code,Swift's *String* type is a fast,modern string implementation
 
->Note
+> Note
 
->Swift’s String type is bridged with Foundation’s NSString class. If you are working with the Foundation framework in Cocoa, the entire NSString API is available to call on any String value you create when type cast to NSString, as described in AnyObject. You can also use a String value with any API that requires an NSString instance.
+> Swift’s String type is bridged with Foundation’s NSString class. If you are working with the Foundation framework in Cocoa, the entire NSString API is available to call on any String value you create when type cast to NSString, as described in AnyObject. You can also use a String value with any API that requires an NSString instance.
 
 
 #### String Literals
@@ -130,12 +130,14 @@ print("Nothing to see here")
 
 #### Constants and Variables
 Constants and variables associate an identi er (such as myName or currentTemperature) with a value of a particular type (such as String or Int), where the identi er can be used to retrieve the value
+
 -  a variable can be updated or changed
 -  a constant cannot be changed once a value is assigned to it
 
->The use of constants is encouraged in Swift. If we do not expect or want the value to change, we should declare it as a constant. This adds a very important safety constraint to our code that ensures that the value never changes.
+> The use of constants is encouraged in Swift. If we do not expect or want the value to change, we should declare it as a constant. This adds a very important safety constraint to our code that ensures that the value never changes.
 
 You can use almost any character in the identi er of a variable or constant (even Unicode characters); however, there are a few rules that you must follow:
+
 - An identifier must not contain any whitespace
 - An identifier must not contain any mathematical symbols
 - An identifier must not contain any arrows

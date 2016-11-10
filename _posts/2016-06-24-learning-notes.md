@@ -9,7 +9,7 @@ title:  Learning Notes - Swift Properties
 - **Computed properties**: They ***do not store*** a value **themselves**, but **retrieve** and possibly **set *other properties***. The value returned by a computed property can also be calculated *when it is requested*.
 
 ### Stored properties
-A stored property is a **variable** or **constant** that is stored as part of an instance of **a class or structure**. We can provide a default value for stored properties. ~~These are de ned with the **var** keyword.~~
+A stored property is a **variable** or **constant** that is stored as part of an instance of **a class or structure**. We can provide a default value for stored properties. ~~These are defined with the **var** keyword.~~
 
 ### Computed properties
 Computed properties are properties **that do not have backend variables** that are used to store the values associated with the property. The values of **a computed property are usually computed when code requests it**. You can think of a computed property as a function disguised(伪装) as a property. Let's take a look at how we would define a **read-only** computed property:
