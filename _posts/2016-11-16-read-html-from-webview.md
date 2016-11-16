@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to read HTML content from a UIWebView or by using String
+title: How to read HTML content from a UIWebView 
 ---
 ## How to read HTML content from a UIWebView
 Copy from stackoverflow

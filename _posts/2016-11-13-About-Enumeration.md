@@ -3,6 +3,7 @@ layout: post
 title: ObjC - 关于Enumeration
 ---
 ## Enumeration的适用范围
+
 ### Use Enumerations for States(状态),Options（选项）,and Status Codes（状态码）
 Enumberation是一种极为有用的定义可组合命名常量的方式。被广泛使用，遍布系统 `Frameworks`，但是却经常被开发者忽略。 Objective-C从C++11标准受益，最近的版本也支持强类型定义`Enumberation`类型。
 
