@@ -13,6 +13,8 @@ title: Swift3对Foundation类的重构
 
 `String` 是 `NSString`的替代者。 
 
+> 注：使用`String`初始化获取url内容时，目前已知的`String.Encoding`（数目有限）往往导致获取的String为乱码，不指定Encoding时反而可以正确读取。
+
 ## 现成休眠功能调用
 `sleep()`为`Thread`类的类型方法，调用如下：
 
