@@ -35,10 +35,10 @@ title: Swift Learning Notes - 如何使用Swift将String写入文件（Mac Dev�
 若使用下面代码，生成的urlstring为／user/xxx/xxx.html，则会抛出错误。
 
 ```
-        //此种写法错误在于没有组合为文件URL
-        //        let dirs = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-//        let path = dirs[0].appending("/test/file.html")
-//        try! htmlString.write(to: URL(string:path)!, atomically: true, encoding: String.Encoding.utf8)
+//此种写法错误在于没有组合为文件URL
+let dirs = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+let path = dirs[0].appending("/test/file.html")
+try! htmlString.write(to: URL(string:path)!, atomically: true, encoding: String.Encoding.utf8)
 ```
 
 错误Log
