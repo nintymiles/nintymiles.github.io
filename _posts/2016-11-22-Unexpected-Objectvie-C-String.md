@@ -16,10 +16,10 @@ static NSString * kHLAPIURLPrefix = @"api/main/"
 ```
 
 错误截图1
-![Screen Shot 2016-11-23 at 1.58.49 P](media/ScreenShot2.png)
+![Screen Shot 2016-11-23 at 1.58.49 P](asset/ScreenShot_20161123_1.jpg)
 
 错误截图2
-![Screen Shot 2016-11-23 at 1.58.14 P](media/ScreenShot1.png)
+![Screen Shot 2016-11-23 at 1.58.14 P](asset/ScreenShot_20161123_2.jpg)
 
 
 
