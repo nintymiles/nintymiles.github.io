@@ -3,7 +3,7 @@
 
 ```
 ...
-//shadowImage为具体变现的颜色设置
+//shadowImage为具体边线的颜色设置
 [tabBarController.tabBar setShadowImage:[self imageWithColor:[UIColor colorFromHexString:@"#dcdcdc"] size:CGSizeMake(tabBarController.tabBar.frame.size.width,1.0f)]];
 //设置tabBar的背景色为[UIImage new]实例，如果设置为nil则不起作用
 [tabBarController.tabBar setBackgroundImage:[UIImage new]];
