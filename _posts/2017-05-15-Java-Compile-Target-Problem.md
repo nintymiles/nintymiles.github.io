@@ -2,6 +2,7 @@
 layout: post
 title: 使用IntelliJ IDE时碰到target相关的编译错误问题的解决
 ---
+
 ## 错误表现为：`Error:java: javacTask: source release 8 requires target release 1.8`
 * 通过 preferences 设置，步骤如下：
 
