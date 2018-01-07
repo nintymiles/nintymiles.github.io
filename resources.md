@@ -62,6 +62,13 @@ title: 学习资源汇总
 
 ## Machine Learning Projects ##
 - [yenchenlin/DeepLearningFlappyBird](https://github.com/yenchenlin/DeepLearningFlappyBird)Flappy Bird hack using Deep Reinforcement Learning (Deep Q-learning).
+- [donnemartin/data-science-ipython-notebooks](https://github.com/donnemartin/data-science-ipython-notebooks)Data science Python notebooks: Deep learning (TensorFlow, Theano, Caffe, Keras), scikit-learn, Kaggle, big data (Spark, Hadoop MapReduce, HDFS), matplotlib, pandas, NumPy, SciPy, Python essentials, AWS, and various command lines.
+- [dformoso/machine-learning-mindmap](https://github.com/dformoso/machine-learning-mindmap)A mindmap summarising Machine Learning concepts, from Data Analysis to Deep Learning.
+- [bulutyazilim/awesome-datascience](https://github.com/bulutyazilim/awesome-datascience)📝 An awesome Data Science repository to learn and apply for real world problems.
+- [ossu/data-science](https://github.com/ossu/data-science)📊 Path to a free self-taught education in Data Science!
+- [joelgrus/data-science-from-scratch](https://github.com/joelgrus/data-science-from-scratch)code for Data Science From Scratch book
+- [rushter/data-science-blogs](https://github.com/rushter/data-science-blogs)A curated list of data science blogs http://rushter.com/dsreader/
+- [nborwankar/LearnDataScience](https://github.com/nborwankar/LearnDataScience)Open Content for self-directed learning in data science
 
 
 ## iOS Top 10 Library ##
@@ -78,5 +85,8 @@ title: 学习资源汇总
 ### Utility ###
 - [nvzqz/RandomKit](https://github.com/nvzqz/RandomKit) Random data generation in Swift https://nvzqz.github.io/RandomKit/docs/
 - [kostub/iosMath](https://github.com/kostub/iosMath) Beautiful math equation rendering on iOS and MacOS
+- [webtorrent/bittorrent-dht](https://github.com/webtorrent/bittorrent-dht) 🕸 Simple, robust, BitTorrent DHT implementation https://webtorrent.io
+- [webtorrent/bittorrent-tracker](https://github.com/webtorrent/bittorrent-tracker) 🌊 Simple, robust, BitTorrent tracker (client & server) implementation https://webtorrent.io
+- [HelloZeroNet/ZeroNet](https://github.com/HelloZeroNet/ZeroNet) ZeroNet - Decentralized websites using Bitcoin crypto and BitTorrent network https://zeronet.io
 
 
