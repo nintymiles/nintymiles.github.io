@@ -3,6 +3,12 @@ layout: page
 title: 学习资源汇总
 ---
 
+## Working Stuff ##
+这部分只放置目前正在学习的相关资料
+- [BradLarson/GPUImage](https://github.com/BradLarson/GPUImage) An open source iOS framework for GPU-based image and video processing http://www.sunsetlakesoftware.com/201…
+- [BradLarson/GPUImage2](https://github.com/BradLarson/GPUImage2) GPUImage 2 is a BSD-licensed Swift framework for GPU-accelerated video and image processing.
+- [CyberAgent/android-gpuimage](https://github.com/CyberAgent/android-gpuimage) Android filters based on OpenGL (idea from GPUImage for iOS)
+
 ## Top Stuff ##
 - [mojombo/semver](https://github.com/mojombo/semver) Semantic Versioning Specification http://semver.org
 
@@ -89,4 +95,6 @@ title: 学习资源汇总
 - [webtorrent/bittorrent-tracker](https://github.com/webtorrent/bittorrent-tracker) 🌊 Simple, robust, BitTorrent tracker (client & server) implementation https://webtorrent.io
 - [HelloZeroNet/ZeroNet](https://github.com/HelloZeroNet/ZeroNet) ZeroNet - Decentralized websites using Bitcoin crypto and BitTorrent network https://zeronet.io
 
+
+Vulkan® 1.1.83 - A Specification (with KHR extensions)
 
