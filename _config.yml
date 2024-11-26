@@ -1,23 +1,24 @@
-# Permalinks
-#
-# Use of `relative_permalinks` ensures post links from the index work properly.
-permalink:           pretty
-#relative_permalinks: true
-
 # Setup
 title:               九十里
 tagline:             '行百里者半九十'
-description:         '大道即在，吾所言者乃道之术也'
+description:         '行百里者半九十'
 url:                 http://nintymiles.github.io
 baseurl:             ''
 paginate:            5
-gems: [jekyll-paginate]
+permalink:           pretty
+
 
 # About/contact
 author:
   name:              SeanRen
-  url:               https://twitter.com/afighter
+  url:               http://nintymiles.github.io
   email:             nintymiles@icloud.com
 
+
+# Gems
+plugins:
+  - jekyll-paginate
+
 # Custom vars
-version:             1.0.0
+version:             1.1.0
+google_analytics_id: #UA-XXXX-Y
