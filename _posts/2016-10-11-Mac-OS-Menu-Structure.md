@@ -1,19 +1,0 @@
----
-layout: post
-title:  Learning Notes -  Mac OS Menu Programing Concepts
----
-## The Struture of Mac OS Menu
-Menus are constructed from three classes:• **NSMenu** represents a menu. This is a collection of items drawn in a special kind of window. Most instances display a vertical menu; however, the top- level application menu is also an NSMenu and is drawn across the top of the screen horizontally.• **NSMenuItem** represents a single item in a menu.• **NSMenuItemCell** is responsible for drawing the menu item.
-
-### Menu bar 菜单栏
-菜单栏位于屏幕的最顶部，是Mac UI最立刻让人认知的部分。一直存在于Mac OS系统
-> The menu bar at the top of the screen is the most instantly recognizable part of the Mac user interface. It has been there since the original Mac in 1984 and, although the look has changed several times, is still there on a modern OS X system. 
-
-### Dock Menus
-Providing a dock menu is very easy. When you create an application nib file, the file’s owner will be an NSApplication instance. This has three outlets, one of which is called dockMenu. Any menu you connect to this outlet will automatically be shown in the dock.For some applications, it is more convenient to provide a dock menu dynami- cally. These might display different dock menus depending on their active state, or simply change the menu over time. When the dock menu is about to be displayed, the application will send this message to its delegate:     
-```
-- (NSMenu*)applicationDockMenu: (NSApplication*)sender;
-```The sender will always be NSApp and the return value should be the menu to display. You can use this to override the menu defined in the nib file. The returned menu can come from any source; you can create it in code or load it from another nib file.### Context MenusThe menu at the top of the screen contains all of the commands that can be applied anywhere on the screen, but sometimes it is useful to display a menu that is only applicable to a certain view, or object inside that view. When you right-click or control-click on a view, it will be sent a -menuForEvent: message by the default mouse-down handler.This method will first see if the menu attribute is defined, and if so return that. If not, it will send its class a +defaultMenu message and return the result.This gives three opportunities to define the context menu that a view will display. You can define a menu for the class, a menu for the instance, or a menu for a region. If you are writing a new view that has a meaningful context menu layout for all instances, you should override +defaultMenu. Some of the standard Cocoa views do this, in particular NSTextView, which displays a simplified version of the Edit menu as a context menu.The horizontal menu at the top of the screen is easy for the user to reach—he just needs to throw the mouse at the top of the screen—but the context menu is even easier. Invoking the context menu doesn’t require moving the mouse, just clicking on a button. Selecting the top item from the context menu is one of the fastest user interactions possible. Selecting others is slightly slower, and becomes progressively more slow as the menu size and complexity increases.
-
-### Pop-Up MenusCocoa provides a special kind of button that displays a context menu whenever you click on it. This is conceptually similar to a context menu. Unlike a context menu, it appears with a normal click on the button, rather than a control-click or right-click.The NSPopUpButton class is a subclass of NSButton. When you click on it, it displays a menu, usually created in Interface Builder and attached to its menu outlet. The button title is set to the last-selected value from the menu.As with any other kind of button, this sends an action message when the user has interacted with it. Usually the method this calls will send a -selectedItem message to its sender to get the menu items that the user clicked on.
-
