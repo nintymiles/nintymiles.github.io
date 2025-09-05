@@ -9,8 +9,11 @@ title: 资源汇总
 
 
 ## Unity
-[CrackCoding Unity Tutorials](https://catlikecoding.com/unity/)
-[e.blog](https://edom18.hateblo.jp/archive/category/Unity) 高质量Unity博客
+[CrackCoding Unity Tutorials](https://catlikecoding.com/unity/) </br>
+[e.blog](https://edom18.hateblo.jp/archive/category/Unity) 高质量Unity博客 </br>
+[Game Development,
+Shader Coding &
+Artificial Intelligence](https://www.alanzucconi.com) </br>
 
 ## Blender教程
 [BlenderGuru Beginner Tutorial](https://www.youtube.com/playlist?list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z) </br>
